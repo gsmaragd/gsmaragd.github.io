@@ -1,0 +1,152 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Enabling ISP and Application Collaboration</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" type="text/css" href="css/main.css" media="screen" />
+<script type="text/javascript">
+	// toggle dynamic divs
+    function toggle(div) {
+    	var elem = document.getElementById(div);
+    	if (elem.style.display=='') {elem.style.display='none'; return;}
+    	elem.style.display='';
+    }
+	</script>
+</head>
+<body>
+<div id="content">
+  <div id="header">
+    <div id="logo">
+      <h1>Enabling</h1><h1>ISP & Application</h1><h1>Collaboration</h1> <!-- <sup> beta</sup></h1> -->
+      <!-- <p>Donec lacinia tristique ante. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam blandit ultricies nisl.</p> -->
+    </div>
+    <!-- <div id="search"> <a onclick="toggle('searchform');">+ SEARCH</a> -->
+      <div id="searchform" style="display: none;">
+        <form method="post" action="http://www.free-css.com/">
+          <p>
+            <input class="searchfield" name="search_query" id="keywords" value="Search Keywords" type="text" />
+            <input class="searchbutton" name="submit" value="Search" type="submit" />
+          </p>
+        </form>
+      </div>
+   <!--  </div> -->
+  </div>
+  <ul id="menu">
+    <li><a class="current" href="index.html">Overview</a></li>
+    <li><a href="documents.html">Documents</a></li>
+    <li><a href="news.html">News</a></li>
+    <li><a href="software.html">Software & Data</a></li>
+    <li><a href="people.html">People</a></li>
+    <li><a href="sponsors.html">Sponsors</a></li>
+    <li><a id="last" href="contact.html">Contact</a></li>
+  </ul>
+<br>
+
+  <div style="clear: both;"></div>
+<p>
+Today, a large fraction of Internet traffic is due to content delivery applications 
+originated by Content Providers (CPs) such as content distribution networks, 
+content producers, hyper-giants and cloud platforms. To cope with the increasing demand
+for content, CPs deploy massively distributed infrastructures.
+This poses new challenges for the CPs as they
+have to dynamically map end-user to the appropriate servers.
+This is challenging as CPs are largely unaware of the network
+conditions within an ISP as well as the end-users network
+locations. Furthermore, ISPs strive to cope with rapid
+traffic shifts caused by the dynamic server selection process
+of CPs. This is to a lose-lose situation for both CPs and ISPs.
+Moreover, end-users are not always assigned to the best servers that leads to optimal end-user performance.
+<br><br>
+We are developing and evaluating novel architectures and protocols to enable the collaboration between ISPs and
+CPs. We argue that it is feasible for both ISPs and CPs to reduce their operational cost, improve their revenue, 
+and enable new applications by exchnanging recommendations on the best assignment of users to servers based on their
+operational view of the network and hosting infrastructures respectively. By jointly optimizing the network and 
+hosting infrastructure, end-user experience is also expected to be improved. 
+</p>
+<br>
+
+  <div class="third">
+    <h2>Provider-aided Distance Information System (PaDIS)</h2>
+<p>
+To improve end-user assignment to servers, especially from a performance perspective, we propose and deploy a Provider-aided Distance Information System (PaDIS). 
+PaDIS is a novel system operated by an ISP that allows them to influence the assignment of users to servers by utilizing information available only to ISPs (network
+conditions and end-user location) as well as by exploiting server diversity exposed by the CDN server selection process. PaDIS ranks any user and available CDN server pair based on current network 
+conditions and accurate network locations. It then returns back the most preferable servers to the end-user regarding a performance metric chosen by the ISP. 
+As a result, PaDIS utilizes the deployed CDN server infrastructure to improve end-user performance. To evaluate the performance improvements we have implemented 
+and deployed a PaDIS prototype. Our field test results show that significant improvements in download time up to a factor of four for content offered by popular 
+content distributors can be achieved when PaDIS is used.
+</p>    
+  </div>
+  <div class="third">
+    <h2>Content-aware Traffic Engineering (CaTE)</h2>
+    <p>
+We argue that CPs and ISPs can jointly take advantage of the massively deployed distributed
+infrastructures to improve their operation and end-user performance.
+We propose Content-aware Traffic Engineering (CaTE).
+CaTE dynamically changes the traffic demand by utilizing ISP network
+information during the server selection process performed by CPs.
+With CaTE server selection of CPs is decoupled from content transfer.
+Thus, it is possible to augment the server selection strategy of CPs
+with information from ISPs about the state of the network, the links
+that are traversed and the network location of the users.
+To this end, CPs gain a better end-user to server mapping
+as network-informed server selection circumvents network bottlenecks.
+Our results show significant improvements in end-user performance, 
+reduction of the overall traffic in the ISP, 
+and decrease in ISP link utilization up to 40% when applying 
+CaTE to traffic delivered by the major CPs.
+CaTE also enables online negotiations between ISPs and CPs on the 
+use of network and hosting resources.
+ </p>
+  </div>
+  <div class="third last">
+    <h2>ISP-CDN Collaboration</h2>
+    <p>
+We develop protocols to enable the collaboration between ISPs and CPs without 
+the need to reveal sensitive operational information. 
+For CDNs, a closer collaboration with an ISP is an imprortant step towards improving
+their competitiveness in the content delivery market. ISP-CDN collaboration is 
+an enabler for both ISP and CDN to jointly introduce new applications to end-users
+by utilizing the global footprint of a CDN and its negotiation power with content producers,
+as well as utilizing the customer base of an ISP.
+This is a new paradigm for revenue sharing between the two parties.
+Turning our attention to cost cutting, both CPs and ISPs will be benefited. 
+An ISP can deploy general purpose infrastructure and leverage recent advances in virtualization 
+to increase its revenue by co-locating CDNs. The deployment of such infrastructures will help
+an ISP to better provision its network, thus, alleviates the need to frequently expand the network. 
+In this setting, CDNs can increase their capacity on demand and potentially reduce their operational costs.
+Moreover, CDNs can also utilize computation power within the network to enhance current application or
+launch new ones.
+Furthermore, the offering of richer and more cost-efficient applications to the end-user is also 
+expected to improve end-user experience and engagement to the ISP.
+ </p>
+<!--    <p class="more"><a href="http://www.free-css.com/">Read More</a></p> -->
+  </div>
+  <div style="clear: both;"></div>
+</div>
+<div id="prefooter">
+<!--  <p>Powered by Truck Accident Lawyers &middot; Davis &amp; McCabe</p> -->
+</div>
+<div id="footer">
+<!--  <p class="right"><a href="http://www.free-css.com/">Sitemap</a><a href="http://www.free-css.com/">Contact</a></p> -->
+  <!-- <p>© Copyright 2008, <a href="http://www.free-css.com/">Website Traffic</a>, Design: <a href="http://www.solucija.com">Luka Cvrk</a></p> -->
+</div>
+
+
+<!-- Start of StatCounter Code -->
+<script type="text/javascript" language="javascript">
+var sc_project=2126673; 
+var sc_invisible=1; 
+var sc_partition=19; 
+var sc_security="3bc9f8cf"; 
+</script>
+
+<script type="text/javascript" language="javascript" src="http://www.statcounter.com/counter/frames.js"></script><noscript><a href="http://www.statcounter.com/" target="_blank"><img  src="http://c20.statcounter.com/counter.php?sc_project=2126673&amp;java=0&amp;security=3bc9f8cf&amp;invisible=1" alt="hit counter" border="0"></a> </noscript>
+<!-- End of StatCounter Code -->
+
+
+
+
+
+</body>
+</html>

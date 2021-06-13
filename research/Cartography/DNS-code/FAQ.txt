@@ -1,0 +1,112 @@
+DNS in the Wild
+---------------
+
+To contribute to the DNS in the Wild Project please download and start the
+program. As it is written in Python it should run on any computer / operating
+system where Python 2.5, 2.6 or 2.7 is installed. This is the case by default
+on most Linux distributions and MacOS. 
+
+Thank you for your help.
+
+The DNS in the Wild Project Team:
+Bernhard Ager, Wolfgang Mühlbauer,
+Georgios Smaragdakis, Steve Uhlig
+
+
+Operation & Installation
+-------------------------
+
+Our program performs DNS queries for a number of predefined hosts. This list
+is included in plain text in the download packages. Periodically, our program
+performs traceroutes towards predefined DNS resolvers (your local resolver,
+GoogleDNS, and OpenDNS). The traces collected with our program do not interact
+with any of your browsing or download history or activity. The additional
+bandwidth consumption and CPU load due to the experiment are negligible.
+Please run it from an Internet connection provided by a commercial ISP, e.g.,
+at home. The average duration of the experiment is six hours on a DSL
+connection.
+
+
+Un*x/MacOS version and source code:
+
+Tested on Linux, MacOS and FreeBSD. Should run on any machine with Python 2.5,
+2.6 or 2.7, even if not Un*x based, and comes with full source code. Download,
+extract and run dnstest.py.
+
+
+Specific Instructions:
+
+We tested this recipe on Linux, FreeBSD and MacOS: Open a terminal and give
+the following instructions (copy & paste):
+
+wget http://cs-people.bu.edu/gsmaragd/research/Cartography/DNS-code/dnstest_unix+macos.tar.bz2
+tar xjf dnstest_unix+macos.tar.bz2
+cd dnstest_unix+macos
+./dnstest.py
+
+
+
+FAQ
+---
+
+* How long will the script run?
+
+Typically a measurement run will take between 5 and 7 hours. The script will
+restart itself and start a new trace after 24 hours until you stop it by
+pressing Ctrl-C. You are welcome to upload as many traces as you want.
+
+
+*There are thousands of tracesroutes in the queue!
+
+Don't worry. The queue will get shorter while the script runs. Wait until both
+traceroutes and DNS queries are finished before uploading the results. The
+script will explicitly tell you when it's done.
+
+
+* Which hosts are these?
+
+You can find the list of hosts in the file 'hosts'.
+
+
+* Which resolvers?
+
+OpenDNS, Google Pubic DNS, and your local resolver.
+
+
+* Which private information is leaked by running the scripts?
+
+Your IP address and, for debugging purposes only, the operating system in use.
+
+
+* Why manual trace upload?
+
+We want to give you the chance to inspect the results before you upload them.
+
+
+* How can I read the results?
+
+On Linux: 'bzcat results-12345.txt.bz2 | less'. 
+
+Note that you should definitely upload the compressed file as the uncompressed
+version can become quite large.
+
+
+* I get an Exception on startup.
+
+Most likely the Python version your machine uses by default is not compatible.
+You can try to enforce Python 2.5, 2.6 or 2.7 by explicitly naming the script
+interpreter. One of the commands below should hopefully work:
+
+python2 ./dnspython.py
+
+python25 ./dnspython.py
+
+python26 ./dnspython.py
+
+python27 ./dnspython.py
+
+
+* Contact details
+
+For further technical information and your comments please do not hesitate to
+contact us by mail: georgios@net.t-labs.tu-berlin.de

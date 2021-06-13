@@ -1,0 +1,2 @@
+In the Analysis part: 
+in the T(Sadv) replace normal nodes w/ advanced nodes.

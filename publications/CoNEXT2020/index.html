@@ -1,0 +1,113 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <meta http-equiv="content-type"
+ content="text/html; charset=ISO-8859-1">
+  <title>
+Keep your Communities Clean: Exploring the Routing Message Impact of BGP Communities
+</title>
+</head>
+
+  <!--font-awesome -->
+    <link rel="stylesheet"
+href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <!-- -->
+
+<body link="#070fff" vlink="#686f84" bgcolor="#ffffff">
+<span style="font-weight: bold;"> ``Keep your Communities Clean: Exploring the Routing Message Impact of BGP Communities"</span>
+<br>
+Thomas Krenc, Robert Beverly, and Georgios Smaragdakis.
+<br>
+ACM CoNEXT 2020. 
+<br>
+<br>
+</span><span style="font-weight: bold;">Abstract:
+</span>
+<table cellpadding="2" cellspacing="2" border="0"
+ style="text-align: left; width: 66%;">
+  <tbody>
+    <tr>
+      <td style="vertical-align: top; text-align: justify;">
+BGP communities are widely used to tag prefix aggregates for policy, traffic 
+engineering, and inter-AS signaling. Because individual ASes de ne their own
+community semantics, many ASes blindly propagate communities they do not
+recognize. Prior research has shown the potential security vulnerabilities when
+communities are not filtered. This work sheds light on a second unintended 
+side-effect of communities and permissive propagation: an increase in unnecessary BGP
+routing messages. Due to its transitive property, a change in the community
+attribute induces update messages throughout established routes, just updating
+communities. We ground our work by characterizing the handling of updates with
+communities, including when filtered, on multiple real-world BGP
+implementations in controlled laboratory experiments. We then examine 10 years
+of BGP messages observed in the wild at two route collector systems. In 2020,
+approximately 25% of all updates modify the community attribute, but retain the
+AS path of the most recent announcement; an additional 25% update neither
+community nor AS path. Using predictable beacon prefixes, we demonstrate that
+communities lead to an increase in update messages both at the tagging AS and at
+neighboring ASes that neither add nor filter communities. This effect is prominent
+for geolocation communities during path explo- ration: on a single day, 63% of
+all unique community attributes are revealed exclusively due to global
+withdrawals.  </td>
+    </tr>
+  </tbody>
+</table>
+<br>
+<br>
+
+<!-- ACM DL Article: Comparing DNS resolvers in the wild -->
+<div class="acmdlitem" id="item1879144"><img
+src="http://dl.acm.org/images/oa.gif" width="25" height="25" border="0" alt="ACM DL Author-ize service" style="vertical-align:middle"/>
+<a href="https://dl.acm.org/doi/10.1145/3386367.3432731?cid=81339529264"
+target="_blank"
+title="Keep your Communities Clean: Exploring the Routing Message Impact of BGP Communities">
+Keep your Communities Clean: Exploring the Routing Message Impact of BGP Communities
+</a><div style="margin-left:25px"> 
+
+
+<br><br>
+Paper&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : 
+<a href="CoNEXT2020.pdf" style="text-decoration: none;"><!--[pdf]-->
+<i class="fa fa-file-pdf-o fa-lg"></i>
+</a>
+
+<br>
+presentation: <a href="" style="text-decoration: none;">
+<i class="fa fa-file-pdf-o fa-lg"></i>
+</a>
+
+<br>
+bibtex&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : <a
+ href="CoNEXT2020_bib.html" style="text-decoration: none;">[bibtex.html]</a>
+<br><br>
+<!-- Project page:<a href="http://www.smaragdakis.net/research/ResolutioNet" style="text-decoration: none"> [html]</a> -->
+<br> 
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<!-- Start of StatCounter Code -->
+<script type="text/javascript" language="javascript">
+var sc_project=2126673; 
+var sc_invisible=1; 
+var sc_partition=19; 
+var sc_security="3bc9f8cf"; 
+</script>
+
+<script type="text/javascript" language="javascript" src="http://www.statcounter.com/counter/frames.js"></script><noscript><a href="http://www.statcounter.com/" target="_blank"><img  src="http://c20.statcounter.com/counter.php?sc_project=2126673&amp;java=0&amp;security=3bc9f8cf&amp;invisible=1" alt="hit counter" border="0"></a> </noscript>
+<!-- End of StatCounter Code -->
+
+
+
+
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <meta http-equiv="content-type"
+ content="text/html; charset=ISO-8859-1">
+  <title>Online Replication Strategies for Distributed Data Stores</title>
+</head>
+
+	<!--font-awesome -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+	<!-- -->
+
+<body link="#070fff" vlink="#686f84" bgcolor="#ffffff">
+<span style="font-weight: bold;"> 
+"Online Replication Strategies for Distributed Data Stores"
+</span>
+<br>
+Niklas Semmler, Georgios Smaragdakis, and Anja Feldmann.
+<br>
+Very Large Internet of Things (VLIoT 2019) workshop, in conjunction
+with VLDB 2019. 
+<br>
+<span style="font-weight: bold;"><br>
+<br>
+<br>
+</span><span style="font-weight: bold;">Abstract:
+</span>
+<table cellpadding="2" cellspacing="2" border="0"
+ style="text-align: left; width: 66%;">
+  <tbody>
+    <tr>
+      <td style="vertical-align: top; text-align: justify;">
+The rate at which data is produced at the network edge, e.g., collected from
+sensors and Internet of Things (IoT) devices, will soon exceed the storage and
+processing capabilities of a single system and the capacity of the network.
+Thus, data will need to be collected and preprocessed in distributed data
+stores - as part of a distributed database - at the network edge. Yet, even in this
+setup, the transfer of query results will incur prohibitive costs. To further
+reduce the data transfers, patterns in the workloads must be exploited.
+Particularly in IoT scenarios, we expect data access to be highly skewed. Most
+data will be store-only, while a fraction will be popular. Here, the replication
+of popular, raw data, as opposed to the shipment of partially redundant query
+results, can reduce the volume of data transfers over the network.
+<br><br>
+In this paper, we design online strategies to decide between replicating data
+from data stores or forwarding the queries and retrieving their results. Our
+insight is that by pro ling access patterns of the data we can lower the data
+transfer cost and the corresponding response times. We evaluate the bene t of
+our strategies using two real-world datasets.  
+</td>
+    </tr>
+  </tbody>
+</table>
+<br>
+<br>
+
+
+
+<br><br>
+Paper&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : 
+<a href="VLIoT2019.pdf" style="text-decoration: none;"><!-- [pdf] -->
+<i class="fa fa-file-pdf-o fa-lg"></i>
+</a> <br>
+<br>
+presentation : <a
+ href="VLIoT2019_presentation.pdf" style="text-decoration: none;"><i
+class="fa fa-file-pdf-o fa-lg"></i></a>
+<br>
+<br>
+bibtex&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : <a
+ href="VLIoT2019_bib.html" style="text-decoration: none;">[bibtex.html]</a>
+<br>
+
+<br>
+<br>
+<!-- Project page:<a href="http://www.smaragdakis.net/research/CDN-H"
+style="text-decoration: none"> [html]</a> -->
+<br>
+
+
+<!-- Start of StatCounter Code -->
+<script type="text/javascript" language="javascript">
+var sc_project=2126673; 
+var sc_invisible=1; 
+var sc_partition=19; 
+var sc_security="3bc9f8cf"; 
+</script>
+
+<script type="text/javascript" language="javascript" src="http://www.statcounter.com/counter/frames.js"></script><noscript><a href="http://www.statcounter.com/" target="_blank"><img  src="http://c20.statcounter.com/counter.php?sc_project=2126673&amp;java=0&amp;security=3bc9f8cf&amp;invisible=1" alt="hit counter" border="0"></a> </noscript>
+<!-- End of StatCounter Code -->
+
+
+
+
+
+
+
+
+
+</body>
+</html>

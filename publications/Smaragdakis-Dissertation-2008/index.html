@@ -1,0 +1,121 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <meta http-equiv="content-type"
+ content="text/html; charset=ISO-8859-1">
+  <title>Georgios Smaragdakis - PhD Dissertation -- Overlay Network Creation and
+Maintenance with Selfish Users</title>
+</head>
+<body link="#070fff" vlink="#686f84" bgcolor="#ffffff">
+<span style="font-weight: bold;"> "Overlay Network Creation and Maintenance with Selfish Users"</span>
+<br>
+Georgios Smaragdakis. <br>
+PhD Dissertation, Boston University, 2008.<br>
+<br>
+<br>
+<span style="font-weight: bold;">Abstract:
+</span>
+<table cellpadding="2" cellspacing="2" border="0"
+ style="text-align: left; width: 66%;">
+  <tbody>
+    <tr>
+      <td style="vertical-align: top; text-align: justify;">
+Overlay networks have been used for adding and enhancing functionality
+to the end-users without requiring modifications in the Internet core
+mechanisms. Overlay networks have been used for
+a variety of popular applications including routing, file sharing,
+content distribution, and server deployment.
+Previous work has focused on devising practical neighbor selection heuristics
+under the assumption that users conform to a specific wiring protocol.
+This is not a valid assumption in highly decentralized systems like overlay networks.
+Overlay users may act selfishly and deviate from the default wiring protocols
+by utilizing knowledge they have about the network when selecting neighbors to improve
+the performance they receive from the overlay.
+<br><br>
+This thesis goes against the conventional thinking that overlay users conform to a specific protocol.
+The contributions of this thesis are threefold. It provides a systematic
+evaluation of the design space of selfish neighbor selection strategies in
+real overlays, evaluates the performance of overlay networks that consist of
+users that select their neighbors selfishly, and examines the implications of
+selfish neighbor and server selection to overlay protocol design and service provisioning respectively.
+<br><br>
+This thesis develops a game-theoretic framework that provides a unified approach to modeling
+Selfish Neighbor Selection (SNS) wiring procedures on behalf of selfish users.
+The model is general, and takes into consideration costs reflecting network latency
+and user preference profiles, the inherent directionality in overlay maintenance protocols,
+and connectivity constraints imposed on the system designer. Within this framework
+the notion of user's ``best response" wiring strategy is formalized as a k-median problem
+on asymmetric distance and is used to obtain overlay structures in which no node can 
+re-wire to improve the performance it receives from the overlay.
+Evaluation results presented in this thesis indicate that selfish users can reap substantial performance
+benefits when connecting to overlay networks composed of non-selfish users. In addition, in overlays
+that are dominated by selfish users, the resulting stable wirings are optimized to such great
+extent that even non-selfish newcomers can extract near-optimal performance through naive wiring strategies.
+
+<br><br>
+             
+To capitalize on the performance advantages of optimal neighbor selection strategies and the emergent global wirings that result,
+this thesis presents EGOIST: an SNS-inspired overlay network creation and maintenance routing system.
+Through an extensive measurement study on the deployed prototype, results presented in this thesis
+show that EGOIST's neighbor selection primitives outperform existing heuristics on a variety of
+performance metrics, including delay, available bandwidth, and node utilization.
+Moreover, these results demonstrate that EGOIST is competitive with an optimal but unscalable full-mesh approach,
+remains highly effective under significant churn, is robust to cheating, and incurs minimal overheads.
+
+<br><br>
+This thesis also studies selfish neighbor selection strategies for swarming applications.
+The main focus is on n-way broadcast applications
+where each of n overlay user wants to push its own distinct file to all other destinations as well as download
+their respective data files.
+Results presented in this thesis demonstrate that the performance of our swarming protocol for n-way broadcast
+on top of overlays of selfish users 
+is far superior than the performance on top of existing overlays.
+
+<br><br>
+In the context of service provisioning, this thesis examines the use of distributed approaches that enable a provider
+to determine the number and location of servers for optimal delivery of content or services to its selfish end-users.
+To leverage recent advances in virtualization technologies, this thesis develops and evaluates a distributed protocol to migrate servers
+based on end-users demand and only on local topological knowledge.
+Results under a range of network topologies and workloads suggest that the performance of the distributed deployment
+is comparable to that of the optimal but unscalable centralized deployment.
+
+<br>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<br>
+<br>
+Thesis&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : 
+<a href="Smaragdakis-Dissertation-2008.ps.gz" style="text-decoration: none;">[ps.gz],</a>
+<a href="Smaragdakis-Dissertation-2008.ps" style="text-decoration: none;">[ps],</a>
+<a href="Smaragdakis-Dissertation-2008.pdf" style="text-decoration: none;">[pdf]</a>
+<br>
+Presentation :
+<a href="Smaragdakis-Dissertation-2008_presentation.ppt" style="text-decoration: none;">[ppt]</a>
+<br>
+bibtex&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : <a
+ href="Smaragdakis-Dissertation-2008_bib.html" style="text-decoration: none;">[bib.html]</a>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<!-- Start of StatCounter Code -->
+<script type="text/javascript" language="javascript">
+var sc_project=2126673; 
+var sc_invisible=1; 
+var sc_partition=19; 
+var sc_security="3bc9f8cf"; 
+</script>
+
+<script type="text/javascript" language="javascript" src="http://www.statcounter.com/counter/frames.js"></script><noscript><a href="http://www.statcounter.com/" target="_blank"><img  src="http://c20.statcounter.com/counter.php?sc_project=2126673&amp;java=0&amp;security=3bc9f8cf&amp;invisible=1" alt="hit counter" border="0"></a> </noscript>
+<!-- End of StatCounter Code -->
+
+
+
+
+
+</body>
+</html>

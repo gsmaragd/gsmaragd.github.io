@@ -1,0 +1,33 @@
+This is all set.  I created a "dsc" group for the four of you, and gave it
+ownership of the web directory.  You can access it at /cluster/www/dsc from
+any research machine.  The URL is as you requested: http://csr.bu.edu/dsc/
+
+Let me know if you have any problems.
+
+- Paul
+
+On Wed, Mar 08, 2006 at 04:32:44PM -0500, Georgios Smaragdakis wrote:
+> Dear Paul,
+> 
+> We would like to maintain a site
+> to advertise our research results
+> on Distributed Selfish Caching (DSC)-
+> a joint work with Nikos, Azer and 
+> Ibrahim. 
+> 
+> Can you please create a folder in the
+> csr filesystem? We would prefer to 
+> appear like 
+> 
+> http://csr.bu.edu/dsc
+> 
+> thank you in advance for your time,
+> --George
+> 
+> 
+
+-- 
+Paul Stauffer <paulds@bu.edu>
+Manager of Research Computing
+Computer Science Department
+Boston University

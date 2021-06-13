@@ -1,0 +1,112 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Selfish Neighbor Selection</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" type="text/css" href="css/main.css" media="screen" />
+<script type="text/javascript">
+	// toggle dynamic divs
+    function toggle(div) {
+    	var elem = document.getElementById(div);
+    	if (elem.style.display=='') {elem.style.display='none'; return;}
+    	elem.style.display='';
+    }
+	</script>
+</head>
+<body>
+<div id="content">
+  <div id="header">
+    <div id="logo">
+      <h1>Selfish</h1><h1>Neighbor</h1><h1>Selection</h1> <!-- <sup> beta</sup></h1> -->
+      <!-- <p>Donec lacinia tristique ante. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam blandit ultricies nisl.</p> -->
+    </div>
+    <!-- <div id="search"> <a onclick="toggle('searchform');">+ SEARCH</a> -->
+      <div id="searchform" style="display: none;">
+        <form method="post" action="http://www.free-css.com/">
+          <p>
+            <input class="searchfield" name="search_query" id="keywords" value="Search Keywords" type="text" />
+            <input class="searchbutton" name="submit" value="Search" type="submit" />
+          </p>
+        </form>
+      </div>
+   <!--  </div> -->
+  </div>
+  <ul id="menu">
+    <li><a class="current" href="index.html">Overview</a></li>
+    <li><a href="http://cs-people.bu.edu/gsmaragd/research/SNS/egoist.html">EGOIST</a></li>
+    <li><a href="publications.html">Publications</a></li>
+    <li><a href="code.html">Code</a></li>
+    <li><a href="people.html">People</a></li>
+    <li><a href="sponsors.html">Sponsors</a></li>
+    <li><a id="last" href="contact.html">Contact</a></li>
+  </ul>
+  <div style="clear: both;"></div>
+<p>In a typical overlay network for routing or content sharing, each node must select a fixed number of immediate overlay neighbors for routing traffic or content queries. 
+Previous work has considered the problem from two perspectives: devising practical heuristics for specific applications designed to work well in real deployments, and providing abstractions for the underlying problem that are analytically tractable, especially via game-theoretic analysis. 
+Our work on Selfish Neighbor Selection (SNS) unifies these two thrusts by using insights gleaned from novel, realistic theoretic models in the design of optimized distributed systems for overlay applications.</p>
+<br>
+
+  <div class="third">
+    <h2>Analysis</h2>
+<p><b>A realistic model of overlay networks:</b>
+Our work models neighbor selection as a game involving 
+constraints on the number of allowed neighbors, 
+costs reflecting both network latency and node preference,
+and the inherent directionality in traffic routing. 
+We express a node's "best response" wiring strategy as a k-median problem on asymmetric distance, and use this formulation to obtain pure Nash equilibria.<br><br>
+<b>Characterization of stable wirings:</b>
+We experimentally examine the properties of such stable wirings on a range of network topologies.
+<br><br>
+<b>Performance evaluation of the best response wiring strategy:</b>
+Our results indicate that selfish nodes can reap substantial performance benefits when connecting to overlay networks composed of non-selfish nodes. On the other hand, in overlays that are dominated by selfish nodes, the resulting stable wirings are optimized to such great extent that even non-selfish newcomers can extract near-optimal performance through naive wiring strategies.
+</p>    
+  </div>
+  <div class="third">
+    <h2>System</h2>
+    <p><b> the EGOIST system:</b>
+To capitalize on the substantial performance improvement of best response wirings for overlay nodes, we designed, deployed and evaluated, EGOIST, an SNS inspired distributed system for overlay routing. Using extensive measurements of paths between nodes, we demonstrate that Egoist's neighbor selection primitives significantly outperform existing heuristics on a variety of performance metrics, including delay, available bandwidth, and node utilization. Moreover, we demonstrate that Egoist is competitive with an optimal, but unscalable full-mesh approach, remains highly effective under significant churn, is robust to cheating, and incurs minimal overhead. 
+<!-- Finally, we discuss some of the potential benefits Egoist may offer to applications. -->
+EGOIST code will be available soon and can be used as a building block for the construction of optimized overlay networks.
+ </p>
+  </div>
+  <div class="third last">
+    <h2>Applications</h2>
+    <p><b>SNS and swarming:</b>
+We demonstrate the potential benefits SNS-inspired formations may offer to swarming applications, especially to the family of n-way broadcast applications, where each overlay node wants to push its own distinct large data file to all other destinations as well as download their respective data files.
+    <p><b>SNS and real time applications:</b> We use a multiplayer peer-to-peer game to demonstrate the value of EGOIST to end-user applications,
+especially in reducing the update latencies. We also discuss the benefits EGOIST may offer to p2p-voice-over-IP.
+
+    <p><b>SNS and file transfers:</b> We provide a layered architecture that end users can use
+to route their packets over EGOIST. We also study the case of multipath file tranfer over EGOIST.
+<!--    <p><b>SNS and SN:</b> -->
+ </p>
+<!--    <p class="more"><a href="http://www.free-css.com/">Read More</a></p> -->
+  </div>
+  <div style="clear: both;"></div>
+</div>
+<div id="prefooter">
+<!--  <p>Powered by Truck Accident Lawyers &middot; Davis &amp; McCabe</p> -->
+</div>
+<div id="footer">
+<!--  <p class="right"><a href="http://www.free-css.com/">Sitemap</a><a href="http://www.free-css.com/">Contact</a></p> -->
+  <!-- <p>© Copyright 2008, <a href="http://www.free-css.com/">Website Traffic</a>, Design: <a href="http://www.solucija.com">Luka Cvrk</a></p> -->
+</div>
+
+
+<!-- Start of StatCounter Code -->
+<script type="text/javascript" language="javascript">
+var sc_project=2126673; 
+var sc_invisible=1; 
+var sc_partition=19; 
+var sc_security="3bc9f8cf"; 
+</script>
+
+<script type="text/javascript" language="javascript" src="http://www.statcounter.com/counter/frames.js"></script><noscript><a href="http://www.statcounter.com/" target="_blank"><img  src="http://c20.statcounter.com/counter.php?sc_project=2126673&amp;java=0&amp;security=3bc9f8cf&amp;invisible=1" alt="hit counter" border="0"></a> </noscript>
+<!-- End of StatCounter Code -->
+
+
+
+
+
+</body>
+</html>

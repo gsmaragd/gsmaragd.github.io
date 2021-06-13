@@ -1,0 +1,217 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <meta http-equiv="content-type"
+ content="text/html; charset=ISO-8859-1">
+  <title>Distributed Facility Location and Migration</title>
+</head>
+<body>
+<h2 style="text-align: center;"><img src="dfl-logo.jpg" alt="" style=""></h2>  <!--style="width: 245px; height: 164px;"></h2> -->
+
+ <!-- style="width: 249px; height: 180px;"-->
+<h1 style="text-align: center;"><em>Distributed Facility Location and Migration</em></h1>
+
+<br>
+&nbsp; <br>
+<br>
+<big style="font-weight: bold;"><big><small>Overview</small></big></big><small> 
+</small>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>
+<div style="text-align: justify;">
+<i>How can we determine in a distributed and scalable manner the number and
+location of service facilities?</i> We propose an innovative approach in which
+topology and demand information is limited to neighborhoods, or balls of
+small radius around selected facilities, whereas demand information is
+captured implicitly for the remaining (remote) clients outside these
+neighborhoods, by mapping them to clients on the edge of the
+neighborhood. Through an iterative local reoptimization of the location
+and the number of facilities within such balls, our distributed approach
+achieves performance that is comparable to that of optimal, centralized
+approaches requiring full topology and demand information. We demonstrate
+the efficiency and scalability of our framework under various synthetic
+and real Internet topologies.
+<br>
+
+
+  <br>
+</div>
+<div align="justify"><big style="font-weight: bold;"><big><big><small><br>
+  </big></small></big></big><big style="font-weight: bold;"><big><small>Toward Dynamic Service Deployment 
+  </small></big></big><big><big><small><small><br>
+  
+
+</div>
+<ul>
+  <li><big><big><small><small>
+  <b>Key Applications</b>:<br>
+  	<ul>
+  	<li> Distribution of software updates and patches.
+  	<li> Real time distribution of virus definitions files.
+	<li> Service Deployment with limited budget.
+	</ul>
+ 
+  <br><b><li>Key Challenges</b>:<br>
+  An ideal deployment should be:
+	<ul>
+	<li> Scalable
+	<li> Distributed
+	<li> Oblivious to Network Topology
+	<li> Unaware (a-priori) of the client demand
+	<li> Easily Reconfigurable
+	</ul>
+  
+  
+  <br><b><li>Nomenclature</b>:</li>
+	<ul>
+		<li> Generic Service Host: software or hardware infrastructure necessary to host a service.
+		<li> Service Facility: a Generic Service Host which hosts a service. 
+		<li> Flash Crowd: unexpected surge of requests for a service.
+	</ul>
+  </small></small></big></big></li>
+
+  </small></small></big></big></li>
+</ul>
+
+<center><img src="scenario_final.png"  alt="" style=""></center>
+<center><i>Where should the Service Facility migrate?</i></center>
+
+<div align="justify"><big style="font-weight: bold;"><big><big><small><br>
+</big></small></big></big><big style="font-weight: bold;"><big><small>Main Results
+  </small></big></big><br>
+<ul>
+	<li> Our framework addresses all the aforementioned challenges. A stable set of service facilities is achieved
+	     within a small number (logarithmic to the size of the network) of local re-optimizations.
+	<li> Local information for the neighborhood of a node (within 1 or 2 hops) is sufficient.
+	<li> The performance of the distributed solution based on local re-optimizations is comparable to a centralized, but
+		not scalable solution.
+	<li> Our experimental results show that our migration protocol is responsive to dynamic changes and resilient to redirection policies.
+</ul>
+</div>
+
+
+<!-- <h2 style="text-Align: center;"><img src="SNSmap.png" alt="" style=""></h2>  -->
+
+<!-- <h1 style="text-align: center;"><img src="max_cost_reduction.png" alt="" style="border: 0px solid ; width: 1000px; height: 700px;"></h1> -->
+</ul>
+<big style="font-weight: bold;"><big><small></small></big></big>
+<!-- <div style="text-align: center;"><img src="sep_performance.png" alt=""
+ style=""> --> <br>
+</div>
+
+<br>
+<big style="font-weight: bold;"><big><small>Documentation:</small></big></big><big><big><small><small>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+
+<ul>
+  <li>   <a href="http://www.smaragdakis.net/publications/ToN-dFL" style="text-decoration: none;">
+  "Distributed Server Migration for Scalable Internet Service Deployment"</a> 
+<br>Georgios Smaragdakis, Nikolaos Laoutaris, Konstantinos Oikonomou, Ioannis Stavrakakis, and Azer Bestavros.<br>
+IEEE/ACM Transactions on Networking, 22(3):917--930, June 2014. 
+  </li>
+</ul>
+
+<ul>
+  <li>   <a href="http://cs-people.bu.edu/gsmaragd/publications/Infocom2007-dfl" style="text-decoration: none;">
+ "Distributed Placement of Service Facilities in Large-Scale Networks"</a>
+<br>Nikolaos Laoutaris, Georgios Smaragdakis, Konstantinos Oikonomou, Ioannis Stavrakakis and Azer Bestavros.<br>
+IEEE INFOCOM 2007. 
+  </li>
+</ul>
+
+
+<br>
+
+<!-- <big style="font-weight: bold;"><big><small>References:</small></big></big><big><big><small><small>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+<br>
+<ul>
+<li>   <a href="http://cs-people.bu.edu/gsmaragd/publications/TRs/BUCS-TR-2007-013" style="text-decoration: none;">
+ "EGOIST: Overlay Routing using Selfish Neighbor Selection"</a>
+ <br>Georgios Smaragdakis, Nikolaos Laoutaris, Azer Bestavros, John W. Byers
+and Mema Roussopoulos.<br>
+BUCS-TR-2007-013. 
+  </li> -->
+
+<br>
+<big style="font-weight: bold;"><big><small>Poster:</small></big></big><big><big><small><small>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+<ul><li>
+<a href="DFL2008_POSTER_final.pdf" style="text-decoration:none;">Distributed Placement of Services in Large-Scale Networks</a> 
+<br>
+</li></ul>
+
+<br>
+<big style="font-weight: bold;"><big><small>Code</small></big></big><big><big><small><small><br>
+Revised code will be released soon. 
+<br>
+<br>
+<br>
+<big style="font-weight: bold;"><big><small>Group Members:</small></big></big><big><big><small><small><br>
+
+
+<a href="http://cs-people.bu.edu/gsmaragd" style="text-decoration: none&quot;">Georgios Smaragdakis  </a>(PhD BU'08, now with Deutsche Telekom Labs/Technical University of Berlin)
+<br>
+<a href="http://research.tid.es/nikos" style="text-decoration: none&quot;">Nikolaos Laoutaris  </a>(Telefonica Research, Barcelona)
+<br>
+<a href="http://www.cs.bu.edu/fac/best" style="text-decoration: none&quot;">Azer Bestavros  </a>(Professor, Boston University)
+<br>
+<a href="http://www.ionio.gr/~okon/" style="text-decoration: none&quot;">Konstantinos Oikonomou  </a>(Assistant Professor, Ionian University)
+<br>
+<a href="http://www.di.uoa.gr/~istavrak" style="text-decoration: none&quot;">Ioannis Stavrakakis   </a>(Professor, University of Athens)
+<br>
+
+
+
+<big style="font-weight: bold;"><big><br>
+
+</big></big><big style="font-weight: bold;"><big><small> Contact</small></big></big><br>
+<big style="font-weight: bold;"><big> </big></big><big><small>For any further 
+information or bug report please send e-mail to <a
+ href="mailto:gsmaragd@cs.bu.edu?subject=SNS%20Question" style="text-decoration: none;" >Georgios Smaragdakis</a></small></big><big> 
+</big><big
+ style="font-weight: bold;"><big><br>
+<br><br>
+<small>Sponsors: </small><br>
+
+<a href="http://www.nsf.gov"><img src="nsflogo.png" alt="" style="border: 0px solid ; width: 60px; height: 60px;"></a> 
+<!-- <a href="http://www.nsf.gov"><img src="nsf.gif" alt="" style="border: 0px solid ; width: 60px; height: 60px;"></a>  -->
+<a href="http://www.cs.bu.edu/groups/wing"><img src="WINGlogo.gif" alt="" style="border: 0px solid ; width: 75px; height: 72px;"></a><br>
+</big></big><br>
+<br>
+<br>
+<br>
+last update: October 13, 2007<br>
+
+                                                                                                                       
+
+
+<br><br><br>
+<!-- Creative Commons License -->
+<a rel="license" href="http://creativecommons.org/licenses/by-nc/2.0/"><img alt="Creative Commons License" border="0" src="http://creativecommons.org/images/public/somerights20.gif" /></a><br />
+All code on this page is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc/2.0/">Creative Commons License</a>.
+<!-- /Creative Commons License -->
+
+
+<!-- Start of StatCounter Code -->
+<script type="text/javascript" language="javascript">
+var sc_project=2126673; 
+var sc_invisible=1; 
+var sc_partition=19; 
+var sc_security="3bc9f8cf"; 
+</script>
+
+<script type="text/javascript" language="javascript" src="http://www.statcounter.com/counter/frames.js"></script><noscript><a href="http://www.statcounter.com/" target="_blank"><img  src="http://c20.statcounter.com/counter.php?sc_project=2126673&amp;java=0&amp;security=3bc9f8cf&amp;invisible=1" alt="hit counter" border="0"></a> </noscript>
+<!-- End of StatCounter Code -->
+
+
+<hr>
+Sponsors: The DFL project is supported partially by a
+number of National Science Foundation grants, including CISE/CSR Award
+#0720604, ENG/EFRI Award #0735974, CISE/CNS Award #0524477, CNS/CNS
+Award #0520166, CNS/ITR Award #0205294, and CISE/EIA RI Award #0202067.
+<br>
+<small> Disclaimer: Any opinions, findings, conclusions, or recommendations
+expressed in materials available from this site are those of their
+author(s) and do not necessarily reflect the views of Boston University
+or of the National Science Foundation.</small>
+
+
+
+</body>
+</html>

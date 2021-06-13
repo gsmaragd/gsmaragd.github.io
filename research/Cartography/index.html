@@ -1,0 +1,157 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Content Cartography & DNS</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" type="text/css" href="css/main.css" media="screen" />
+<script type="text/javascript">
+	// toggle dynamic divs
+    function toggle(div) {
+    	var elem = document.getElementById(div);
+    	if (elem.style.display=='') {elem.style.display='none'; return;}
+    	elem.style.display='';
+    }
+	</script>
+</head>
+<body>
+<div id="content">
+  <div id="header">
+    <div id="logo">
+      <h1>Content Cartography</h1><h1>& DNS</h1> <!-- <sup> beta</sup></h1> -->
+      <!-- <p>Donec lacinia tristique ante. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam blandit ultricies nisl.</p> -->
+    </div>
+    <!-- <div id="search"> <a onclick="toggle('searchform');">+ SEARCH</a> -->
+      <div id="searchform" style="display: none;">
+        <form method="post" action="http://www.free-css.com/">
+          <p>
+            <input class="searchfield" name="search_query" id="keywords" value="Search Keywords" type="text" />
+            <input class="searchbutton" name="submit" value="Search" type="submit" />
+          </p>
+        </form>
+      </div>
+   <!--  </div> -->
+  </div>
+  <ul id="menu">
+    <li><a class="current" href="index.html">Overview</a></li>
+    <li><a href="documents.html">Documents</a></li>
+    <li><a href="news.html">News</a></li>
+    <li><a href="software.html">Software & Data</a></li>
+    <li><a href="people.html">People</a></li>
+    <li><a id="last" href="contact.html">Contact</a></li>
+  </ul>
+<br>
+
+  <div style="clear: both;"></div>
+<p>
+In the recent years we have witnessed an unprecedented expansion of server infrastructures to cope with the always increasing
+demand for content in the Internet. In this project we develop methods, some based on DNS, to infer the footprints of major
+content delivery infrastructures, to understand their strategies, and to make data available to the research community and decision
+makers. 
+<br><br>
+In a parallel effort we study the deployment of DNS resolvers including both local and open ones and we comment on
+their proximity to end-users, caching performance, and effect on user-server redirection as performed by major CDNs today.
+</p>
+<br>
+
+  <div class="third">
+    <h2>Web Content Cartography</h2>
+<p>
+Recent studies show that a significant part of Internet traffic is delivered
+through Web-based applications. To cope with the increasing demand for Web
+content, large scale content hosting and delivery infrastructures, such as
+data-centers and content distribution networks, are continuously being
+deployed. Being able to identify and classify such hosting infrastructures is
+helpful not only to content producers, content providers, and ISPs, but also to
+the research community at large. For example, to quantify the degree of hosting
+infrastructure deployment in the Internet or the replication of Web content.
+
+In this study, we introduce Web Content Cartography, i.e., the identification
+and classification of content hosting and delivery infrastructures. We propose
+a lightweight and fully automated approach to discover hosting infrastructures
+based only on DNS measurements and BGP routing table snapshots. Our
+experimental results show that our approach is feasible even with a limited
+number of well-distributed vantage points. We find that some popular content is
+served exclusively from specific regions and ASes. Furthermore, our
+classification enables us to derive content-centric AS rankings that complement
+existing AS rankings and shed light on recent observations about shifts in
+inter-domain traffic and the AS topology. 
+</p>    
+</div>
+  
+<div class="third">
+    <h2>EDNS-Client-Subnet Extension</h2>   
+    <p>
+    The recently proposed DNS extension, EDNS-Client-Subnet (ECS), has been
+    quickly adopted by major Internet companies such as Google to better assign
+    user requests to their servers and improve end-user experience. In this
+    paper, we show that the adoption of ECS also offers unique, but likely
+    unintended, opportunities to uncover details about these companies'
+    operational practices at almost no cost. A key observation is that ECS
+    allows everyone to resolve domain names of ECS adopters on behalf of any
+    arbitrary IP/prefix in the Internet. In fact, by utilizing only a single
+    residential vantage point and relying solely on publicly available
+    information, we are able to (i) uncover the global footprint of ECS
+    adopters with very little effort, (ii) infer the DNS response cacheability
+    and end-user clustering of ECS adopters for an arbitrary network in the
+    Internet, and (iii) reveal the mapping of users to server locations as
+    practiced by major ECS adopters. While pointing out such new measurement
+    opportunities, our work is also intended to make current and future ECS
+    adopters aware of which operational information gets exposed when utilizing
+    this recent DNS extension.  
+  </p>
+  </div>
+
+  <div class="third last">
+    <h2>DNS Resolvers in the Wild</h2>
+    <p>
+The Domain Name System (DNS) is a fundamental building block of the Internet.
+Today, the performance of more and more applications depend not only on the
+responsiveness of DNS, but also the exact answer returned by the queried DNS
+resolver, e.g., for Content Distribution Networks (CDN).
+
+In this study, we compare local DNS resolvers against GoogleDNS and OpenDNS for
+a large set of vantage points. Our end-host measurements inside 50 commercial
+ISPs reveal that two aspects have a significant impact on responsiveness: (1)
+the latency to the DNS resolver, (2) the content of the DNS cache when the
+query is issued. We also observe significant diversity, even at the AS-level,
+among the answers provided by the studied DNS resolvers. We attribute this
+diversity to the location-awareness of CDNs as well as to the location of DNS
+resolvers that breaks the assumption made by CDNs about the vicinity of the
+end-user and its DNS resolver. Our findings pinpoint limitations within the DNS
+deployment of some ISPs, as well as the way third-party DNS resolvers bias DNS
+replies. 
+ </p>
+</div>
+<!-- P2P Cartography -->
+
+<!--    <p class="more"><a href="http://www.free-css.com/">Read More</a></p> -->
+
+
+<div style="clear: both;"></div>
+</div>
+<div id="prefooter">
+<!--  <p>Powered by Truck Accident Lawyers &middot; Davis &amp; McCabe</p> -->
+</div>
+<div id="footer">
+<!--  <p class="right"><a href="http://www.free-css.com/">Sitemap</a><a href="http://www.free-css.com/">Contact</a></p> -->
+  <!-- <p>© Copyright 2008, <a href="http://www.free-css.com/">Website Traffic</a>, Design: <a href="http://www.solucija.com">Luka Cvrk</a></p> -->
+</div>
+
+
+<!-- Start of StatCounter Code -->
+<script type="text/javascript" language="javascript">
+var sc_project=2126673; 
+var sc_invisible=1; 
+var sc_partition=19; 
+var sc_security="3bc9f8cf"; 
+</script>
+
+<script type="text/javascript" language="javascript" src="http://www.statcounter.com/counter/frames.js"></script><noscript><a href="http://www.statcounter.com/" target="_blank"><img  src="http://c20.statcounter.com/counter.php?sc_project=2126673&amp;java=0&amp;security=3bc9f8cf&amp;invisible=1" alt="hit counter" border="0"></a> </noscript>
+<!-- End of StatCounter Code -->
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,303 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html lang="en">
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <title>EGOIST Online </title>
+  <META HTTP-EQUIV="refresh" CONTENT="60"; URL="http://cs-people.bu.edu/gsmaragd/research/SNS/egoist.html">
+    
+    <script src="http://maps.google.com/maps?file=api&amp;v=2&amp;key=ABQIAAAApnL-4zIdf1DrLTJJFk3c7RRgYaAAkhv3Wb08csdDYissY2zVSxQKIF6NmIwdZ4eK76BNKQjXkSE6wQ" type="text/javascript"></script>
+    <script src="mapiconmaker.js" type="text/javascript"></script>
+    <link rel="stylesheet" type="text/css" href="css/main.css" media="screen" />
+    <script type="text/javascript">
+	// toggle dynamic divs
+    function toggle(div) {
+    	var elem = document.getElementById(div);
+    	if (elem.style.display=='') {elem.style.display='none'; return;}
+    	elem.style.display='';
+    }
+    </script>
+
+</head>
+<body  onload="load()" onunload="GUnload()">
+<!--  <body onload="initialize()">
+    <div id="map_canvas" style="width: 960px; height: 700px; float:left; border: 1px solid black;"></div>
+    <br clear="all"/> -->
+
+<div id="content">
+  <div id="header">
+    <div id="logo">
+      <h1>Selfish</h1><h1>Neighbor</h1><h1>Selection</h1> <!-- <sup> beta</sup></h1> -->
+      <!-- <p>Donec lacinia tristique ante. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam blandit ultricies nisl.</p> -->
+
+    </div>
+    <!-- <div id="search"> <a onclick="toggle('searchform');">+ SEARCH</a> -->
+      <div id="searchform" style="display: none;">
+        <form method="post" action="http://www.free-css.com/">
+          <p>
+            <input class="searchfield" name="search_query" id="keywords" value="Search Keywords" type="text" />
+            <input class="searchbutton" name="submit" value="Search" type="submit" />
+          </p>
+        </form>
+
+      </div>
+   <!--  </div> -->
+  </div>
+  <ul id="menu">
+    <li><a href="index.html">Overview</a></li>
+    <li><a class="current" href="http://cs-people.bu.edu/gsmaragd/research/SNS/egoist.html">EGOIST</a></li>
+    <li><a href="publications.html">Publications</a></li>
+
+    <li><a href="code.html">Code</a></li>
+    <li><a href="people.html">People</a></li>
+    <li><a href="sponsors.html">Sponsors</a></li>
+    <li><a id="last" href="contact.html">Contact</a></li>
+  </ul>
+  <div style="clear: both;"></div>
+  <div class="twice">
+
+<h2>EGOIST overlay routing system</h2>
+
+
+<!-- <link rel="shortcut icon" href="http://www.bu.edu/favicon.ico" type="image/x-icon"> -->
+<!--    <script src="http://maps.google.com/maps?file=api&v=2&key=ABQIAAAApnL-4zIdf1DrLTJJFk3c7RTQQU2XDjxmfhi0Qac-os7qJlZLwxTG2fKqf2xtJCa21hWAgQ6D3wntCQ"
+      type="text/javascript"></script> -->
+
+
+<!-- <b> EGOIST </b>overlay routing system.  -->
+Part of the <a href="http://csr.bu.edu/sns">Selfish Neighbor Selection</a> project. 
+<!-- <br>(c) WING Group, Computer Science department, Boston University, 2007-8. -->
+<!-- <br><a href="nodes_egoist.txt">[List of participating nodes]</a> -->
+<script language = "JavaScript">
+var now = new Date();
+var dayNames = new Array("Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday");
+var monNames = new Array("January","February","March","April","May","June","July","August","September","October","November","December");
+document.write("[Date: " + dayNames[now.getDay()] + " " + monNames[now.getMonth()] + " " + now.getDate() + ", " + now.getFullYear()+" -- Time: "
++now.getHours()+":"+now.getMinutes()+":"+now.getSeconds()+"]");
+</script>
+
+[automatic update every 60 seconds]
+[<a href="nodes.web.site.txt">list of nodes</a>]
+
+
+    <script type="text/javascript">
+    
+        var lg=[13.4, -82.4128, -89.4104, -84.5382, -86.4555 , -122.0603, 24.9342, 7, 1.6167, 15.5833, 14.5144, 120.9714,  23.7332, 8.7667, -73.2463, -0.1167, -74.6597, 21, 25.1306, -96.7453, 103.8558, -78.8667, -111.7367, -122.1826]	
+        var lt=[52.5167, 28.0631, 43.0761, 39.1668, 39.2499, 36.9899 , 60.1756, 43.6333, 48.1167, 56.1667, 46.0553, 24.8047,  37.9833, 51.7167,  42.6442, 51.5, 40.3756, 52.25, 35.325, 32.9733, 1.2931, 43.9, 40.7855, 37.3762]
+        var colors = ['#000000','#000033', '#0000FF', '#003300', '#FF33FF' , '#003399', '#006633', '#006699', '#00CCFF', '#00FF00', '#FFFF66', '#330000', '#330099', '#333333', '#660000','#660099', '#CC0000', '#CC0099', '#CC6600', '#CCCCFF', '#FFFF00', '#FF9900', '#FFCC99', '#00CC00']
+
+        var names = ['<b><i>neighbors of Fraunhofer Institute</i></b>: <br>&nbsp; &nbsp&nbsp; &nbsp; Poland Telecommunications @ 39.061038961\n ms <br>&nbsp; &nbsp&nbsp; &nbsp; U. Paderborn @ 15.14953125\n ms <br>', '<b><i>neighbors of USF</i></b>: <br>&nbsp; &nbsp&nbsp; &nbsp; WISC @ 56.569151671\n ms <br>&nbsp; &nbsp&nbsp; &nbsp; U. Singapore @ 275.429305913\n ms <br>', '<b><i>neighbors of WISC</i></b>: <br>&nbsp; &nbsp&nbsp; &nbsp; U. Paderborn @ 143.938618926\n ms <br>&nbsp; &nbsp&nbsp; &nbsp; U. Dallas @ 51.5867346939\n ms <br>', '<b><i>neighbors of UC</i></b>: <br>', '<b><i>neighbors of U. Indiana</i></b>: <br>&nbsp; &nbsp&nbsp; &nbsp; WISC @ 25.0456852792\n ms <br>&nbsp; &nbsp&nbsp; &nbsp; USF @ 44.8078680203\n ms <br>', '<b><i>neighbors of UCSC</i></b>: <br>&nbsp; &nbsp&nbsp; &nbsp; Docomo-Labs @ 42.286351706\n ms <br>&nbsp; &nbsp&nbsp; &nbsp; U. Ontario @ 455.190625\n ms <br>', '<b><i>neighbors of Helsinki IT Institute</i></b>: <br>&nbsp; &nbsp&nbsp; &nbsp; Imperial College @ 42.800530504\n ms <br>&nbsp; &nbsp&nbsp; &nbsp; Supelec @ 125.139393939\n ms <br>', '<b><i>neighbors of INRIA</i></b>: <br>', '<b><i>neighbors of Supelec</i></b>: <br>', '<b><i>neighbors of Blekinge</i></b>: <br>', '<b><i>neighbors of U. Ljubljaba</i></b>: <br>&nbsp; &nbsp&nbsp; &nbsp; NTUA @ 44.6337595908\n ms <br>&nbsp; &nbsp&nbsp; &nbsp; Imperial College @ 39.1853846154\n ms <br>', '<b><i>neighbors of U. Tsing Hua</i></b>: <br>', '<b><i>neighbors of NTUA</i></b>: <br>&nbsp; &nbsp&nbsp; &nbsp; Imperial College @ 57.6028205128\n ms <br>&nbsp; &nbsp&nbsp; &nbsp; U. Indiana @ 162.554987212\n ms <br>', '<b><i>neighbors of U. Paderborn</i></b>: <br>&nbsp; &nbsp&nbsp; &nbsp; Helsinki IT Institute @ 53.788071066\n ms <br>&nbsp; &nbsp&nbsp; &nbsp; Fraunhofer Institute @ 14.9387206266\n ms <br>', '<b><i>neighbors of Williams College</i></b>: <br>', '<b><i>neighbors of Imperial College</i></b>: <br>&nbsp; &nbsp&nbsp; &nbsp; U. Paderborn @ 33.4685279188\n ms <br>&nbsp; &nbsp&nbsp; &nbsp; U. Dallas @ 150.910714286\n ms <br>', '<b><i>neighbors of Princeton</i></b>: <br>&nbsp; &nbsp&nbsp; &nbsp; U. Dallas @ 2400\n ms <br>&nbsp; &nbsp&nbsp; &nbsp; U. Paderborn @ 2406\n ms <br>', '<b><i>neighbors of Poland Telecommunications</i></b>: <br>&nbsp; &nbsp&nbsp; &nbsp; U. Ljubljaba @ 43.673857868\n ms <br>&nbsp; &nbsp&nbsp; &nbsp; U. Dallas @ 160.308673469\n ms <br>', '<b><i>neighbors of ICS-FORTH</i></b>: <br>&nbsp; &nbsp&nbsp; &nbsp; U. Dallas @ 191.865853659\n ms <br>&nbsp; &nbsp&nbsp; &nbsp; NTUA @ 7.38758308157\n ms <br>', '<b><i>neighbors of U. Dallas</i></b>: <br>&nbsp; &nbsp&nbsp; &nbsp; UCSC @ 50.0395939086\n ms <br>&nbsp; &nbsp&nbsp; &nbsp; U. Indiana @ 38.8553299492\n ms <br>', '<b><i>neighbors of U. Singapore</i></b>: <br>&nbsp; &nbsp&nbsp; &nbsp; Imperial College @ 268.197969543\n ms <br>&nbsp; &nbsp&nbsp; &nbsp; U. Dallas @ 216.657360406\n ms <br>', '<b><i>neighbors of U. Ontario</i></b>: <br>&nbsp; &nbsp&nbsp; &nbsp; Docomo-Labs @ 473.216666667\n ms <br>&nbsp; &nbsp&nbsp; &nbsp; Poland Telecommunications @ 589.884353741\n ms <br>', '<b><i>neighbors of U. Utah</i></b>: <br>&nbsp; &nbsp&nbsp; &nbsp; U. Paderborn @ 161.053299492\n ms <br>&nbsp; &nbsp&nbsp; &nbsp; U. Dallas @ 47.5258883249\n ms <br>', '<b><i>neighbors of Docomo-Labs</i></b>: <br>&nbsp; &nbsp&nbsp; &nbsp; U. Utah @ 73.282460733\n ms <br>&nbsp; &nbsp&nbsp; &nbsp; Princeton @ 114.166230366\n ms <br>']
+
+        var map
+        function createMarker(point, index)
+        {
+          
+          var newIcon = MapIconMaker.createMarkerIcon({width: 16, height: 26, primaryColor: colors[index]});
+          var marker = new GMarker(point, {icon:newIcon});
+          
+        GEvent.addListener(marker, "click", function(){ 
+            
+            marker.openInfoWindowHtml((index+1) + "." + names[index] );});
+        
+           return marker;
+        }
+        
+        function load()
+        {
+            map = new GMap2(document.getElementById("map"));
+            map.addControl(new GSmallMapControl());
+            map.addControl(new GMapTypeControl())
+            map.setMapType(G_NORMAL_MAP);
+            map.setCenter(new GLatLng(0.0, 0.0), 2);
+            
+            for (var i=0; i<24; i++)
+            {
+                var point = new GLatLng(lt[i],lg[i])
+                map.addOverlay(createMarker(point,i))
+            }
+            
+            var p_0 = new GLatLng(60.1756,24.9342);
+var p_1 = new GLatLng(51.5,-0.1167);
+var p_0__p_1 = new GPolyline([p_0,p_1], "#006633", 2);
+map.addOverlay(p_0__p_1);
+var p_1 = new GLatLng(46.0553,14.5144);
+var p_2 = new GLatLng(37.9833,23.7332);
+var p_1__p_2 = new GPolyline([p_1,p_2], "#FFFF66", 2);
+map.addOverlay(p_1__p_2);
+var p_2 = new GLatLng(52.25,21);
+var p_3 = new GLatLng(46.0553,14.5144);
+var p_2__p_3 = new GPolyline([p_2,p_3], "#CC0099", 2);
+map.addOverlay(p_2__p_3);
+var p_3 = new GLatLng(51.7167,8.7667);
+var p_4 = new GLatLng(60.1756,24.9342);
+var p_3__p_4 = new GPolyline([p_3,p_4], "#333333", 2);
+map.addOverlay(p_3__p_4);
+var p_4 = new GLatLng(51.7167,8.7667);
+var p_5 = new GLatLng(52.5167,13.4);
+var p_4__p_5 = new GPolyline([p_4,p_5], "#333333", 2);
+map.addOverlay(p_4__p_5);
+var p_5 = new GLatLng(36.9899,-122.0603);
+var p_6 = new GLatLng(37.3762,-122.1826);
+var p_5__p_6 = new GPolyline([p_5,p_6], "#003399", 2);
+map.addOverlay(p_5__p_6);
+var p_6 = new GLatLng(43.0761,-89.4104);
+var p_7 = new GLatLng(51.7167,8.7667);
+var p_6__p_7 = new GPolyline([p_6,p_7], "#0000FF", 2);
+map.addOverlay(p_6__p_7);
+var p_7 = new GLatLng(35.325,25.1306);
+var p_8 = new GLatLng(32.9733,-96.7453);
+var p_7__p_8 = new GPolyline([p_7,p_8], "#CC6600", 2);
+map.addOverlay(p_7__p_8);
+var p_8 = new GLatLng(28.0631,-82.4128);
+var p_9 = new GLatLng(43.0761,-89.4104);
+var p_8__p_9 = new GPolyline([p_8,p_9], "#000033", 2);
+map.addOverlay(p_8__p_9);
+var p_9 = new GLatLng(40.3756,-74.6597);
+var p_10 = new GLatLng(32.9733,-96.7453);
+var p_9__p_10 = new GPolyline([p_9,p_10], "#CC0000", 2);
+map.addOverlay(p_9__p_10);
+var p_10 = new GLatLng(36.9899,-122.0603);
+var p_11 = new GLatLng(43.9,-78.8667);
+var p_10__p_11 = new GPolyline([p_10,p_11], "#003399", 2);
+map.addOverlay(p_10__p_11);
+var p_11 = new GLatLng(1.2931,103.8558);
+var p_12 = new GLatLng(51.5,-0.1167);
+var p_11__p_12 = new GPolyline([p_11,p_12], "#FFFF00", 2);
+map.addOverlay(p_11__p_12);
+var p_12 = new GLatLng(43.9,-78.8667);
+var p_13 = new GLatLng(37.3762,-122.1826);
+var p_12__p_13 = new GPolyline([p_12,p_13], "#FF9900", 2);
+map.addOverlay(p_12__p_13);
+var p_13 = new GLatLng(60.1756,24.9342);
+var p_14 = new GLatLng(48.1167,1.6167);
+var p_13__p_14 = new GPolyline([p_13,p_14], "#006633", 2);
+map.addOverlay(p_13__p_14);
+var p_14 = new GLatLng(51.5,-0.1167);
+var p_15 = new GLatLng(51.7167,8.7667);
+var p_14__p_15 = new GPolyline([p_14,p_15], "#660099", 2);
+map.addOverlay(p_14__p_15);
+var p_15 = new GLatLng(39.2499,-86.4555);
+var p_16 = new GLatLng(43.0761,-89.4104);
+var p_15__p_16 = new GPolyline([p_15,p_16], "#FF00FF", 2);
+map.addOverlay(p_15__p_16);
+var p_16 = new GLatLng(43.0761,-89.4104);
+var p_17 = new GLatLng(32.9733,-96.7453);
+var p_16__p_17 = new GPolyline([p_16,p_17], "#0000FF", 2);
+map.addOverlay(p_16__p_17);
+var p_17 = new GLatLng(37.9833,23.7332);
+var p_18 = new GLatLng(51.5,-0.1167);
+var p_17__p_18 = new GPolyline([p_17,p_18], "#330099", 2);
+map.addOverlay(p_17__p_18);
+var p_18 = new GLatLng(52.25,21);
+var p_19 = new GLatLng(32.9733,-96.7453);
+var p_18__p_19 = new GPolyline([p_18,p_19], "#CC0099", 2);
+map.addOverlay(p_18__p_19);
+var p_19 = new GLatLng(37.3762,-122.1826);
+var p_20 = new GLatLng(40.7855,-111.7367);
+var p_19__p_20 = new GPolyline([p_19,p_20], "#00CC00", 2);
+map.addOverlay(p_19__p_20);
+var p_20 = new GLatLng(51.5,-0.1167);
+var p_21 = new GLatLng(32.9733,-96.7453);
+var p_20__p_21 = new GPolyline([p_20,p_21], "#660099", 2);
+map.addOverlay(p_20__p_21);
+var p_21 = new GLatLng(28.0631,-82.4128);
+var p_22 = new GLatLng(1.2931,103.8558);
+var p_21__p_22 = new GPolyline([p_21,p_22], "#000033", 2);
+map.addOverlay(p_21__p_22);
+var p_22 = new GLatLng(40.7855,-111.7367);
+var p_23 = new GLatLng(51.7167,8.7667);
+var p_22__p_23 = new GPolyline([p_22,p_23], "#FFCC99", 2);
+map.addOverlay(p_22__p_23);
+var p_23 = new GLatLng(37.9833,23.7332);
+var p_24 = new GLatLng(39.2499,-86.4555);
+var p_23__p_24 = new GPolyline([p_23,p_24], "#330099", 2);
+map.addOverlay(p_23__p_24);
+var p_24 = new GLatLng(37.3762,-122.1826);
+var p_25 = new GLatLng(40.3756,-74.6597);
+var p_24__p_25 = new GPolyline([p_24,p_25], "#00CC00", 2);
+map.addOverlay(p_24__p_25);
+var p_25 = new GLatLng(52.5167,13.4);
+var p_26 = new GLatLng(52.25,21);
+var p_25__p_26 = new GPolyline([p_25,p_26], "#000000", 2);
+map.addOverlay(p_25__p_26);
+var p_26 = new GLatLng(52.5167,13.4);
+var p_27 = new GLatLng(51.7167,8.7667);
+var p_26__p_27 = new GPolyline([p_26,p_27], "#000000", 2);
+map.addOverlay(p_26__p_27);
+var p_27 = new GLatLng(40.3756,-74.6597);
+var p_28 = new GLatLng(51.7167,8.7667);
+var p_27__p_28 = new GPolyline([p_27,p_28], "#CC0000", 2);
+map.addOverlay(p_27__p_28);
+var p_28 = new GLatLng(32.9733,-96.7453);
+var p_29 = new GLatLng(36.9899,-122.0603);
+var p_28__p_29 = new GPolyline([p_28,p_29], "#CCCCFF", 2);
+map.addOverlay(p_28__p_29);
+var p_29 = new GLatLng(40.7855,-111.7367);
+var p_30 = new GLatLng(32.9733,-96.7453);
+var p_29__p_30 = new GPolyline([p_29,p_30], "#FFCC99", 2);
+map.addOverlay(p_29__p_30);
+var p_30 = new GLatLng(1.2931,103.8558);
+var p_31 = new GLatLng(32.9733,-96.7453);
+var p_30__p_31 = new GPolyline([p_30,p_31], "#FFFF00", 2);
+map.addOverlay(p_30__p_31);
+var p_31 = new GLatLng(39.2499,-86.4555);
+var p_32 = new GLatLng(28.0631,-82.4128);
+var p_31__p_32 = new GPolyline([p_31,p_32], "#FF00FF", 2);
+map.addOverlay(p_31__p_32);
+var p_32 = new GLatLng(32.9733,-96.7453);
+var p_33 = new GLatLng(39.2499,-86.4555);
+var p_32__p_33 = new GPolyline([p_32,p_33], "#CCCCFF", 2);
+map.addOverlay(p_32__p_33);
+var p_33 = new GLatLng(35.325,25.1306);
+var p_34 = new GLatLng(37.9833,23.7332);
+var p_33__p_34 = new GPolyline([p_33,p_34], "#CC6600", 2);
+map.addOverlay(p_33__p_34);
+var p_34 = new GLatLng(43.9,-78.8667);
+var p_35 = new GLatLng(52.25,21);
+var p_34__p_35 = new GPolyline([p_34,p_35], "#FF9900", 2);
+map.addOverlay(p_34__p_35);
+var p_35 = new GLatLng(46.0553,14.5144);
+var p_36 = new GLatLng(51.5,-0.1167);
+var p_35__p_36 = new GPolyline([p_35,p_36], "#FFFF66", 2);
+map.addOverlay(p_35__p_36);
+
+         
+            
+        }
+    </script>
+            
+
+
+    <div id="map" style="width: 960px; height: 700px; float:left; border: 1px solid black;"></div>
+    <br clear="all"/>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<br><br>
+  </div>
+
+  <div style="clear: both;"></div>
+</div>
+<div id="prefooter">
+  <!-- <p>Powered by Truck Accident Lawyers &middot; Davis &amp; McCabe</p> -->
+</div>
+<div id="footer">  
+</div>
+</body>
+</html>

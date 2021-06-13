@@ -1,0 +1,159 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <meta http-equiv="content-type"
+ content="text/html; charset=ISO-8859-1">
+  <title>e-Mail@tlas</title>
+</head>
+<body>
+<div style="text-align: center;"><big><big><big><big><big
+ style="font-weight: bold;"><big><small>e-Mail<span
+ style="color: rgb(255, 0, 0);">@</span>tlas </small></big></big></big></big></big></big><br>
+</div>
+<div style="text-align: center;">
+<div style="text-align: center;">
+<div style="text-align: center;"><big><big><big
+ style="font-weight: bold;"><big><small><small><small><small><small>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+(a.k.a WING Friday
+Lunch)</small></small></small></small></small></big></big><small><small><span
+ style="font-weight: bold;"> &nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;
+</small></small></big></big><br>
+</div>
+<big><big><small><small><br>
+<br>
+</small></small></big></big>
+<div style="text-align: left;"><big style="font-weight: bold;"><big><br>
+Overview</big></big><br>
+</div>
+<div style="text-align: left;"><br>
+</div>
+<div style="text-align: left;">
+<div style="text-align: justify;">This is a crazy idea we had when our
+networking group organized the weekly Friday lunch. We used anonymized
+data (I think one week of data)<br>
+from our mail server and&nbsp; we plotted the relations between the
+members of our community (computer science department at Boston
+University). We <br>
+used the gravity model where the member of the community that
+contributes more are closer to the center of the ring. The one that
+contributes more <br>
+is denoted with a red cycle and the next top 10 are denoted with blue
+cycles. The rest nodes that are related with other nodes are denoted
+with green <br>
+cycles, and those that are not peering with any other nodes are denoted
+with yellow cycles. <br>
+</div>
+<br>
+Formally for any node n we calculate its radius, and the new
+coordinates as follows:<br>
+<br>
+<img src="http://cs-people.bu.edu/gsmaragd/research/eMailAtlas/img1.png"
+ alt="" style="width: 332px; height: 63px;"><br>
+<br>
+<img src="http://cs-people.bu.edu/gsmaragd/research/eMailAtlas/img2.png"
+ alt="" style="width: 165px; height: 37px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<img src="http://cs-people.bu.edu/gsmaragd/research/eMailAtlas/img5.png"
+ alt="" style="width: 118px; height: 37px;"><br>
+<br>
+<img src="http://cs-people.bu.edu/gsmaragd/research/eMailAtlas/img3.png"
+ alt="" style="width: 191px; height: 37px;"><br>
+<br>
+<img src="http://cs-people.bu.edu/gsmaragd/research/eMailAtlas/img4.png"
+ alt="" style="width: 190px; height: 37px;"><br>
+<big><big><small><small><br>
+</small></small></big></big>We illustrated three types of relations:<br>
+<ul style="text-align: justify;">
+  <li>Directed Peering : Nodes that are peering more are closer to the
+center of the ring . <br>
+  </li>
+  <li>Receiving Gravity : Nodes that are receiving more e-mails are
+closer to the center of the ring.<br>
+  </li>
+  <li>Sending Gravity : Nodes that are sending more e-mails are closer
+to the center of the ring.<br>
+  </li>
+</ul>
+We also provide the code (in Matlab) for all these types of relations.<br>
+<br>
+<big><small>For any further information or bug report please send
+e-mail to <a href="mailto:gsmaragd@cs.bu.edu?subject=SEP%20Question"
+ style="text-decoration: none;">Georgios Smaragdakis</a></small></big><big>
+</big><br>
+<br>
+<br>
+<br>
+</div>
+<big><big><small><small><br>
+<br>
+</small></small></big></big>
+<div style="text-align: center;"><span style="font-weight: bold;"><big><big><big>Directed
+Peering</big> </big></big></span><br>
+<span style="font-weight: bold;"><big><big><small><small>code: <a
+ href="outdegree.m" style="text-decoration: none;">outdegree.m</a></small></small></big></big></span><br>
+</div>
+</div>
+<img src="Topology_out_with_yellow.jpg" alt=""
+ style="width: 1280px; height: 897px;"><br>
+<img src="Topology_out_with_yellow_one_line.jpg" alt=""
+ style="width: 1280px; height: 897px;"><br>
+<img src="Topology_out_mesh.jpg" alt=""
+ style="width: 1280px; height: 897px;"><br>
+<br>
+<span style="font-weight: bold;"><big><big><big><br>
+<br>
+<br>
+<br>
+Receiving Gravity</big> <br>
+<small><small>code: <a href="receiver_traffic.m"
+ style="text-decoration: none;">receiver_traffic.m</a></small></small></big></big></span><br>
+<br>
+<img src="Receiver_with_yellow.jpg" alt=""
+ style="width: 1280px; height: 897px;"><br>
+<img src="Receiver.jpg" alt="" style="width: 1280px; height: 897px;"><br>
+</div>
+<div style="text-align: center;"><span style="font-weight: bold;"><big><big><big><br>
+<br>
+<br>
+<br>
+<br>
+Sending Gravity</big> </big></big></span><br>
+<span style="font-weight: bold;"><big><big><small><small>code: <a
+ href="sender_traffic.m" style="text-decoration: none;">sender_traffic.m</a></small></small></big></big></span><br>
+</div>
+<br>
+<img src="Sender_with_yellow.jpg" alt=""
+ style="width: 1280px; height: 897px;"><br>
+<img src="Sender.jpg" alt="" style="width: 1280px; height: 897px;"><br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<!-- Begin Nedstat Basic code -->
+<!-- Title: e-Mail@tlas --><!-- URL: http://cs-people.bu.edu/gsmaragd/research/eMailAtlas/ -->
+<script language="JavaScript" type="text/javascript"
+ src="http://m1.nedstatbasic.net/basic.js">
+</script>
+<script language="JavaScript" type="text/javascript">
+<!--
+  nedstatbasic("ADScJAGybUQZDbubHqTrzzxDpi2Q", 0);
+  // -->
+  </script>
+<noscript> <a target="_blank"
+href="http://www.nedstatbasic.net/stats?ADScJAGybUQZDbubHqTrzzxDpi2Q"><img
+src="http://m1.nedstatbasic.net/n?id=ADScJAGybUQZDbubHqTrzzxDpi2Q"
+border="0" width="18" height="18" alt="Nedstat Basic - Free web site
+statistics Personal homepage website counter"></a><br> <a
+target="_blank" href="http://www.nedstatbasic.net/">Free counter</a> </noscript>
+<!-- End Nedstat Basic code --><br>
+<!-- Creative Commons License -->
+<a rel="license" href="http://creativecommons.org/licenses/by-nc/2.0/"><img
+ alt="Creative Commons License" border="0"
+ src="http://creativecommons.org/images/public/somerights20.gif"></a><br>
+All code on this page is licensed under a <a rel="license"
+ href="http://creativecommons.org/licenses/by-nc/2.0/">Creative Commons
+License</a>.
+<!-- /Creative Commons License -->
+</body>
+</html>

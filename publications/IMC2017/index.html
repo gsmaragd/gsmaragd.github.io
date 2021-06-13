@@ -1,0 +1,128 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <meta http-equiv="content-type"
+ content="text/html; charset=ISO-8859-1">
+  <title>
+Inferring BGP Blackholing Activity in the Internet
+</title>
+</head>
+
+  <!--font-awesome -->
+    <link rel="stylesheet"
+href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <!-- -->
+
+<body link="#070fff" vlink="#686f84" bgcolor="#ffffff">
+<span style="font-weight: bold;"> ``Inferring BGP Blackholing Activity in the Internet"</span>
+<br>
+Vasileios Giotsas, Georgios Smaragdakis, Christoph Dietzel, Philipp Richter,
+Anja Feldmann, and Arthur Berger.
+<br>
+IMC 2017. 
+<br>
+<br>
+</span><span style="font-weight: bold;">Abstract:
+</span>
+<table cellpadding="2" cellspacing="2" border="0"
+ style="text-align: left; width: 66%;">
+  <tbody>
+    <tr>
+      <td style="vertical-align: top; text-align: justify;">
+The Border Gateway Protocol (BGP) has been used for decades as the de facto
+protocol to exchange reachability information among networks in the Internet.
+However, little is known about how this protocol is used to restrict
+reachability to selected destinations, e.g., that are under attack.  While such
+a feature, BGP blackholing, has been available for some time, we lack a
+systematic study of its Internet-wide adoption, practices, and network efficacy,
+as well as the profile of blackholed destinations.
+<br><br>
+In this paper, we develop and evaluate a methodology to automatically detect BGP
+blackholing activity in the wild. We apply our method to both public and private
+BGP datasets. We find that hundreds of networks, including large transit
+providers, as well as about 50 Internet exchange points (IXPs) offer blackholing
+service to their customers, peers, and members. Between 2014-2017, the number
+of blackholed prefixes increased by a factor of 6, peaking at 5K concurrently
+blackholed prefixes by up to 400 Autonomous Systems.  We assess the effect of
+blackholing on the data plane using both targeted active measurements as well as
+passive datasets, finding that blackholing is indeed highly effective in
+dropping traffic before it reaches its destination, though it also discards
+legitimate traffic.  We augment our findings with an analysis of the target IP
+addresses of blackholing.  Our tools and insights are relevant for operators
+considering offering or using BGP blackholing services as well as for
+researchers studying DDoS mitigation in the Internet.
+</td>
+    </tr>
+  </tbody>
+</table>
+<br>
+<br>
+
+<!-- ACM DL Article: Inferring BGP blackholing activity in the internet -->
+<div class="acmdlitem" id="item3131379"><img
+src="http://dl.acm.org/images/oa.gif" width="25" height="25" border="0" alt="ACM
+DL Author-ize service" style="vertical-align:middle"/><a
+href="http://dl.acm.org/authorize?N41663" title="Inferring BGP blackholing
+activity in the internet">Inferring BGP blackholing activity in the
+internet</a><div style="margin-left:25px">
+<!-- <a
+href="http://dl.acm.org/author_page.cfm?id=81467665761" >Vasileios Giotsas</a>,
+<a href="http://dl.acm.org/author_page.cfm?id=81442604302" >Philipp Richter</a>,
+<a href="http://dl.acm.org/author_page.cfm?id=81339529264" >Georgios
+Smaragdakis</a>, <a href="http://dl.acm.org/author_page.cfm?id=81100370843"
+>Anja Feldmann</a>, <a href="http://dl.acm.org/author_page.cfm?id=99659096451"
+>>Christoph Dietzel</a>, <a
+>>href="http://dl.acm.org/author_page.cfm?id=81100228698" >Arthur Berger</a><br
+>>/>-->
+IMC '17 Proceedings of the 2017 Internet Measurement Conference, 2017</div></div>
+<!-- ACM DL Bibliometrics: Inferring BGP blackholing activity in the internet-->
+<!--<div class="acmdlstat" id ="stats3131379"><iframe
+src="http://dl.acm.org/authorizestats?N41663" width="100%" height="30"
+scrolling="no" frameborder="0">frames are not supported</iframe></div>
+-->
+
+<br><br>
+Paper&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : 
+<a href="IMC2017.pdf" style="text-decoration: none;"><!--[pdf]-->
+<i class="fa fa-file-pdf-o fa-lg"></i>
+</a>
+<br>
+presentation: <a href="IMC2017-presentation.pdf" style="text-decoration: none;"><!--[pdf]-->
+<i class="fa fa-file-pdf-o fa-lg"></i>
+</a>
+<br>
+bibtex&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : <a
+ href="IMC2017_bib.html" style="text-decoration: none;">[bibtex.html]</a>
+<br><br>
+<!-- Project page:<a href="http://www.smaragdakis.net/research/ResolutioNet" style="text-decoration: none"> [html]</a> -->
+<br> 
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<!-- Start of StatCounter Code -->
+<script type="text/javascript" language="javascript">
+var sc_project=2126673; 
+var sc_invisible=1; 
+var sc_partition=19; 
+var sc_security="3bc9f8cf"; 
+</script>
+
+<script type="text/javascript" language="javascript" src="http://www.statcounter.com/counter/frames.js"></script><noscript><a href="http://www.statcounter.com/" target="_blank"><img  src="http://c20.statcounter.com/counter.php?sc_project=2126673&amp;java=0&amp;security=3bc9f8cf&amp;invisible=1" alt="hit counter" border="0"></a> </noscript>
+<!-- End of StatCounter Code -->
+
+
+
+
+
+
+
+
+
+</body>
+</html>

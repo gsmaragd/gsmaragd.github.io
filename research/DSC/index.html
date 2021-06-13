@@ -1,0 +1,197 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <meta http-equiv="content-type"
+ content="text/html; charset=ISO-8859-1">
+  <title>Distributed Selfish Caching</title>
+</head>
+<body>
+<h1 style="text-align: center;"><img src="DSC-logo.gif" alt=""></h1> 
+
+ <!-- style="width: 249px; height: 180px;"-->
+<h1 style="text-align: center;"><em>Distributed&nbsp; Selfish&nbsp;
+Caching</em></h1>
+<br>
+&nbsp; <br>
+<br>
+<big style="font-weight: bold;"><big><small>Overview</small></big></big><small> 
+</small>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>
+<div style="text-align: justify;">
+Although cooperation generally increases the amount of resources available to a community of nodes, 
+thus improving individual and collective performance, it also allows for the appearance of potential 
+mistreatment problems (i.e., a node's cost to perform a task becoming worse with cooperation than without)
+through the exposition of one node's resources to others. We study such concerns 
+by considering a group of independent, rational, self-aware nodes that cooperate using on-line caching algorithms, 
+where the exposed resource is the storage at each node. Motivated by content networking applications 
+-- including web caching, CDNs, and P2P -- in this project we extend previous work on the off-line version of the problem, 
+which was conducted under a game-theoretic framework, and limited to object replication.
+
+
+  <br>
+</div>
+<div align="justify"><big style="font-weight: bold;"><big><big><small><br>
+  </big></small></big></big><big style="font-weight: bold;"><big><small>Main Results 
+  </small></big></big><big><big><small><small><br>
+  
+  </small></small></big></big> 
+</div>
+<ul>
+  <li><big><big><small><small>
+  We identify and investigate two causes of mistreatment: <br>
+  1. Cache state Interactions (due to the cooperative servicing of requests) and <br>
+  2. the adoption of a Common Scheme for cache management policies. <br>
+  Using analytic models, numerical solutions of these models, as well as simulation experiments, we study the feasibility <br>
+  and implications of these two types of mistreatment. 
+  </small></small></big></big></li><br>
+  <li><big><big><small><small>
+We design an emulation-based framework for the development of mistreatment-resilient distributed selfish caching schemes<br>
+which utilizes a control-theoretic approach to dynamically parameterize the cache management scheme. We show performance <br>
+evaluation results that quantify the benefits from instantiating such a framework, which could be substantial under skewed <br>
+demand profiles.
+  </small></small></big></big></li>
+
+<!-- <h1 style="text-align: center;"><img src="max_cost_reduction.png" alt="" style="border: 0px solid ; width: 1000px; height: 700px;"></h1> -->
+</ul>
+<big style="font-weight: bold;"><big><small></small></big></big>
+<!-- <div style="text-align: center;"><img src="sep_performance.png" alt=""
+ style=""> --> <br>
+</div>
+<br>
+<big style="font-weight: bold;"><big><small>Documentation:</small></big></big><big><big><small><small>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+
+<ul>
+  <li>   <a href="http://cs-people.bu.edu/gsmaragd/publications/TPDS-DSC/" style="text-decoration: none;">
+  "Distributed Selfish Caching"</a>
+<br>Nikolaos Laoutaris, Georgios Smaragdakis, Azer Bestavros, Ibrahim Matta and Ioannis Stavrakakis.<br>
+IEEE Transactions on Parallel and Distributed Systems, Volume 18, Number 10, October 2007.
+  </li>
+</ul>
+<ul>
+<li>  <a href="http://cs-people.bu.edu/gsmaragd/publications/ComNet-DSC" style="text-decoration: none;">"Mistreatment-Resilient Distributed Caching"</a>
+<br>Georgios Smaragdakis, Nikolaos Laoutaris, Azer Bestavros, Ibrahim Matta and Ioannis Stavrakakis.<br>
+Computer Networks, Volume 51, Number 11, August 2007.
+
+
+  </li>
+</ul>
+
+<ul>
+  <li>  <a href="http://cs-people.bu.edu/gsmaragd/publications/Infocom2006"
+ style="text-decoration: none;">"Mistreatment in Distributed Caching Groups: Causes and Implications"</a>
+<br>Nikolaos Laoutaris, Georgios Smaragdakis, Azer Bestavros and Ioannis Stavrakakis.<br>
+IEEE INFOCOM 2006.
+  </li>
+</ul>
+
+<ul>
+  <li>  <a href="http://cs-people.bu.edu/gsmaragd/publications/Networking2006"
+ style="text-decoration: none;">"A Feedback Control Approach to Mitigating Mistreatment in Distributed Caching Groups"</a>
+<br>Georgios Smaragdakis, Nikolaos Laoutaris, Ibrahim Matta, Azer Bestavros and Ioannis Stavrakakis.<br>
+IFIP Networking 2006.
+  </li>
+</ul>
+<!--<ul>
+  <li>  <a href="http://cs-people.bu.edu/gsmaragd/publications/BUCS-TR-2006-003"
+ style="text-decoration: none;">"Distributed Selfish Caching"</a>
+<br>Nikolaos Laoutaris, Georgios Smaragdakis, Azer Bestavros, Ibrahim Matta and Ioannis Stavrakakis.<br>
+BUCS-TR-2006-003.
+  </li>-->
+</ul>
+
+
+<br>
+<big style="font-weight: bold;"><big><small>Related Work:</small></big></big><big><big><small><small>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+<br>
+<ul><li>
+<a href="http://cs-people.bu.edu/nlaout/cgame.pdf" style="text-decoration:none;">"Distributed Selfish Replication"</a> 
+<br>Nikolaos Laoutaris, Orestis Telelis, Vassilios Zissimopoulos and Ioannis Stavrakakis.
+<br>IEEE Transactions on Parallel and Distributed Systems, Vol. 17, No. 12, December 2006.
+</li></ul>
+<br>
+<big style="font-weight: bold;"><big><small>Poster:</small></big></big><big><big><small><small>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+<br>
+<a href="http://cs-people.bu.edu/gsmaragd/research/DSC/DSC_POSTER.pdf" style="text-decoration:none;"> Distributed Selfish Caching Poster </a> 
+<br>
+(presented in 
+<a href="http://www.cs.bu.edu/IAP/ResearchDay2006/" style="text-decoration: none;">BUCS IAP 2006</a> 
+and 
+<a href="http://www.bu.edu/research/spotlight/scienceday/2006.html" style="text-decoration: none&quot;">BU S&E day 2006</a>)
+<br><br><br>
+
+<big style="font-weight: bold;"><big><small>Code</small></big></big><big><big><small><small><br>
+Revised code will be released soon. 
+<br>
+<br>
+<br>
+<big style="font-weight: bold;"><big><small>Group Members:</small></big></big><big><big><small><small><br>
+<a href="http://cs-people.bu.edu/nlaout" style="text-decoration: none&quot;">Nikolaos Laoutaris  </a>(Marie Curie Postdoc Fellow)
+<br>
+<a href="http://cs-people.bu.edu/gsmaragd" style="text-decoration: none&quot;">Georgios Smaragdakis  </a>(PhD Candidate, Boston University)
+<br>
+<a href="http://www.cs.bu.edu/fac/best" style="text-decoration: none&quot;">Azer Bestavros  </a>(Professor, Boston University)
+<br>
+<a href="http://www.cs.bu.edu/fac/matta" style="text-decoration: none&quot;">Ibrahim Matta  </a>(Associate Professor, Boston University)
+<br>
+<a href="http://cgi.di.uoa.gr/~istavrak/" style="text-decoration: none&quot;">Ioannis Stavrakakis  </a>(Professor, University of Athens)
+<br>
+
+<big style="font-weight: bold;"><big><br>
+</big></big><big style="font-weight: bold;"><big><small> Contact</small></big></big><br>
+<big style="font-weight: bold;"><big> </big></big><big><small>For any further 
+information or bug report please send e-mail to <a
+ href="mailto:gsmaragd@cs.bu.edu?subject=DSC%20Question" style="text-decoration: none;" >Georgios Smaragdakis</a></small></big><big> 
+</big><big
+ style="font-weight: bold;"><big><br>
+<br>
+<small>Sponsors: </small><br>
+
+<a href="http://europa.eu.int/comm/research/fp6/mariecurie-actions/action/action_en.html">
+<img src="level1_r2_c1.gif" alt=""style="border: 0px solid ; width: 178px; height: 24px;"<br>
+<img src="level1_r3_c1.gif" alt=""style="border: 0px solid ; width: 178px; height: 35px;"><br></a>
+&nbsp;&nbsp
+<a href="http://www.nsf.gov"><img src="nsf.gif" alt="" style="border: 0px solid ; width: 60px; height: 60px;"></a> 
+<a href="http://www.cs.bu.edu/groups/wing"><img src="WINGlogo.gif" alt="" style="border: 0px solid ; width: 75px; height: 72px;"></a><br>
+<a href="http://www.ist-e-next.net/"><img src="enext.jpg" alt="" style="border: 0px solid ; width: 210px; height: 100px;"></a><br>
+</big></big><br>
+<br>
+<br>
+<br>
+last update: March 10, 2006<br>
+
+                                                                                                                       
+
+
+<br><br><br>
+<!-- Creative Commons License -->
+<a rel="license" href="http://creativecommons.org/licenses/by-nc/2.0/"><img alt="Creative Commons License" border="0" src="http://creativecommons.org/images/public/somerights20.gif" /></a><br />
+All code on this page is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc/2.0/">Creative Commons License</a>.
+<!-- /Creative Commons License -->
+
+
+
+<!-- Start of StatCounter Code -->
+<script type="text/javascript" language="javascript">
+var sc_project=2126673; 
+var sc_invisible=1; 
+var sc_partition=19; 
+var sc_security="3bc9f8cf"; 
+</script>
+
+<script type="text/javascript" language="javascript" src="http://www.statcounter.com/counter/frames.js"></script><noscript><a href="http://www.statcounter.com/" target="_blank"><img  src="http://c20.statcounter.com/counter.php?sc_project=2126673&amp;java=0&amp;security=3bc9f8cf&amp;invisible=1" alt="hit counter" border="0"></a> </noscript>
+<!-- End of StatCounter Code -->
+
+
+<hr>
+Sponsors: The DSC project is supported partially by a
+number of National Science Foundation grants, including CISE/CSR Award
+#0720604, ENG/EFRI Award #0735974, CISE/CNS Award #0524477, CNS/CNS
+Award #0520166, CNS/ITR Award #0205294, and CISE/EIA RI Award #0202067.
+<br>
+<small> Disclaimer: Any opinions, findings, conclusions, or recommendations
+expressed in materials available from this site are those of their
+author(s) and do not necessarily reflect the views of Boston University
+or of the National Science Foundation.</small>
+
+
+</body>
+</html>

@@ -1,0 +1,154 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <meta http-equiv="content-type"
+ content="text/html; charset=ISO-8859-1">
+  <title>SEP: A Stable Election Protocol for clustered heterogeneous WSN</title>
+</head>
+<body>
+<h1 style="text-align: center;"><img src="SEP.jpg" alt=""
+ style="width: 249px; height: 180px;"></h1>
+<h1 style="text-align: center;"><em>SEP: A&nbsp; Stable&nbsp;
+Election&nbsp; Protocol&nbsp; for&nbsp; clustered&nbsp;
+heterogeneous&nbsp; wireless&nbsp; sensor&nbsp; networks</em></h1>
+<br>
+&nbsp; <br>
+<br>
+<big style="font-weight: bold;"><big><small>Overview</small></big></big><small> 
+</small>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>
+<div style="text-align: justify;">We study the impact of heterogeneity of nodes, 
+  in terms of their energy, in wireless sensor networks that are hierarchically 
+  clustered.&nbsp; We assume that a percentage of the population of sensor nodes 
+  is equipped with additional energy resources - this is a source of&nbsp; heterogeneity 
+  which may result from the initial setting or as the operation of the network 
+  evolves.&nbsp; We show that the behavior of such sensor networks becomes very 
+  unstable once the first node dies, especially in the presence of node heterogeneity.&nbsp; 
+  Classical clustering protocols assume that all the nodes are equipped with the 
+  same amount of energy and as a result, they can not take full advantage of the 
+  presence of node heterogeneity.<br>
+</div>
+<div align="justify"><big style="font-weight: bold;"><big><big><small><br>
+  </small></big><small>Main Idea <br>
+  </small></big></big><big><big><small><small> We propose SEP, a heterogeneous-aware 
+  protocol to prolong the time interval before the death of the first node (we 
+  refer to as stability period), which is crucial for many applications where 
+  the feedback from the sensor network must be reliable.&nbsp; SEP is based on 
+  weighted election probabilities of each node to become cluster head according 
+  to the remaining energy in each node.</small></small></big></big><big
+ style="font-weight: bold;"><big><small><br>
+  <big><br>
+  </big></small></big></big><big style="font-weight: bold;"><big><small>Main Results 
+  </small></big></big><big><big><small><small><br>
+  We show by simulation that SEP always prolongs the stability period compared 
+  to (and that the average throughput is greater than) the one obtained using 
+  current clustering protocols. Our main contributions are:</small></small></big></big> 
+</div>
+<ul>
+  <li><big><big><small><small>Our SEP protocol successfully extends the stable 
+    region by being aware of heterogeneity through assigning probabilities of 
+    cluster-head election weighted by the relative initial energy&nbsp;of nodes.</small></small></big></big></li>
+  <li><big><big><small><small>Due to extended stability, the throughput
+of SEP is also higher than that of current (heterogeneous-oblivious)
+clustering protocols.</small></small></big></big></li>
+  <li><big><big><small><small>The performance of SEP is observed to be close to 
+    that of an ideal upper bound obtained by distributing the additional energy 
+    of advanced nodes uniformly over all nodes in the sensor field.</small></small></big></big></li>
+  <li><big><big><small><small>SEP is more resilient than LEACH in judiciously 
+    consuming the extra energy of advanced nodes - SEP yields longer stability 
+    region for higher values of extra energy.</small></small></big></big></li>
+</ul>
+<big style="font-weight: bold;"><big><small></small></big></big>
+<div style="text-align: center;"><img src="sep_performance.png" alt=""
+ style=""><br>
+</div>
+<br><br>
+<big style="font-weight: bold;"><big><small>Documentation:</small></big></big><big><big><small><small>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+
+<br></br></small></small></big></big>
+<span style="font-weight: bold;"> "SEP: A Stable Election Protocol for clustered heterogeneous wireless sensor networks"</span>
+<br>
+Georgios Smaragdakis, Ibrahim Matta and Azer Bestavros. 
+<br>Second International Workshop on
+Sensor and Actor Network Protocols and Applications (SANPA 2004).<br><br>
+Paper&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : <a
+ href="SEP_SANPA04.ps.gz" style="text-decoration: none;">[ps.gz],</a>
+<a
+ href="SEP_SANPA04.ps" style="text-decoration: none;">[ps],</a>
+<a
+ href="SEP_SANPA04.pdf" style="text-decoration: none;">[pdf]</a>
+<br>
+Poster&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: <a
+ href="SEP_POSTER_34x44.pdf" style="text-decoration: none;">[pdf]</a>
+<br>
+Presentation&nbsp;&nbsp;:
+ <a href="SEP_SANPA04_presentation.pdf" style="text-decoration: none;">[pdf]</a><br>
+
+
+
+bibtex&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : <a
+ href="SEP_SANPA04_bib.html"
+ style="text-decoration: none;">[bib.html]</a>
+
+<br><br><br>
+
+
+<big style="font-weight: bold;"><big><small>Code</small></big></big><big><big><small><small><br>
+</small></big></big><big><big><small><big><small>Code for SEP</small> :&nbsp; 
+<small><a href="SEP.m" style="text-decoration: none;">SEP.m</a></small></big></small></small></big></big><br>
+<big><big><small><small> Code for LEACH :&nbsp; <a href="LEACH.m" style="text-decoration: none;">LEACH.m</a> 
+&nbsp; (This code can be used for FAIR if m=1)</small></small></big></big><br>
+<big style="font-weight: bold;"><big><br>
+</big></big><big style="font-weight: bold;"><big><small> Contact</small></big></big><br>
+<big style="font-weight: bold;"><big> </big></big><big><small>For any further 
+information or bug report please send e-mail to <a
+ href="mailto:gsmaragd@cs.bu.edu?subject=SEP%20Question" style="text-decoration: none;" >Georgios Smaragdakis</a></small></big><big> 
+</big><big
+ style="font-weight: bold;"><big><br>
+<br>
+<small>Sponsors </small><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="http://www.nsf.gov"><img
+ src="nsf.gif" alt=""
+ style="border: 0px solid ; width: 60px; height: 60px;"></a> <a
+ href="http://www.cs.bu.edu/groups/wing"><img src="WINGlogo.gif" alt=""
+ style="border: 0px solid ; width: 75px; height: 72px;"></a><br>
+</big></big><br>
+<br>
+<br>
+<br>
+last update: November 26, 2004<br>
+
+                                                                                                                       
+
+
+
+<br><br><br>
+<!-- Creative Commons License -->
+<a rel="license" href="http://creativecommons.org/licenses/by-nc/2.0/"><img alt="Creative Commons License" border="0" src="http://creativecommons.org/images/public/somerights20.gif" /></a><br />
+All code on this page is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc/2.0/">Creative Commons License</a>.
+<!-- /Creative Commons License -->
+
+<!-- Start of StatCounter Code -->
+<script type="text/javascript" language="javascript">
+var sc_project=2126673; 
+var sc_invisible=1; 
+var sc_partition=19; 
+var sc_security="3bc9f8cf"; 
+</script>
+
+<script type="text/javascript" language="javascript" src="http://www.statcounter.com/counter/frames.js"></script><noscript><a href="http://www.statcounter.com/" target="_blank"><img  src="http://c20.statcounter.com/counter.php?sc_project=2126673&amp;java=0&amp;security=3bc9f8cf&amp;invisible=1" alt="hit counter" border="0"></a> </noscript>
+<!-- End of StatCounter Code -->
+
+<hr>
+Sponsors: The SEP project is supported partially by a
+number of National Science Foundation grants, including CISE/CSR Award
+#0720604, ENG/EFRI Award #0735974, CISE/CNS Award #0524477, CNS/CNS
+Award #0520166, CNS/ITR Award #0205294, and CISE/EIA RI Award #0202067.
+<br>
+<small> Disclaimer: Any opinions, findings, conclusions, or recommendations
+expressed in materials available from this site are those of their
+author(s) and do not necessarily reflect the views of Boston University
+or of the National Science Foundation.</small>
+
+
+</body>
+</html>

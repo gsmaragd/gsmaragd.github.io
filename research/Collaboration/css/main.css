@@ -1,0 +1,53 @@
+/* 
+
+	project:  website traffic (free CSS templates)
+	author:   luka cvrk (www.solucija.com) 
+
+   
+*/
+
+*{ margin: 0; padding: 0; }* 
+body { font: .74em Verdana, Arial, "Trebuchet MS", Tahoma, sans-serif; line-height: 1.6em; background: #D0D4D4; color: #444; }
+
+a {	color: #B60D0A;	background: inherit; text-decoration: none; }
+a:hover { color: #808080; background: inherit; }
+p { margin: 0 0 15px 0; }
+h1 { font: normal 3.7em "Trebuchet MS", Arial, Sans-Serif; color: #A60D0A; }
+h1 a { color: #fff; background: inherit; }
+h1 a:hover { color: #E4FFD3; background: inherit; }
+sup { font-size: .3em; color: #DFCDA2; }
+h2 { color: #B60D0A; font: bold 1.6em "Trebuchet MS", Arial, Sans-Serif; margin: 0 0 12px; border-bottom: 1px solid #ccc; }
+h3 { color: #808080; background: #D0D4D4; padding: 3px 10px; margin: 0 0 15px; }
+
+#content { width: 960px; margin: 10px auto; background: #fff; padding: 10px; }
+
+#header { background: #fff url(../images/header.jpg) no-repeat; height: 252px; }
+	#header p { margin: 30px 0 0; color: #D6E5EA; }
+	#logo { padding: 40px 0 0 20px;  float: left; width: 400px; }
+
+	#search { float: right; width: 240px; text-align: right; margin: 10px 15px 0 0; }
+	#search a, #watch a { color: #fff; font-size: .8em; cursor: pointer; }
+
+	#searchform { padding: 10px; background: #A1BDD2;  }
+	#searchform p { margin: 0; }
+
+	#menu { margin: 0 0 50px; }
+		#menu li { list-style: none; float: left; }
+		#menu li a { cursor: pointer; padding: 5px 39px; line-height: 25px; background: #D0D4D4; margin: 0 1px 0 0; color: #808080; }
+		#menu li a:hover { background: #B2B6B6; color: #000; }
+		#menu li a.current { background: #66A3CF; color: #fff; }
+		#menu li a#last  { margin: 0; padding: 5px 41px 5px 40px; }
+
+.third { font-size: .9em;  float: left; width: 280px; margin: 0 30px 10px 10px; }
+.fourth { font-size: 1.0em;  float: left; width: 280px; margin: 30px 10px; }
+.last { float: right; margin: 0 10px 10px 0; }
+
+.more { border-top: 1px solid #eee; padding: 5px 0 0 0; }
+
+#prefooter { width: 944px; margin: 0 auto; background: #fff; padding: 15px 18px 1px; font-size: .9em;  }
+
+#footer { width: 960px; margin: 15px auto; color: #808080; font-size: .9em; }
+	#footer a { color: #444; }
+	.right { float: right; text-align: right; font-size: 1em; }
+		#footer .right a { margin: 0 0 0 2px; padding: 3px 10px; }
+		#footer .right a:hover { background: #fff; color: #444; text-decoration: underline; }

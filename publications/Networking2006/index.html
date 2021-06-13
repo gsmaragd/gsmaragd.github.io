@@ -1,0 +1,95 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <meta http-equiv="content-type"
+ content="text/html; charset=ISO-8859-1">
+  <title>A Feedback Control Approach to Mitigating Mistreatment in Distributed
+Caching Groups</title>
+</head>
+<body link="#070fff" vlink="#686f84" bgcolor="#ffffff">
+<span style="font-weight: bold;"> "A Feedback Control Approach to Mitigating Mistreatment in Distributed Caching Groups"</span>
+<br>
+Georgios Smaragdakis, Nikolaos Laoutaris, Ibrahim Matta, Azer Bestavros and Ioannis Stavrakakis. <br>
+IFIP Networking 2006.
+<span style="font-weight: bold;"><br>
+<br>
+<br>
+</span><span style="font-weight: bold;">Abstract:
+</span>
+<table cellpadding="2" cellspacing="2" border="0"
+ style="text-align: left; width: 66%;">
+  <tbody>
+    <tr>
+      <td style="vertical-align: top; text-align: justify;">
+We consider distributed collaborative caching groups where individual members are
+autonomous and self-aware. Such
+groups have been emerging in many new overlay and peer-to-peer
+applications. In a recent work of ours, we considered distributed caching
+protocols where group members (nodes) cooperate to satisfy requests for
+information objects either locally or remotely from the group, or otherwise
+from the origin server. In such setting, we identified the problem of a
+node being mistreated, i.e., its access cost for fetching information objects becoming worse with 
+cooperation than without. We identified two causes of mistreatment: (1) the use of a common
+caching scheme which controls whether a node should not rely on
+other nodes in the group by keeping its own local copy of the object once
+retrieved from the group; and (2) the state interaction that can take place when the miss-request stre
+ams from other nodes in the group
+are allowed to affect the state of the local replacement algorithm. We also showed that both these issues ca
+n be addressed by introducing two simple additional parameters that affect the caching behavior (the reliance
+and the interaction parameters). In this paper,
+we argue against a static rule-of-thumb policy of setting these
+parameters since the performance, in terms of
+average object access cost, depends on a multitude of system parameters
+(namely, group size, cache sizes, demand skewness, and distances). We then
+propose a feedback control approach to mitigating mistreatment in
+distributed caching groups. In our approach, a node independently emulates
+its performance as if it were acting selfishly and then adapts its reliance
+and interaction parameters in the direction of reducing its measured access
+cost below its emulated selfish cost. To ensure good convergence and
+stability properties, we use a (Proportional-Integral-Differential)
+PID-style controller. Our simulation results show that our
+controller adapts to the minimal access cost and outperforms static-parameter schemes.
+<br>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<br>
+<br>
+Paper&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : <a
+ href="Networking2006.ps.gz" style="text-decoration: none;">[ps.gz],</a>
+<a href="Networking2006.ps" style="text-decoration: none;">[ps]</a>
+<a href="Networking2006.pdf" style="text-decoration: none;">[pdf]</a> <br>
+Presentation : <a href="Networking2006_presentation.ppt" style="text-decoration: none;">[ppt]</a> 
+<a href="Networking2006_presentation.pdf" style="text-decoration: none;"></a> 
+<br>
+bibtex&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : <a
+ href="Networking2006_bib.html" style="text-decoration: none;">[bibtex.html]</a>
+<br>
+<br>
+Project page:<a href="http://csr.bu.edu/dsc" style="text-decoration: none"> [html]</a>
+<br>
+<br>
+<br>
+<!--Project page:&nbsp;<a
+ href="http://csr.bu.edu/sep"
+ style="text-decoration: none;">[html]</a>
+-->
+
+
+<!-- Start of StatCounter Code -->
+<script type="text/javascript" language="javascript">
+var sc_project=2126673; 
+var sc_invisible=1; 
+var sc_partition=19; 
+var sc_security="3bc9f8cf"; 
+</script>
+
+<script type="text/javascript" language="javascript" src="http://www.statcounter.com/counter/frames.js"></script><noscript><a href="http://www.statcounter.com/" target="_blank"><img  src="http://c20.statcounter.com/counter.php?sc_project=2126673&amp;java=0&amp;security=3bc9f8cf&amp;invisible=1" alt="hit counter" border="0"></a> </noscript>
+<!-- End of StatCounter Code -->
+
+
+
+
+</body>
+</html>

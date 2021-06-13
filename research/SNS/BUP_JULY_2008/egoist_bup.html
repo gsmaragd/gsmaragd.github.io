@@ -1,0 +1,607 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<title>Selfish Neighbor Selection</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <META HTTP-EQUIV="refresh" CONTENT="60"; URL="http://cs-people.bu.edu/gsmaragd/research/SNS/egoist.html">
+
+<script src="http://maps.google.com/maps?file=api&amp;v=2&amp;key=ABQIAAAApnL-4zIdf1DrLTJJFk3c7RRgYaAAkhv3Wb08csdDYissY2zVSxQKIF6NmIwdZ4eK76BNKQjXkSE6wQ"
+      type="text/javascript"></script>
+
+
+<link rel="stylesheet" type="text/css" href="css/main.css" media="screen" />
+<script type="text/javascript">
+	// toggle dynamic divs
+    function toggle(div) {
+    	var elem = document.getElementById(div);
+    	if (elem.style.display=='') {elem.style.display='none'; return;}
+    	elem.style.display='';
+    }
+	</script>
+
+
+
+</head>
+<body>
+<div id="content">
+  <div id="header">
+    <div id="logo">
+      <h1>Selfish</h1><h1>Neighbor</h1><h1>Selection</h1> <!-- <sup> beta</sup></h1> -->
+      <!-- <p>Donec lacinia tristique ante. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam blandit ultricies nisl.</p> -->
+    </div>
+    <!-- <div id="search"> <a onclick="toggle('searchform');">+ SEARCH</a> -->
+      <div id="searchform" style="display: none;">
+        <form method="post" action="http://www.free-css.com/">
+          <p>
+            <input class="searchfield" name="search_query" id="keywords" value="Search Keywords" type="text" />
+            <input class="searchbutton" name="submit" value="Search" type="submit" />
+          </p>
+        </form>
+      </div>
+   <!--  </div> -->
+  </div>
+  <ul id="menu">
+    <li><a href="index.html">Overview</a></li>
+    <li><a class="current" href="http://cs-people.bu.edu/gsmaragd/research/SNS/egoist.html">EGOIST</a></li>
+    <li><a href="publications.html">Publications</a></li>
+    <li><a href="code.html">Code</a></li>
+    <li><a href="people.html">People</a></li>
+    <li><a href="sponsors.html">Sponsors</a></li>
+    <li><a id="last" href="contact.html">Contact</a></li>
+  </ul>
+  <div style="clear: both;"></div>
+  <div class="twice">
+<h2>EGOIST overlay routing system</h2>
+
+
+<!-- <link rel="shortcut icon" href="http://www.bu.edu/favicon.ico" type="image/x-icon"> -->
+<!--    <script src="http://maps.google.com/maps?file=api&v=2&key=ABQIAAAApnL-4zIdf1DrLTJJFk3c7RTQQU2XDjxmfhi0Qac-os7qJlZLwxTG2fKqf2xtJCa21hWAgQ6D3wntCQ"
+      type="text/javascript"></script> -->
+
+
+<!-- <b> EGOIST </b>overlay routing system.  -->
+Part of the <a href="http://csr.bu.edu/sns">Selfish Neighbor Selection</a> project. 
+<!-- <br>(c) WING Group, Computer Science department, Boston University, 2007-8. -->
+<!-- <br><a href="nodes_egoist.txt">[List of participating nodes]</a> -->
+<script language = "JavaScript">
+var now = new Date();
+var dayNames = new Array("Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday");
+var monNames = new Array("January","February","March","April","May","June","July","August","September","October","November","December");
+document.write("[Date: " + dayNames[now.getDay()] + " " + monNames[now.getMonth()] + " " + now.getDate() + ", " + now.getFullYear()+" -- Time: "
++now.getHours()+":"+now.getMinutes()+":"+now.getSeconds()+"]");
+</script>
+[automatic update every 60 seconds]
+
+
+
+
+    <script type="text/javascript"> 
+
+
+
+    var map;
+//    var trafficInfo = new GTrafficOverlay();
+//    var toggleState = 1;
+
+    function initialize() {
+
+  var message = ["","NYU","MIT","TUM","Princeton","UNiNa","Un. Washington","UFCG","UFL","Sinica","Duke","UPRM","ColBud","UTAH","MPI-SWS","UTexas Austin","UCSD","Imperial","USTC-China","Wisc","DoCoMo US","Colorado State","Columbia","De Paul","UPC","UKentuky","Postel.org","Cornell","Ryerson","Rice","UTexas Arlington","CMU","UIUC","Purdue","ETHZ","TU Delft","NCSU","Intel Research","Ottawa PlanetLab","UMass","CUHK","U Virginia","Wide Japan","USF","Rochester","Northwestern","HP Labs","UIT Norway","Canterbury NZ","RedClara Argentina","U Lancaster"];
+
+      if (GBrowserIsCompatible()) {
+        var map = new GMap2(document.getElementById("map_canvas"));
+        map.setCenter(new GLatLng(5, 0), 2);
+
+
+// Create a base icon for all of our markers that specifies the
+        // shadow, icon dimensions, etc.
+        var baseIcon = new GIcon();
+        baseIcon.shadow = "http://www.google.com/mapfiles/shadow50.png";
+        baseIcon.iconSize = new GSize(20, 34);
+        baseIcon.shadowSize = new GSize(37, 34);
+        baseIcon.iconAnchor = new GPoint(9, 34);
+        baseIcon.infoWindowAnchor = new GPoint(9, 2);
+        baseIcon.infoShadowAnchor = new GPoint(18, 25);
+
+        // Creates a marker whose info window displays the letter corresponding
+        // to the given index.
+        function createMarker(point, index) {
+          // Create a lettered icon for this point using our icon class
+//          var letter = String.fromCharCode(index);//	"1".charCodeAt(0));	// + index);
+          var letteredIcon = new GIcon(baseIcon);
+          letteredIcon.image = "http://www.google.com/mapfiles/marker" + ".png";
+
+          // Set up our GMarkerOptions object
+          markerOptions = { icon:letteredIcon };
+          var marker = new GMarker(point, markerOptions);
+
+          GEvent.addListener(marker, "click", function() {
+		if(index==1){
+	            marker.openInfoWindowHtml(index + "." + message[index] + "<br> neighbors:" + "<br>" + message[44] + " 9.1 msecs" + "<br>" + message[48] + " 23.7 msecs");
+			}
+		if(index==2){
+	            marker.openInfoWindowHtml(index + "." + message[index] + "<br> neighbors:" + "<br>" + messages[22] +" 6.1 msecs" + "<br>" + message[39] + " 4.7 msecs");
+			}
+		if(index==3){
+	            marker.openInfoWindowHtml(index + "." + message[index] + "<br> neighbors:" + "<br>" + message[24] +" 53.3 msecs" + "<br>" + message[35] + " 17.5 msecs");
+			}
+		if(index==4){
+	            marker.openInfoWindowHtml(index + "." + message[index] + "<br> neighbors:" + "<br>" + message[1] + " 4.2 msecs" + "<br>" + message[19] + " 43.9 msecs");
+			}
+		if(index==5){
+	            marker.openInfoWindowHtml(index + "." + message[index] + "<br> neighbors:" + "<br>" + message[6] +  " 192 msecs" + "<br>" + message[7] + " 99 msecs");
+			}
+		if(index==6){
+	            marker.openInfoWindowHtml(index + "." + message[index] + "<br> neighbors:" + "<br>" + message[13] + " 17.5 msecs" + "<br>" + message[20] + " 23.2 msecs");
+			}
+		if(index==7){
+	            marker.openInfoWindowHtml(index + "." + message[index] + "<br> neighbors:" + "<br>" + message[8] + " 25.1 msecs" + "<br>" + message[9] + " 47.2 msecs");
+			}
+		if(index==8){
+	            marker.openInfoWindowHtml(index + "." + message[index] + "<br> neighbors:" + "<br>" + message[21] + " 54.9 msecs" + "<br>" + message[22] + " 200 msecs");
+			}
+		if(index==9){
+	            marker.openInfoWindowHtml(index + "." + message[index] + "<br> neighbors:" + "<br>" + message[30] + " 200 msecs" + "<br>" + message[42] + " 33.6 msecs");
+			}
+		if(index==10){
+	            marker.openInfoWindowHtml(index + "." + message[index] + "<br> neighbors:" + "<br>" + message[11] + " 78.2 msecs" + "<br>" + message[36] + " 3.2 msecs");
+			}
+
+
+
+		if(index==11){
+	            marker.openInfoWindowHtml(index + "." + message[index] + "<br> neighbors:" + "<br>" + message[4] + 
+" 66.7 msecs" + "<br>" + message[36] + " 36.4 msecs");
+			}
+		if(index==12){
+	            marker.openInfoWindowHtml(index + "." + message[index] + "<br> neighbors:" + "<br>" + message[3] + 
+" 36.7 msecs" + "<br>" + message[31] + " 117 msecs");
+			}
+		if(index==13){
+	            marker.openInfoWindowHtml(index + "." + message[index] + "<br> neighbors:" + "<br>" + message[6] + 
+" 17.5 msecs" + "<br>" + message[33] + " 41.8 msecs");
+			}
+		if(index==14){
+	            marker.openInfoWindowHtml(index + "." + message[index] + "<br> neighbors:" + "<br>" + message[15] + " 139 msecs" + "<br>" + message[16] + " 169 msecs");
+			}
+		if(index==15){
+	            marker.openInfoWindowHtml(index + "." + message[index] + "<br> neighbors:" + "<br>" + message[8] + 
+" 28.4 msecs" + "<br>" + message[29] + " 4.6 msecs");
+			}
+		if(index==16){
+	            marker.openInfoWindowHtml(index + "." + message[index] + "<br> neighbors:" + "<br>" + message[6] + 
+" 29.1 msecs" + "<br>" + message[29] + " 35.7 msecs");
+			}
+		if(index==17){
+	            marker.openInfoWindowHtml(index + "." + message[index] + "<br> neighbors:" + "<br>" + message[34] + " 22.1 msecs" + "<br>" + message[50] + " 7.7 msecs");
+			}
+		if(index==18){
+	            marker.openInfoWindowHtml(index + "." + message[index] + "<br> neighbors:" + "<br>" + message[9] + 
+" 82.6 msecs" + "<br>" + message[87] + " 193 msecs");
+			}
+		if(index==19){
+	            marker.openInfoWindowHtml(index + "." + message[index] + "<br> neighbors:" + "<br>" + message[21] + " 56 msecs" + "<br>" + message[33] + " 24.7 msecs");
+			}
+		if(index==20){
+	            marker.openInfoWindowHtml(index + "." + message[index] + "<br> neighbors:" + "<br>" + message[16] + " 16.8 msecs" + "<br>" + message[28] + " 68.4 msecs");
+			}
+
+
+		if(index==21){
+	            marker.openInfoWindowHtml(index + "." + message[index] + "<br> neighbors:" + "<br>" + message[13] + " 14.5 msecs" + "<br>" + message[33] + " 32 msecs");
+			}
+		if(index==22){
+	            marker.openInfoWindowHtml(index + "." + message[index] + "<br> neighbors:" + "<br>" + message[1] + 
+" 1.1 msecs" + "<br>" + message[35] + " 86.3 msecs");
+			}
+		if(index==23){
+	            marker.openInfoWindowHtml(index + "." + message[index] + "<br> neighbors:" + "<br>" + message[24] + " 155 msecs" + "<br>" + message[25] + " 33.3 msecs");
+			}
+		if(index==24){
+	            marker.openInfoWindowHtml(index + "." + message[index] + "<br> neighbors:" + "<br>" + message[5] + 
+" 60.9 msecs" + "<br>" + message[17] + " 44.1 msecs");
+			}
+		if(index==25){
+	            marker.openInfoWindowHtml(index + "." + message[index] + "<br> neighbors:" + "<br>" + message[26] + " 91.4 msecs" + "<br>" + message[27] + " 43.4 msecs");
+			}
+		if(index==26){
+	            marker.openInfoWindowHtml(index + "." + message[index] + "<br> neighbors:" + "<br>" + message[27] +" 94.6 msecs" + "<br>" + message[28] + " 83.9 msecs");
+			}
+		if(index==27){
+	            marker.openInfoWindowHtml(index + "." + message[index] + "<br> neighbors:" + "<br>" + message[10] + " 20.7 msecs" + "<br>" + message[22] + " 8.1 msecs");
+			}
+		if(index==28){
+	            marker.openInfoWindowHtml(index + "." + message[index] + "<br> neighbors:" + "<br>" + message[22] + " 13.1 msecs" + "<br>" + message[23] + " 13.1 msecs");
+			}
+		if(index==29){
+	            marker.openInfoWindowHtml(index + "." + message[index] + "<br> neighbors:" + "<br>" + message[15] + " 4.7 msecs" + "<br>" + message[33] + " 32.5 msecs");
+			}
+		if(index==30){
+	            marker.openInfoWindowHtml(index + "." + message[index] + "<br> neighbors:" + "<br>" + message[31] + " 53.6 msecs" + "<br>" + message[32] + " 3.7 msecs");
+			}
+
+		if(index==31){
+	            marker.openInfoWindowHtml(index + "." + message[index] + "<br> neighbors:" + "<br>" + message[20] + " 91.3 msecs" + "<br>" + message[37] + " 0.3 msecs");
+			}
+		if(index==32){
+	            marker.openInfoWindowHtml(index + "." + message[index] + "<br> neighbors:" + "<br>" + message[33] + " 9.3 msecs" + "<br>" + message[34] + " 12.7 msecs");
+			}
+		if(index==33){
+	            marker.openInfoWindowHtml(index + "." + message[index] + "<br> neighbors:" + "<br>" + message[10] + " 32.2 msecs" + "<br>" + message[28] + " 19.3 msecs");
+			}
+		if(index==34){
+	            marker.openInfoWindowHtml(index + "." + message[index] + "<br> neighbors:" + "<br>" + message[14] + " 16.8 msecs" + "<br>" + message[35] + " 22.3 msecs");
+			}
+		if(index==35){
+	            marker.openInfoWindowHtml(index + "." + message[index] + "<br> neighbors:" + "<br>" + message[4] + 
+" 89.6 msecs" + "<br>" + message[12] + " 26.2 msecs");
+			}
+		if(index==36){
+	            marker.openInfoWindowHtml(index + "." + message[index] + "<br> neighbors:" + "<br>" + message[31] + " 13.3 msecs" + "<br>" + message[41] + " 12.4 msecs");
+			}
+		if(index==37){
+	            marker.openInfoWindowHtml(index + "." + message[index] + "<br> neighbors:" + "<br>" + message[38] + " 51.3 msecs" + "<br>" + message[39] + " 22.3 msecs");
+			}
+		if(index==38){
+	            marker.openInfoWindowHtml(index + "." + message[index] + "<br> neighbors:" + "<br>" + message[39] + " 200 msecs" + "<br>" + message[40] + " 255 msecs");
+			}
+		if(index==39){
+	            marker.openInfoWindowHtml(index + "." + message[index] + "<br> neighbors:" + "<br>" + message[20] + " 4.8 msecs" + "<br>" + message[30] + " 255 msecs");
+			}
+		if(index==40){
+	            marker.openInfoWindowHtml(index + "." + message[index] + "<br> neighbors:" + "<br>" + message[9] + " 126 msecs" + "<br>" + message[20] + " 188 msecs");
+			}
+		
+		if(index==41){
+	            marker.openInfoWindowHtml(index + "." + message[index] + "<br> neighbors:" + "<br>" + message[42] + " 187.4 msecs" + "<br>" + message[43] + " 36.8 msecs");
+			}
+		if(index==42){
+	            marker.openInfoWindowHtml(index + "." + message[index] + "<br> neighbors:" + "<br>" + message[6] + " 98.1 msecs" + "<br>" + message[18] + " 135.9 msecs");
+			}
+		if(index==43){
+	            marker.openInfoWindowHtml(index + "." + message[index] + "<br> neighbors:" + "<br>" + message[44] + " 45.9 msecs" + "<br>" + message[45] + " 38.9 msecs");
+			}
+		if(index==44){
+	            marker.openInfoWindowHtml(index + "." + message[index] + "<br> neighbors:" + "<br>" + message[19] + " 34.2 msecs" + "<br>" + message[27] + " 4.5 msecs");
+			}
+		if(index==45){
+	            marker.openInfoWindowHtml(index + "." + message[index] + "<br> neighbors:" + "<br>" + message[46] + " 53.6 msecs" + "<br>" + message[47] + " 168.3 msecs");
+			}
+		if(index==46){
+	            marker.openInfoWindowHtml(index + "." + message[index] + "<br> neighbors:" + "<br>" + message[47] + " 207 msecs" + "<br>" + message[48] + " 302.3 msecs");
+			}
+		if(index==47){
+	            marker.openInfoWindowHtml(index + "." + message[index] + "<br> neighbors:" + "<br>" + message[17] + " 63.8 msecs" + "<br>" + message[35] + " 56.5 msecs");
+			}
+		if(index==48){
+	            marker.openInfoWindowHtml(index + "." + message[index] + "<br> neighbors:" + "<br>" + message[49] + " 382.5 msecs" + "<br>" + message[50] + " 337.4 msecs");
+			}
+		if(index==49){
+	            marker.openInfoWindowHtml(index + "." + message[index] + "<br> neighbors:" + "<br>" + message[2] + " 202.7 msecs" + "<br>" + message[16] + " 151.8 msecs");
+			}
+		if(index==50){
+	            marker.openInfoWindowHtml(index + "." + message[index] + "<br> neighbors:" + "<br>" + message[1] + " 98.4 msecs" + "<br>" + message[2] + " 102.9 msecs");
+			}
+
+
+
+
+
+
+
+
+
+          });
+          return marker;
+        }
+
+
+
+        // Add 10 markers to the map at random locations
+        //var bounds = map.getBounds();
+        //var southWest = bounds.getSouthWest();
+        //var northEast = bounds.getNorthEast();
+        //var lngSpan = northEast.lng() - southWest.lng();
+        //var latSpan = northEast.lat() - southWest.lat();
+        //for (var i = 0; i < 10; i++) {
+        //  var latlng = new GLatLng(southWest.lat() + latSpan * Math.random(),
+        //    southWest.lng() + lngSpan * Math.random());
+//	  var latlng1 = new GLatLng(42,-71);
+//        map.addOverlay(createMarker(latlng1, 1));
+//	  var latlng2 = new GLatLng(42,-91);
+//	  var latlng2 = new GLatLng(37,23);
+//        map.addOverlay(createMarker(latlng2, 2));
+
+
+	  var latlng1 = new GLatLng(40.70,-74); map.addOverlay(createMarker(latlng1, 1));
+	  var latlng2 = new GLatLng(42.3667 , -71.1); map.addOverlay(createMarker(latlng2, 2));
+	  var latlng3 = new GLatLng(48.1333 , 11.5833); map.addOverlay(createMarker(latlng3, 3));
+	  var latlng4 = new GLatLng(40.351565,-74.659266); map.addOverlay(createMarker(latlng4, 4));
+	  var latlng5 = new GLatLng(40.86316,14.252701); map.addOverlay(createMarker(latlng5, 5));
+	  var latlng6 = new GLatLng(47.621901,-122.330017); map.addOverlay(createMarker(latlng6, 6));
+	  var latlng7 = new GLatLng(-9.235004,-36.92528); map.addOverlay(createMarker(latlng7, 7));
+	  var latlng8 = new GLatLng(30.353916,-83.474121); map.addOverlay(createMarker(latlng8, 8));
+	  var latlng9 = new GLatLng(23.69781,120.960515); map.addOverlay(createMarker(latlng9, 9));
+	  var latlng10 = new GLatLng(36.003007,-78.938828); map.addOverlay(createMarker(latlng10, 10));
+	  
+	  var latlng11 = new GLatLng(18.38383,-66.122589); map.addOverlay(createMarker(latlng11, 11));
+	  var latlng12 = new GLatLng(47.162494,19.503304); map.addOverlay(createMarker(latlng12, 12));
+	  var latlng13 = new GLatLng(40.761756,-111.862578 ); map.addOverlay(createMarker(latlng13, 13));
+	  var latlng14 = new GLatLng(48.154177,11.577015); map.addOverlay(createMarker(latlng14, 14));
+	  var latlng15 = new GLatLng(30.279749,-97.731285); map.addOverlay(createMarker(latlng15, 15));
+	  var latlng16 = new GLatLng(32.873694,-117.23770); map.addOverlay(createMarker(latlng16, 16));
+	  var latlng17 = new GLatLng(51.500248,-0.177605); map.addOverlay(createMarker(latlng17, 17));
+	  var latlng18 = new GLatLng(31.952162,117.290039); map.addOverlay(createMarker(latlng18, 18));
+	  var latlng19 = new GLatLng(43.081928,-89.386826); map.addOverlay(createMarker(latlng19, 19));
+	  var latlng20 = new GLatLng(37.37159,-121.91391); map.addOverlay(createMarker(latlng20, 20));
+
+	  var latlng21 = new GLatLng(37.94061,-104.834139); map.addOverlay(createMarker(latlng21, 21));
+	  var latlng22 = new GLatLng(40.809684,-73.963716); map.addOverlay(createMarker(latlng22, 22));
+	  var latlng23 = new GLatLng(42.608001,-113.783555); map.addOverlay(createMarker(latlng23, 23));
+	  var latlng24 = new GLatLng(41.398188,2.144909); map.addOverlay(createMarker(latlng24, 24));
+	  var latlng25 = new GLatLng(38.042515,-84.50675); map.addOverlay(createMarker(latlng25, 25));
+	  var latlng26 = new GLatLng(37.859354,-122.23967); map.addOverlay(createMarker(latlng26, 26));
+	  var latlng27 = new GLatLng(42.447196,-76.482697); map.addOverlay(createMarker(latlng27, 27));
+	  var latlng28 = new GLatLng(49.787097,-101.674604); map.addOverlay(createMarker(latlng28, 28));
+	  var latlng29 = new GLatLng(29.724023,-95.393815); map.addOverlay(createMarker(latlng29, 29));
+	  var latlng30 = new GLatLng(32.73083,-97.123647); map.addOverlay(createMarker(latlng30, 30));
+
+	  var latlng31 = new GLatLng(40.446131,-79.943047); map.addOverlay(createMarker(latlng31, 31));
+	  var latlng32 = new GLatLng(45.767523,-95.712891); map.addOverlay(createMarker(latlng32, 32));
+	  var latlng33 = new GLatLng(38.464124,-86.691184); map.addOverlay(createMarker(latlng33, 33));
+	  var latlng34 = new GLatLng(47.385435,8.654437); map.addOverlay(createMarker(latlng34, 34));
+	  var latlng35 = new GLatLng(52.019121,4.360199); map.addOverlay(createMarker(latlng35, 35));
+	  var latlng36 = new GLatLng(35.789934,-78.664126); map.addOverlay(createMarker(latlng36, 36));
+	  var latlng37 = new GLatLng(38.320111,-122.272339); map.addOverlay(createMarker(latlng37, 37));
+	  var latlng38 = new GLatLng(45.454351,-75.691681); map.addOverlay(createMarker(latlng38, 38));
+	  var latlng39 = new GLatLng(42.396143,-72.511268); map.addOverlay(createMarker(latlng39, 39));
+	  var latlng40 = new GLatLng(22.419796,114.206808); map.addOverlay(createMarker(latlng40, 40));
+
+
+	  var latlng41 = new GLatLng(38.037512,-78.502979); map.addOverlay(createMarker(latlng41, 41));
+	  var latlng42 = new GLatLng(38.065392,139.658203); map.addOverlay(createMarker(latlng42, 42));
+	  var latlng43 = new GLatLng(26.094713,-80.251007); map.addOverlay(createMarker(latlng43, 43));
+	  var latlng44 = new GLatLng(43.126171,-77.631369); map.addOverlay(createMarker(latlng44, 44));
+	  var latlng45 = new GLatLng(41.896783,-87.616031); map.addOverlay(createMarker(latlng45, 45));
+	  var latlng46 = new GLatLng(40.946714,-117.333984); map.addOverlay(createMarker(latlng46, 46));
+	  var latlng47 = new GLatLng(69.667825,18.950043); map.addOverlay(createMarker(latlng47, 47));
+	  var latlng48 = new GLatLng(-43.253205,171.705322); map.addOverlay(createMarker(latlng48, 48));
+	  var latlng49 = new GLatLng(-34.572168,-58.417053); map.addOverlay(createMarker(latlng49, 49));
+	  var latlng50 = new GLatLng(54.063418,-2.798767); map.addOverlay(createMarker(latlng50, 50));
+
+
+        //}
+     // }
+    //}
+   
+	var polyline1 = new GPolyline([
+//  		  new GLatLng(42, -71),
+  //		  new GLatLng(42, -91)
+		], "#ff0000", 1);
+		map.addOverlay(polyline1);
+
+
+	var polyline1_k1 = new GPolyline([ latlng1,  latlng44] , "#ff0000", 1); 	map.addOverlay(polyline1_k1);
+	var polyline1_k2 = new GPolyline([ latlng1,  latlng48] , "#ff0000", 1); 	map.addOverlay(polyline1_k2);
+	
+	var polyline2_k1 = new GPolyline([ latlng2,  latlng22] , "#ff0000", 1); 	map.addOverlay(polyline2_k1);
+	var polyline2_k2 = new GPolyline([ latlng2,  latlng39] , "#ff0000", 1); 	map.addOverlay(polyline2_k2);
+	
+        var polyline3_k1 = new GPolyline([ latlng3,  latlng24] , "#ff0000", 1); 	map.addOverlay(polyline3_k1);
+	var polyline3_k2 = new GPolyline([ latlng3,  latlng35] , "#ff0000", 1); 	map.addOverlay(polyline3_k2);
+
+        var polyline4_k1 = new GPolyline([ latlng4,  latlng1] , "#ff0000", 1); 	map.addOverlay(polyline4_k1);
+	var polyline4_k2 = new GPolyline([ latlng4,  latlng19] , "#ff0000", 1); 	map.addOverlay(polyline4_k2);
+        
+        var polyline5_k1 = new GPolyline([ latlng5,  latlng6] , "#ff0000", 1); 	map.addOverlay(polyline5_k1);
+	var polyline5_k2 = new GPolyline([ latlng5,  latlng7] , "#ff0000", 1); 	map.addOverlay(polyline5_k2);
+
+        var polyline6_k1 = new GPolyline([ latlng6,  latlng13] , "#ff0000", 1); 	map.addOverlay(polyline6_k1);
+	var polyline6_k2 = new GPolyline([ latlng6,  latlng20] , "#ff0000", 1); 	map.addOverlay(polyline6_k2);
+
+        var polyline7_k1 = new GPolyline([ latlng7,  latlng8] , "#ff0000", 1); 	map.addOverlay(polyline7_k1);
+	var polyline7_k2 = new GPolyline([ latlng7,  latlng9] , "#ff0000", 1); 	map.addOverlay(polyline7_k2);
+        
+	var polyline8_k1 = new GPolyline([ latlng8,  latlng21] , "#ff0000", 1); 	map.addOverlay(polyline8_k1);
+	var polyline8_k2 = new GPolyline([ latlng8,  latlng22] , "#ff0000", 1); 	map.addOverlay(polyline8_k2);
+	
+        var polyline9_k1 = new GPolyline([ latlng9,  latlng30] , "#ff0000", 1); 	map.addOverlay(polyline9_k1);
+	var polyline9_k2 = new GPolyline([ latlng9,  latlng42] , "#ff0000", 1); 	map.addOverlay(polyline9_k2);
+        
+	var polyline10_k1 = new GPolyline([ latlng10,  latlng11] , "#ff0000", 1); 	map.addOverlay(polyline10_k1);
+	var polyline10_k2 = new GPolyline([ latlng10,  latlng36] , "#ff0000", 1); 	map.addOverlay(polyline10_k2);
+
+	var polyline11_k1 = new GPolyline([ latlng11,  latlng4] , "#ff0000", 1); 	map.addOverlay(polyline11_k1);
+	var polyline11_k2 = new GPolyline([ latlng11,  latlng36] , "#ff0000", 1); 	map.addOverlay(polyline11_k2);
+	
+	var polyline12_k1 = new GPolyline([ latlng12,  latlng3] , "#ff0000", 1); 	map.addOverlay(polyline12_k1);
+	var polyline12_k2 = new GPolyline([ latlng12,  latlng31] , "#ff0000", 1); 	map.addOverlay(polyline12_k2);
+
+	var polyline13_k1 = new GPolyline([ latlng13,  latlng6] , "#ff0000", 1); 	map.addOverlay(polyline13_k1);
+	var polyline13_k2 = new GPolyline([ latlng13,  latlng33] , "#ff0000", 1); 	map.addOverlay(polyline13_k2);
+	
+	var polyline14_k1 = new GPolyline([ latlng14,  latlng15] , "#ff0000", 1); 	map.addOverlay(polyline14_k1);
+	var polyline14_k2 = new GPolyline([ latlng14,  latlng16] , "#ff0000", 1); 	map.addOverlay(polyline14_k2);
+
+	var polyline15_k1 = new GPolyline([ latlng15,  latlng8] , "#ff0000", 1); 	map.addOverlay(polyline15_k1);
+	var polyline15_k2 = new GPolyline([ latlng15,  latlng29] , "#ff0000", 1); 	map.addOverlay(polyline15_k2);
+	
+	var polyline16_k1 = new GPolyline([ latlng16,  latlng6] , "#ff0000", 1); 	map.addOverlay(polyline16_k1);
+	var polyline16_k2 = new GPolyline([ latlng16,  latlng29] , "#ff0000", 1); 	map.addOverlay(polyline16_k2);
+	
+        var polyline17_k1 = new GPolyline([ latlng17,  latlng34] , "#ff0000", 1); 	map.addOverlay(polyline17_k1);
+	var polyline17_k2 = new GPolyline([ latlng17,  latlng50] , "#ff0000", 1); 	map.addOverlay(polyline17_k2);
+        
+	var polyline18_k1 = new GPolyline([ latlng18,  latlng9] , "#ff0000", 1); 	map.addOverlay(polyline18_k1);
+	var polyline18_k2 = new GPolyline([ latlng18,  latlng17] , "#ff0000", 1); 	map.addOverlay(polyline18_k2);
+	
+	var polyline19_k1 = new GPolyline([ latlng19,  latlng21] , "#ff0000", 1); 	map.addOverlay(polyline19_k1);
+	var polyline19_k2 = new GPolyline([ latlng19,  latlng33] , "#ff0000", 1); 	map.addOverlay(polyline19_k2);
+	
+	var polyline20_k1 = new GPolyline([ latlng20,  latlng16] , "#ff0000", 1); 	map.addOverlay(polyline20_k1);
+	var polyline20_k2 = new GPolyline([ latlng20,  latlng28] , "#ff0000", 1); 	map.addOverlay(polyline20_k2);
+
+	var polyline21_k1 = new GPolyline([ latlng21,  latlng13] , "#ff0000", 1); 	map.addOverlay(polyline21_k1);
+	var polyline21_k2 = new GPolyline([ latlng21,  latlng33] , "#ff0000", 1); 	map.addOverlay(polyline21_k2);
+	
+        var polyline22_k1 = new GPolyline([ latlng22,  latlng1] , "#ff0000", 1); 	map.addOverlay(polyline22_k1);
+	var polyline22_k2 = new GPolyline([ latlng22,  latlng35] , "#ff0000", 1); 	map.addOverlay(polyline22_k2);
+	
+        var polyline23_k1 = new GPolyline([ latlng23,  latlng24] , "#ff0000", 1); 	map.addOverlay(polyline23_k1);
+	var polyline23_k2 = new GPolyline([ latlng23,  latlng25] , "#ff0000", 1); 	map.addOverlay(polyline23_k2);
+        
+	var polyline24_k1 = new GPolyline([ latlng24,  latlng5] , "#ff0000", 1); 	map.addOverlay(polyline24_k1);
+	var polyline24_k2 = new GPolyline([ latlng24,  latlng17] , "#ff0000", 1); 	map.addOverlay(polyline24_k2);
+	
+	var polyline25_k1 = new GPolyline([ latlng25,  latlng26] , "#ff0000", 1); 	map.addOverlay(polyline25_k1);
+	var polyline25_k2 = new GPolyline([ latlng25,  latlng27] , "#ff0000", 1); 	map.addOverlay(polyline25_k2);
+	
+	var polyline26_k1 = new GPolyline([ latlng26,  latlng27] , "#ff0000", 1); 	map.addOverlay(polyline26_k1);
+	var polyline26_k2 = new GPolyline([ latlng26,  latlng28] , "#ff0000", 1); 	map.addOverlay(polyline26_k2);
+
+	var polyline27_k1 = new GPolyline([ latlng27,  latlng10] , "#ff0000", 1); 	map.addOverlay(polyline27_k1);
+	var polyline27_k2 = new GPolyline([ latlng27,  latlng22] , "#ff0000", 1); 	map.addOverlay(polyline27_k2);
+	
+	var polyline28_k1 = new GPolyline([ latlng28,  latlng22] , "#ff0000", 1); 	map.addOverlay(polyline28_k1);
+	var polyline28_k2 = new GPolyline([ latlng28,  latlng23] , "#ff0000", 1); 	map.addOverlay(polyline28_k2);
+
+	var polyline29_k1 = new GPolyline([ latlng29,  latlng15] , "#ff0000", 1); 	map.addOverlay(polyline29_k1);
+	var polyline29_k2 = new GPolyline([ latlng29,  latlng33] , "#ff0000", 1); 	map.addOverlay(polyline29_k2);
+
+	var polyline30_k1 = new GPolyline([ latlng30,  latlng31] , "#ff0000", 1); 	map.addOverlay(polyline30_k1);
+	var polyline30_k2 = new GPolyline([ latlng30,  latlng32] , "#ff0000", 1); 	map.addOverlay(polyline30_k2);
+
+	var polyline31_k1 = new GPolyline([ latlng31,  latlng20] , "#ff0000", 1); 	map.addOverlay(polyline31_k1);
+	var polyline31_k2 = new GPolyline([ latlng31,  latlng37] , "#ff0000", 1); 	map.addOverlay(polyline31_k2);
+
+	var polyline32_k1 = new GPolyline([ latlng32,  latlng33] , "#ff0000", 1); 	map.addOverlay(polyline32_k1);
+	var polyline32_k2 = new GPolyline([ latlng32,  latlng34] , "#ff0000", 1); 	map.addOverlay(polyline32_k2);
+
+	var polyline33_k1 = new GPolyline([ latlng33,  latlng10] , "#ff0000", 1); 	map.addOverlay(polyline33_k1);
+	var polyline33_k2 = new GPolyline([ latlng33,  latlng28] , "#ff0000", 1); 	map.addOverlay(polyline33_k2);
+
+	var polyline34_k1 = new GPolyline([ latlng34,  latlng14] , "#ff0000", 1); 	map.addOverlay(polyline34_k1);
+	var polyline34_k2 = new GPolyline([ latlng34,  latlng35] , "#ff0000", 1); 	map.addOverlay(polyline34_k2);
+	
+	var polyline35_k1 = new GPolyline([ latlng35,  latlng4] , "#ff0000", 1); 	map.addOverlay(polyline35_k1);
+	var polyline35_k2 = new GPolyline([ latlng35,  latlng12] , "#ff0000", 1); 	map.addOverlay(polyline35_k2);
+
+	var polyline36_k1 = new GPolyline([ latlng36,  latlng31] , "#ff0000", 1); 	map.addOverlay(polyline36_k1);
+	var polyline36_k2 = new GPolyline([ latlng36,  latlng41] , "#ff0000", 1); 	map.addOverlay(polyline36_k2);
+	
+	var polyline37_k1 = new GPolyline([ latlng37,  latlng38] , "#ff0000", 1); 	map.addOverlay(polyline37_k1);
+	var polyline37_k2 = new GPolyline([ latlng37,  latlng39] , "#ff0000", 1); 	map.addOverlay(polyline37_k2);
+
+	var polyline38_k1 = new GPolyline([ latlng38,  latlng39] , "#ff0000", 1); 	map.addOverlay(polyline38_k1);
+	var polyline38_k2 = new GPolyline([ latlng38,  latlng40] , "#ff0000", 1); 	map.addOverlay(polyline38_k2);
+
+	var polyline39_k1 = new GPolyline([ latlng39,  latlng2] , "#ff0000", 1); 	map.addOverlay(polyline39_k1);
+	var polyline39_k2 = new GPolyline([ latlng39,  latlng30] , "#ff0000", 1); 	map.addOverlay(polyline39_k2);
+
+	var polyline40_k1 = new GPolyline([ latlng40,  latlng9] , "#ff0000", 1); 	map.addOverlay(polyline40_k1);
+	var polyline40_k2 = new GPolyline([ latlng40,  latlng20] , "#ff0000", 1); 	map.addOverlay(polyline40_k2);
+
+	var polyline41_k1 = new GPolyline([ latlng41,  latlng42] , "#ff0000", 1); 	map.addOverlay(polyline41_k1);
+	var polyline41_k2 = new GPolyline([ latlng41,  latlng43] , "#ff0000", 1); 	map.addOverlay(polyline41_k2);
+
+	var polyline42_k1 = new GPolyline([ latlng42,  latlng6] , "#ff0000", 1); 	map.addOverlay(polyline42_k1);
+	var polyline42_k2 = new GPolyline([ latlng42,  latlng18] , "#ff0000", 1); 	map.addOverlay(polyline42_k2);
+
+	var polyline43_k1 = new GPolyline([ latlng43,  latlng44] , "#ff0000", 1); 	map.addOverlay(polyline43_k1);
+	var polyline43_k2 = new GPolyline([ latlng43,  latlng45] , "#ff0000", 1); 	map.addOverlay(polyline43_k2);
+
+	var polyline44_k1 = new GPolyline([ latlng44,  latlng19] , "#ff0000", 1); 	map.addOverlay(polyline44_k1);
+	var polyline44_k2 = new GPolyline([ latlng44,  latlng27] , "#ff0000", 1); 	map.addOverlay(polyline44_k2);
+
+	var polyline45_k1 = new GPolyline([ latlng45,  latlng46] , "#ff0000", 1); 	map.addOverlay(polyline45_k1);
+	var polyline45_k2 = new GPolyline([ latlng45,  latlng47] , "#ff0000", 1); 	map.addOverlay(polyline45_k2);
+
+	var polyline46_k1 = new GPolyline([ latlng46,  latlng47] , "#ff0000", 1); 	map.addOverlay(polyline46_k1);
+	var polyline46_k2 = new GPolyline([ latlng46,  latlng48] , "#ff0000", 1); 	map.addOverlay(polyline46_k2);
+
+	var polyline47_k1 = new GPolyline([ latlng47,  latlng17] , "#ff0000", 1); 	map.addOverlay(polyline47_k1);
+	var polyline47_k2 = new GPolyline([ latlng47,  latlng35] , "#ff0000", 1); 	map.addOverlay(polyline47_k2);
+
+	var polyline48_k1 = new GPolyline([ latlng48,  latlng49] , "#ff0000", 1); 	map.addOverlay(polyline48_k1);
+	var polyline48_k2 = new GPolyline([ latlng48,  latlng50] , "#ff0000", 1); 	map.addOverlay(polyline48_k2);
+
+	var polyline49_k1 = new GPolyline([ latlng49,  latlng2] , "#ff0000", 1); 	map.addOverlay(polyline49_k1);
+	var polyline49_k2 = new GPolyline([ latlng49,  latlng16] , "#ff0000", 1); 	map.addOverlay(polyline49_k2);
+
+	var polyline50_k1 = new GPolyline([ latlng50,  latlng1] , "#ff0000", 1); 	map.addOverlay(polyline50_k1);
+	var polyline50_k2 = new GPolyline([ latlng50,  latlng2] , "#ff0000", 1); 	map.addOverlay(polyline50_k2);
+
+
+
+//var coord=["42" ,"-71"]
+
+//points
+  //      var bounds = map.getBounds();
+//        for (var i = 0; i < 1; i++) {
+
+  //      var latlng1 = new GLatLng(42,-71);
+ //	map.addOverlay(new GMarker(latlng1, 1));	
+          
+  //	var latlng2 = new GLatLng(42,-91);
+ //	map.addOverlay(new GMarker(latlng2, 2));
+
+//        }
+
+
+// Map control mechanism
+        map.addControl(new GLargeMapControl());
+        var mapControl = new GMapTypeControl();
+        map.addControl(mapControl);
+
+      }
+    }
+
+
+    
+    //function toggleTraffic() {
+    //  if (toggleState == 1) {
+    //    map.removeOverlay(trafficInfo);
+    //    toggleState = 0;
+    //  } else {
+    //    map.addOverlay(trafficInfo);
+    //    toggleState = 1;
+    //  }
+    //}
+    </script>
+  </head>
+
+  <body onload="initialize()">
+    <div id="map_canvas" style="width: 960px; height: 700px; float:left; border: 1px solid black;"></div>
+    <br clear="all"/>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<br><br>
+  </div>
+  <div style="clear: both;"></div>
+</div>
+<div id="prefooter">
+  <!-- <p>Powered by Truck Accident Lawyers &middot; Davis &amp; McCabe</p> -->
+</div>
+<div id="footer">
+<!--  <p class="right"><a href="http://www.free-css.com/">Sitemap</a><a href="http://www.free-css.com/">Contact</a></p> -->
+  <!-- <p>© Copyright 2008, <a href="http://www.free-css.com/">Website Traffic</a>, Design: <a href="http://www.solucija.com">Luka Cvrk</a></p> -->
+</div>
+</body>
+</html>

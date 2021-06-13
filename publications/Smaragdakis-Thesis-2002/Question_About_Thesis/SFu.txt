@@ -1,0 +1,81 @@
+Hi Rajashree,
+
+thank you for your interest.
+
+Unfortunately I do not have my simulations
+available as it was a combined work with 
+other people and my contribution was on
+applying statistical techniques in UMTS.
+Unfortunately I am not still active in this
+project (3 years now). I can try to find the 
+traces but I can promise anything :(
+
+My solution was based on the following papers
+(which I highly recomend to model/understand 
+losses in UMTS):
+
+M. Zorzi,M. Rossi,G. Mazzini, Throughput and energy performance of TCP
+on a Wideband CDMA air Interface , WCDMA for UMTS : radio access for
+third generation mobile communications , John Wiley , 2000.
+
+M. Zorzi ,G. Mazzini, V. Tralli, A. Giovanardi, Some results on the
+error statistics over a WCDMA air interface , in Proc. MMT2000,
+Florida(USA),Dec. 2000.
+
+
+Moreover, when I run the experiments there was NO UMTS simulations
+so my approach was to create losses following the pattents described
+in the above papers. 
+
+Today there are a UMTS modules available and I recond to use one 
+of them eg:
+UMTS simulators
+--------------
+- EURANE UMTS simulator by European Commission 5th framework project
+  SEACORN 
+- UMTS simulator by Alfredo Todini and Francesco Vacirca 
+- UTRAN/UMTS simulations by Pablo Martin and Paula Ballester at University
+  of Strathclyde, United Kingdom
+- Linkopings Universitet UMTS implementation 
+(for more info go this page:
+http://cchen1.et.ntust.edu.tw/students/master2005.htm
+and search for UMTS simulator) 
+
+you can also have a look at this commercial tool:
+http://www.edx.com/products/3g.html   
+
+If you have any question please do not hesitate to send
+me an e-mail.
+
+Hoping to help you,
+
+-- George
+
+
+
+
+
+
+
+On Mon, 29 Nov 2004 rpaul2@cs.sfu.ca wrote:
+
+> 
+> 
+> Hello Smaragdakis,
+> 
+> I am doing a project at Simon Fraser University,Canada, on TCP over UMTS. I
+> am using NS 2.6 on Fedora core-2 Linux . 
+> 
+> I am reading your thesis"TCP performance over UNTS" and trying to understand
+> 
+> your simulations,so it would be very helpful if you can send me your
+> project files.
+> 
+> Also, it would be helpful if you can tell how you have simulated UMTS. Did
+> you use any UMTS extension or wireless link models? 
+> 
+> 
+> Thanks in advance,
+> 
+> Rajashree 
+> 

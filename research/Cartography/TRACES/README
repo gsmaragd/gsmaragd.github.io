@@ -1,0 +1,71 @@
+These traces have been used to author our paper on Web Content
+Cartography. We publish those 60 (out of 133) where the contributors
+opted in to make them publicly available, to allow the community to
+conduct further investigation of the behaviour of DNS.
+
+As the trace file format (see below) is a bit complex we provide an
+example script called "trace_reader.py" to help extract relevant
+portions of the trace. This script as kept as simple as possible. It
+converts trace files into stripped-down single-line per message log
+files, which however might not be very useful. Therefore, adjusting
+the script to your needs is highly recommended.
+
+File format
+===========
+
+The trace files are bz2 compressed text files. They contain
+concatenated measurement messages. Each message consists of a single
+header line and multiple line message body.
+
+In header lines, all fields a separated by exactly a single space
+character. Header lines are structured as follows:
+
+        type: bodylen timestamp parameters
+
+
+    type is one of: Host, Resolver, Query, or Failed 
+
+    bodylen denotes the length of the message body in lines. Note that a
+    body length of 0 is valid and corresponds to an empty-string
+    body. Currently, only Query messages have a non-empty body.
+
+    timestamp is an epoch-timestamp, i.e., the number of seconds passed
+    since 1970-1-1 00:00 UTC.
+
+    parameters depend on the message type, see below.
+
+
+Host: The host message has a single parameter, and reports the IP
+address of the client as seen from the Internet. The value is
+determined by querying a web server.
+
+Resolver: The resolver message has 3 parameters: (1) a shortname for
+the resolver, (2) the resolver's IP address, and (3) the answer
+returned by that resolver when queried for its IP address "reverse
+lookup".
+
+Query: The query message has 5 parameters: (1) the shortname of the
+resolver as introduced by a earlier Resolver message, (2) the domain
+name that was queried, (3) the number of lookup tries it needed for a
+resolval, (4) the success, which should always have the value "True",
+and (5) the delay in seconds for performing the successful/last
+lookup. The query message contains a message body with the entire
+response packet in an ASCII format. dnspython can read this format,
+and can be used to extract relevant parts of message or to convert it
+back to wire format.
+
+Failed: The failed message has 3 parameters: (1) the shortname of the
+resolver, (2) the domain name that was queried, and (3) the reason for
+the failure. Reasons for failure are (1) "none_for_resolver", i.e.,
+the resolver received a DNS error message such as SERVFAIL, and (2)
+"exception", i.e., the DNS response was malformed.
+
+
+
+
+In case of questions don't hesitate to write an email to
+
+     bernhard+cartography@net.t-labs.tu-berlin.de
+
+
+

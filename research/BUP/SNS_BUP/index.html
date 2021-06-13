@@ -1,0 +1,281 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <meta http-equiv="content-type"
+ content="text/html; charset=ISO-8859-1">
+  <title>Selfish Neighbor Selection</title>
+</head>
+<body>
+<h2 style="text-align: center;"><img src="SNS-logo.PNG" alt="" style="width: 245px; height: 164px;"></h2>  <!--style="width: 245px; height: 164px;"></h2> -->
+
+ <!-- style="width: 249px; height: 180px;"-->
+<h1 style="text-align: center;"><em>Selfish Neighbor Selection</em></h1>
+
+<br>
+&nbsp; <br>
+<br>
+<big style="font-weight: bold;"><big><small>Overview</small></big></big><small> 
+</small>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>
+<div style="text-align: justify;">
+In a typical overlay network for routing or content
+sharing, each node must select a fixed number of immediate
+overlay neighbors for routing traffic or content queries. A selfish
+node entering such a network would select neighbors so as to
+minimize the weighted sum of expected access costs to all its
+destinations. Previous work on Selfish Neighbor Selection (SNS) has
+built intuition with simple models where edges are undirected,
+access costs are modeled by hop-counts, and nodes have potentially
+unbounded degrees. However, in practice, important
+constraints not captured by these models lead to richer games
+with substantively and fundamentally different outcomes. 
+<br>
+
+
+  <br>
+</div>
+<div align="justify"><big style="font-weight: bold;"><big><big><small><br>
+  </big></small></big></big><big style="font-weight: bold;"><big><small>Main Results 
+  </small></big></big><big><big><small><small><br>
+  
+  </small></small></big></big> 
+
+</div>
+<ul>
+  <li><big><big><small><small>
+  <b>A realistic Model of Overlay Networks</b>:<br>
+Our work models neighbor selection as a game involving directed
+links, constraints on the number of allowed neighbors, and
+costs reflecting both network latency and node preference. We
+express a node's ``best response" wiring strategy as a k-median
+problem on asymmetric distance, and use this formulation to
+obtain pure Nash equilibria.  
+  </small></small></big></big></li><br>
+
+  <li><big><big><small><small>
+<b>Characterization of Stable Wirings</b>:  <br>
+We experimentally examine the
+properties of such stable wirings on synthetic topologies, as well
+as on real topologies and maps constructed from PlanetLab and
+the AS-level Internet measurements.
+</small></small></big></big></li><br>
+
+
+<li><big><big><small><small>
+<b>Performance evaluation of the Best Response wiring strategy</b>:  <br>
+Our results indicate that
+selfish nodes can reap substantial performance benefits when
+connecting to overlay networks composed of non-selfish nodes.
+On the other hand, in overlays that are dominated by selfish
+nodes, the resulting stable wirings are optimized to such great
+extent that even non-selfish newcomers can extract near-optimal
+performance through naive wiring strategies.
+
+</small></small></big></big></li><br>
+
+
+  <li><big><big><small><small>
+<b>Design and Implementation of a Selfish Neighbor Selection System</b>:  <br>
+We designed and implemented a prototype SNS, the Egoist overlay routing system, over PlanetLab.
+Our experimental results demonstrate that our neighbor selection primitives significantly
+outperform existing heuristics on a variety of performance metrics. Our system is highly 
+effective under node churn and cheating, while its performance is competitive with the optimal but not scalable 
+full mesh overlay system. <!--We also study how such a system could be adapted to cater to applications
+such as P2P file sharing in unconstructed overlays.-->
+</small></small></big></big></li><br>
+
+  <li><big><big><small><small>
+<b>SNS and File Sharing</b>:  <br>
+We demonstrate how SNS yields significant improvement of search performance in unstructured peer-to-peer 
+file sharing overlays, based on the use of primitives such as scoped-flooding rather than routing.
+</small></small></big></big></li><br>
+
+  <li><big><big><small><small>
+<b>SNS and Swarming</b>:  <br>
+We also demonstrate the potential benefits SNS-inspired formations may offer to swarming applications,
+especially to the family of n-way broadcast applications, where each overlay node wants to push 
+its own distinct large data file to all other destinations as well as download their respective data files.
+</small></small></big></big></li><br>
+
+
+<h1 style="text-align: center;"><em><a href="http://cs-people.bu.edu/gsmaragd/EGOIST">
+CLICK HERE to monitor the current wiring in Egoist
+<img src="http://cs-people.bu.edu/gsmaragd/EGOIST/Egoist_snapshot.png"  alt="" style="">
+</em></h1></a>
+
+<!-- <h2 style="text-Align: center;"><img src="SNSmap.png" alt="" style=""></h2>  -->
+
+<!-- <h1 style="text-align: center;"><img src="max_cost_reduction.png" alt="" style="border: 0px solid ; width: 1000px; height: 700px;"></h1> -->
+</ul>
+<big style="font-weight: bold;"><big><small></small></big></big>
+<!-- <div style="text-align: center;"><img src="sep_performance.png" alt=""
+ style=""> --> <br>
+</div>
+
+<br>
+<big style="font-weight: bold;"><big><small>Documentation:</small></big></big><big><big><small><small>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+
+
+<ul>
+  <li>  <a href="http://cs-people.bu.edu/gsmaragd/publications/Infocom2008" style="text-decoration: none;"> "Swarming on Optimized Graphs for n-way Broadcast"</a>
+<br>Georgios Smaragdakis, Nikolaos Laoutaris, Pietro Michiardi, Azer Bestavros, John W. Byers and Mema Roussopoulos.
+<br>
+IEEE INFOCOM 2008. 
+  </li>
+</ul>
+
+
+
+<ul>
+  <li>   <a href="http://cs-people.bu.edu/gsmaragd/publications/Infocom2007-sns" style="text-decoration: none;">
+ "Implications of Selfish Neighbor Selection in Overlay Networks"</a>
+<br>Nikolaos Laoutaris, Georgios Smaragdakis, Azer Bestavros and John W. Byers.<br>
+IEEE INFOCOM 2007. 
+  </li>
+</ul>
+
+
+<br>
+
+<big style="font-weight: bold;"><big><small>References:</small></big></big><big><big><small><small>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+<br>
+<ul>
+<li>   <a href="http://cs-people.bu.edu/gsmaragd/publications/TRs/BUCS-TR-2007-013" style="text-decoration: none;">
+ "EGOIST: Overlay Routing using Selfish Neighbor Selection"</a>
+ <br>Georgios Smaragdakis, Nikolaos Laoutaris, Azer Bestavros, John W. Byers
+and Mema Roussopoulos.<br>
+BUCS-TR-2007-013. 
+  </li>
+<br>
+  <li> 
+  <a href="http://research.tid.es/nikos/images/podc08.pdf" style="text-decoration: none;">"Bounded Budget Connection (BBC) games or How to make friends and influence people, on a budget"</a>
+<br>Nikolaos Laoutaris, Laura Poplawski, Rajmohan Rajaraman, Ravi Sundaram and Shang-Hua Teng.<br>
+ACM PODC 2008.
+  </li>
+<br>
+ <li>   <a href="http://cs-people.bu.edu/gsmaragd/publications/TRs/BUCS-TR-2007-006" style="text-decoration: none;">
+ "Improving the Performance of Overlay Routing and P2P File Sharing using Selfish Neighbor Selection"</a><br>
+<b>[superseded by BUCS-TR-2007-013; "EGOIST : Overlay Routing using Selfish Neighbor Selection"]</b>
+<br>Georgios Smaragdakis, Nikolaos Laoutaris, Azer Bestavros, John W. Byers
+and Mema Roussopoulos.<br>
+BUCS-TR-2007-006. 
+  </li>
+<br>
+  <li>   <a href="http://cs-people.bu.edu/gsmaragd/publications/TRs/BUCS-TR-2007-009" style="text-decoration: none;">
+ "Swarming on optimized graphs for n-way broadcast"</a>
+<br>Georgios Smaragdakis, Nikolaos Laoutaris, Pietro Michiardi, Azer Bestavros, John W. Byers
+and Mema Roussopoulos.<br>
+BUCS-TR-2007-009. 
+  </li>
+<br>
+</ul>
+
+
+<!-- <ul>
+  <li> <a href="http://www.cs.bu.edu/techreports/pdf/2006-019-selfish-neighbor-selection.pdf" style="text-decoration: none;">
+ "Implications of Selfish Neighbor Selection in Overlay Networks"</a>
+<br>Nikolaos Laoutaris, Georgios Smaragdakis, Azer Bestavros and John W. Byers.<br>
+BUCS-TR-2006-019.
+  </li>
+</ul> -->
+
+
+<br>
+<big style="font-weight: bold;"><big><small>Posters:</small></big></big><big><big><small><small>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+<ul><li>
+The Selfish Neighbor Selection Problem In Overlay Networks : 
+<a href="SNS_POSTER1_final.pdf" style="text-decoration:none;"> Part I, </a> 
+<a href="SNS_POSTER2_final.pdf" style="text-decoration:none;"> Part II </a> 
+<br>
+(presented in 
+<a href="http://www.cs.bu.edu/IAP/ResearchDay2007/" style="text-decoration: none;">BUCS IAP 2007</a> 
+and 
+<a href="http://www.bu.edu/research/spotlight/scienceday/2007.html" style="text-decoration: none&quot;">BU S&E day 2007</a>)
+</li></ul>
+
+<ul><li>
+<a href="SNS_POSTER_HotWeb2006.pdf" style="text-decoration:none;"> The Selfish Neighbor Selection Problem In Overlay Networks </a> 
+<br>(presented in 
+<a href="Http://www.cs.bu.edu/pub/hotweb06/" style="text-decoration: none;">IEEE HotWeb 2006</a> )
+</li></ul>
+<br><br><br>
+
+<big style="font-weight: bold;"><big><small>Code</small></big></big><big><big><small><small><br>
+Revised code will be released soon. 
+<br>
+<br>
+<br>
+<big style="font-weight: bold;"><big><small>Group Members:</small></big></big><big><big><small><small><br>
+
+
+<a href="http://cs-people.bu.edu/gsmaragd" style="text-decoration: none&quot;">Georgios Smaragdakis  </a>(PhD Candidate, Boston University)
+<br>
+<a href="http://research.tid.es/nikos/" style="text-decoration: none&quot;">Nikolaos Laoutaris  </a>(Researcher, Telefonica Research, Barcelona)
+<br>
+<a href="http://www.cs.bu.edu/fac/best" style="text-decoration: none&quot;">Azer Bestavros  </a>(Professor, Boston University)
+<br>
+<a href="http://www.cs.bu.edu/fac/byers" style="text-decoration: none&quot;">John W. Byers  </a>(Professor, Boston University)
+<br>
+<a href="http://www.eecs.harvard.edu/~mema/" style="text-decoration: none&quot;">Mema Roussopoulos   </a>(Professor, Harvard University)
+<br>
+<a href="http://www.eurecom.fr/~michiard/" style="text-decoration: none&quot;">Pietro Michiardi   </a>(Professor, Institut Eurecom)
+<br>
+
+
+
+<big style="font-weight: bold;"><big><br>
+
+</big></big><big style="font-weight: bold;"><big><small> Contact</small></big></big><br>
+<big style="font-weight: bold;"><big> </big></big><big><small>For any further 
+information or bug report please send e-mail to <a
+ href="mailto:gsmaragd@cs.bu.edu?subject=SNS%20Question" style="text-decoration: none;" >Georgios Smaragdakis</a></small></big><big> 
+</big><big
+ style="font-weight: bold;"><big><br>
+<br><br>
+<small>Sponsors: </small><br>
+
+<a href="http://www.nsf.gov"><img src="nsflogo.png" alt="" style="border: 0px solid ; width: 60px; height: 60px;"></a> 
+<!-- <a href="http://www.nsf.gov"><img src="nsf.gif" alt="" style="border: 0px solid ; width: 60px; height: 60px;"></a>  -->
+<a href="http://www.cs.bu.edu/groups/wing"><img src="WINGlogo.gif" alt="" style="border: 0px solid ; width: 75px; height: 72px;"></a><br>
+</big></big><br>
+<br>
+<br>
+<br>
+last update: December 2, 2007<br>
+
+                                                                                                                       
+
+
+<br><br><br>
+<!-- Creative Commons License -->
+<a rel="license" href="http://creativecommons.org/licenses/by-nc/2.0/"><img alt="Creative Commons License" border="0" src="http://creativecommons.org/images/public/somerights20.gif" /></a><br />
+All code on this page is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc/2.0/">Creative Commons License</a>.
+<!-- /Creative Commons License -->
+
+
+<!-- Start of StatCounter Code -->
+<script type="text/javascript" language="javascript">
+var sc_project=2126673; 
+var sc_invisible=1; 
+var sc_partition=19; 
+var sc_security="3bc9f8cf"; 
+</script>
+
+<script type="text/javascript" language="javascript" src="http://www.statcounter.com/counter/frames.js"></script><noscript><a href="http://www.statcounter.com/" target="_blank"><img  src="http://c20.statcounter.com/counter.php?sc_project=2126673&amp;java=0&amp;security=3bc9f8cf&amp;invisible=1" alt="hit counter" border="0"></a> </noscript>
+<!-- End of StatCounter Code -->
+
+
+<hr>
+Sponsors: The SNS project is supported partially by a
+number of National Science Foundation grants, including CISE/CSR Award
+#0720604, ENG/EFRI Award #0735974, CISE/CNS Award #0524477, CNS/CNS
+Award #0520166, CNS/ITR Award #0205294, and CISE/EIA RI Award #0202067.
+<br>
+<small> Disclaimer: Any opinions, findings, conclusions, or recommendations
+expressed in materials available from this site are those of their
+author(s) and do not necessarily reflect the views of Boston University
+or of the National Science Foundation.</small>
+
+
+
+</body>
+</html>

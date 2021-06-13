@@ -1,0 +1,167 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+<meta name="Description" content="Georgios Smaragdakis, Publications, Citations, Acknowledgements, Computer Science Department, Boston University, Web and Internetworking Group">
+ <meta name="Keywords" content="Georgios Smaragdakis, Publications, Citations, Acknowledgements, Computer Science Department, Boston University, Web and Internetworking Group">
+  <title>Georgios Smaragdakis - Publications</title>
+</head>
+<body link="#070fff" vlink="#686f84" bgcolor="#ffffff">
+<font size="+1" style="font-family: times new roman;"><span
+ style="font-weight: bold;">Refereed Journals<br>
+</span></font>
+
+<ul>
+  <li>   <a href="" style="text-decoration: none;">
+  "Spatio-Temporal Network Anomaly Detection by Assessing Deviations of Empirical Measures"</a>
+<br>Ioannis Ch. Paschalidis and Georgios Smaragdakis.<br>
+IEEE/ACM Transactions on Networking [to appear]. 
+  </li>
+</ul>
+
+<ul>
+  <li>   <a href="http://cs-people.bu.edu/gsmaragd/publications/TPDS-DSC" style="text-decoration: none;">
+  "Distributed Selfish Caching"</a>
+<br>Nikolaos Laoutaris, Georgios Smaragdakis, Azer Bestavros, Ibrahim Matta and Ioannis Stavrakakis.<br>
+IEEE Transactions on Parallel and Distributed Systems, Volume 18, Number 10, October 2007. 
+  </li>
+</ul>
+<ul> 
+  <li>  <a href="http://cs-people.bu.edu/gsmaragd/publications/ComNet-DSC" style="text-decoration: none;">"Mistreatment-Resilient Distributed Caching"</a>
+<br>Georgios Smaragdakis, Nikolaos Laoutaris, Azer Bestavros, Ibrahim Matta and Ioannis Stavrakakis.<br>
+Computer Networks, Volume 51, Number 11, August 2007.
+  </li>
+</ul>
+<br>
+
+
+
+
+<font size="+1" style="font-family: times new roman;"><span
+ style="font-weight: bold;">Refereed Conferences<br>
+</span></font>
+
+<ul>
+  <li>  <a href="Infocom2008" style="text-decoration: none;">
+ "Swarming on Optimized Graphs for n-way Broadcast"</a>
+<br>Georgios Smaragdakis, Nikolaos Laoutaris, Pietro Michiardi, Azer Bestavros, John W. Byers and Mema Roussopoulos.
+<br>
+IEEE INFOCOM 2008. 
+  </li>
+</ul>
+
+
+
+
+<ul>
+  <li>  <a href="Infocom2007-sns" style="text-decoration: none;">
+ "Implications of Selfish Neighbor Selection in Overlay Networks"</a>
+<br>Nikolaos Laoutaris, Georgios Smaragdakis, Azer Bestavros
+and John W. Byers.<br>
+IEEE INFOCOM 2007. 
+  </li>
+</ul>
+
+<ul>
+  <li>  <a href="Infocom2007-dfl" style="text-decoration: none;">
+ "Distributed Placement of Service Facilities in Large-Scale Networks"</a>
+<br>Nikolaos Laoutaris, Georgios Smaragdakis, Konstantinos Oikonomou,
+Ioannis Stavrakakis and Azer Bestavros.<br>
+IEEE INFOCOM 2007. 
+</li>
+</ul>
+
+<ul>
+  <li>  <a href="http://cs-people.bu.edu/gsmaragd/publications/Infocom2006"
+ style="text-decoration: none;">"Mistreatment in Distributed Caching Groups: Causes and Implications"</a>
+<br>Nikolaos Laoutaris, Georgios Smaragdakis, Azer Bestavros and Ioannis Stavrakakis.<br>
+IEEE INFOCOM 2006.
+  </li>
+</ul>
+
+
+
+
+<ul>
+  <li>  <a href="http://cs-people.bu.edu/gsmaragd/publications/Networking2006"
+ style="text-decoration: none;">"A Feedback Control Approach to Mitigating Mistreatment in Distributed Caching Groups"</a>
+<br>Georgios Smaragdakis, Nikolaos Laoutaris, Ibrahim Matta, Azer Bestavros and Ioannis Stavrakakis.<br>
+IFIP Networking 2006.
+  </li>
+</ul>
+
+
+<ul>
+  <li>  <a href="http://cs-people.bu.edu/gsmaragd/publications/CDC2006"
+ style="text-decoration: none;">
+ "A Large Deviations Approach to Statistical Traffic Anomaly Detection"</a>
+<br>Ioannis Ch. Paschalidis and Georgios Smaragdakis.<br>
+IEEE CDC 2006. 
+  </li>
+</ul>
+
+
+
+<ul>
+  <li> <a
+ href="http://cs-people.bu.edu/gsmaragd/publications/Globecom2004"
+ style="text-decoration: none;">"The Effect of Router Buffer Size on
+HighSpeed TCP Performance"</a> <br>
+Dhiman Barman, Georgios Smaragdakis and Ibrahim Matta.
+    <br>
+IEEE Globecom 2004 - Global Internet and Next Generation Networks.
+  </li>
+</ul>
+<ul>
+  <li> <a href="http://cs-people.bu.edu/gsmaragd/publications/SEP"
+ style="text-decoration: none;">"SEP: A Stable Election Protocol for
+clustered heterogeneous wireless sensor networks"</a> <br>
+Georgios Smaragdakis, Ibrahim Matta and Azer Bestavros.
+    <br>
+SANPA 2004.
+  </li>
+</ul>
+
+<br>
+<font size="+1" style="font-family: times new roman;"><span
+ style="font-weight: bold;">Theses<br>
+</span></font>
+<ul>
+  <li> <a
+ href="http://cs-people.bu.edu/gsmaragd/publications/Smaragdakis-Thesis-2002"
+ style="text-decoration: none;">"TCP Performance over UMTS Network"</a>
+    <br>
+Georgios Smaragdakis. <br>
+Diploma Thesis, Technical University of Crete, 2002. </li>
+</ul>
+
+
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-1759964-1";
+urchinTracker();
+</script>
+
+
+<!-- Start of StatCounter Code -->
+<script type="text/javascript" language="javascript">
+var sc_project=2126673; 
+var sc_invisible=1; 
+var sc_partition=19; 
+var sc_security="3bc9f8cf"; 
+</script>
+
+<script type="text/javascript" language="javascript" src="http://www.statcounter.com/counter/frames.js"></script><noscript><a href="http://www.statcounter.com/" target="_blank"><img  src="http://c20.statcounter.com/counter.php?sc_project=2126673&amp;java=0&amp;security=3bc9f8cf&amp;invisible=1" alt="hit counter" border="0"></a> </noscript>
+<!-- End of StatCounter Code -->
+<br><br>
+<hr>
+This work was supported in part by a number of NSF awards, including
+CISE/CSR Award #0720604, ENG/EFRI Award #0735974, CISE/CNS Award
+#0524477, CNS/CNS Award #0520166, CNS/ITR Award #0205294, and CISE/EIA
+RI Award #0202067.
+
+
+
+</body>
+</html>

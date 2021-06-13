@@ -1,0 +1,97 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <meta http-equiv="content-type"
+ content="text/html; charset=ISO-8859-1">
+  <title>Selfish Overlay Network Creation and Maintenance</title>
+</head>
+<body link="#070fff" vlink="#686f84" bgcolor="#ffffff">
+<span style="font-weight: bold;"> "Selfish Overlay Network Creation and Maintenance"</span>
+<br>
+Georgios Smaragdakis, Nikolaos Laoutaris, Vassilis Lekakis, Azer Bestavros, John W. Byers, and Mema Roussopoulos.<br>
+IEEE/ACM Transactions on Networking, 19(6), 2011.
+<span style="font-weight: bold;"><br>
+<br>
+<br>
+</span><span style="font-weight: bold;">Abstract:
+</span>
+<table cellpadding="2" cellspacing="2" border="0"
+ style="text-align: left; width: 66%;">
+  <tbody>
+    <tr>
+      <td style="vertical-align: top; text-align: justify;">
+ A foundational issue underlying many overlay network applications ranging
+	from routing to peer-to-peer file sharing is that of the network formation, i.e.,
+	folding new arrivals into an existing overlay, and re-wiring to cope with
+	changing network conditions. Previous work has considered the problem from
+	two perspectives: devising practical heuristics for the case of cooperative peers, and performing
+	game theoretic analysis for the case of selfish peers. In our work, we unify the aforementioned thrusts by
+	defining and studying the Selfish Neighbor Selection (SNS) game and its application to overlay routing.
+	At the heart of SNS stands the restriction that peers are allowed up to a certain number of neighbors.
+	This makes SNS substantially different from existing network formation games that impose no bounds on peer degrees.
+	Having bounded degrees has important practical consequences as it permits the creation of overlay structures that
+	require O(n) instead of O(n^2) link monitoring overhead.
+<br><br>
+We show that a node's ``best response" wiring strategy amounts to solving a k-median
+	problem on asymmetric distance. Best response wirings have substantial practical utility as they permit selfish
+	nodes to reap substantial performance benefits when connecting to overlays of non-selfish nodes.
+	A more intricate consequence is that even non-selfish nodes can benefit from the existence of some selfish nodes since
+	the latter, via their local optimizations, create a highly optimized backbone, upon which even simple heuristic wirings 
+        yield good performance. To capitalize on the above properties we
+	design, build and deploy, EGOIST, an SNS-inspired prototype overlay routing
+	system for PlanetLab. We demonstrate that EGOIST outperforms existing heuristic overlays on a variety of
+	performance metrics, including delay, available bandwidth, and node
+	utilization, while it remains competitive with
+	an optimal, but unscalable full-mesh overlay.
+
+</span>
+<table cellpadding="2" cellspacing="2" border="0"
+ style="text-align: left; width: 66%;">
+  <tbody>
+    <tr>
+      <td style="vertical-align: top; text-align: justify;">
+
+	 </td>
+    </tr>
+  </tbody>
+</table>
+<br>
+<br>
+Paper&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : <a
+ href="ToN-SNS.ps.gz" style="text-decoration: none;">[ps.gz],</a>
+<a href="ToN-SNS.ps" style="text-decoration: none;">[ps],</a>
+<a href="ToN-SNS.pdf" style="text-decoration: none;">[pdf]</a> <br>
+bibtex&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : <a
+ href="ToN-SNS_bib.html" style="text-decoration: none;">[bibtex.html]</a>
+<br>
+<br>
+Project page:<a href="http://csr.bu.edu/sns" style="text-decoration: none"> [html]</a> 
+<br>
+<br>
+<br>
+<!--Project page:&nbsp;<a
+ href="http://csr.bu.edu/sep"
+ style="text-decoration: none;">[html]</a>
+-->
+
+<!-- Start of StatCounter Code -->
+<script type="text/javascript" language="javascript">
+var sc_project=2126673; 
+var sc_invisible=1; 
+var sc_partition=19; 
+var sc_security="3bc9f8cf"; 
+</script>
+
+<script type="text/javascript" language="javascript" src="http://www.statcounter.com/counter/frames.js"></script><noscript><a href="http://www.statcounter.com/" target="_blank"><img  src="http://c20.statcounter.com/counter.php?sc_project=2126673&amp;java=0&amp;security=3bc9f8cf&amp;invisible=1" alt="hit counter" border="0"></a> </noscript>
+<!-- End of StatCounter Code -->
+
+
+
+
+
+
+
+
+
+</body>
+</html>

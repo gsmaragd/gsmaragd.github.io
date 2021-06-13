@@ -1,0 +1,89 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <meta http-equiv="content-type"
+ content="text/html; charset=ISO-8859-1">
+  <title>Georgios Smaragdakis</title>
+</head>
+<body link="#070fff" vlink="#686f84" bgcolor="#ffffff">
+<span style="font-weight: bold;"> ``Content-aware Traffic Engineering"</span>
+<br>
+Benjamin Frank, Ingmar Poese, Georgios Smaragdakis, Steve Uhlig, and Anja Feldmann. 
+<br>
+ACM SIGMETRICS 2012<span style="font-weight: bold;"><br>
+<br>
+<br>
+</span><span style="font-weight: bold;">Abstract:
+</span>
+<table cellpadding="2" cellspacing="2" border="0"
+ style="text-align: left; width: 66%;">
+  <tbody>
+    <tr>
+      <td style="vertical-align: top; text-align: justify;">
+Recent studies show that a large fraction of Internet traffic is originated by Content Providers
+(CPs) such as content distribution networks and hyper-giants.
+To cope with the increasing demand for content, CPs deploy massively distributed server infrastructures.
+Thus, content is available in many network locations and can be downloaded by traversing different
+paths in a network. Despite the prominent server location and path diversity, the decisions on how
+to map users to servers by CPs and how to perform traffic engineering by ISPs, are independent. 
+This leads to a lose-lose situation as CPs are not aware about the network bottlenecks nor the location 
+of end-users, and the ISPs struggle to cope with rapid traffic shifts caused by the 
+dynamic CP server selection process.
+<br><br>
+In this paper we propose and evaluate Content-aware Traffic Engineering (CaTE), which dynamically adapts the traffic 
+demand for content hosted on CPs by utilizing ISP network information and end-user location 
+during the server selection process. This leads to a win-win situation because 
+CPs are able to enhance their end-user to server mapping and ISPs gain the ability to partially influence the traffic
+demands in their networks. Indeed, our results using traces from a Tier-1 ISP show that a number of
+network metrics can be improved when utilizing CaTE.
+	 </td>
+    </tr>
+  </tbody>
+</table>
+<br>
+<br>
+
+
+<br><br>
+Paper&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : <!-- <a
+ href="Sigmetrics2009.ps.gz" style="text-decoration: none;">[ps.gz],</a>
+<a href="Sigmetrics2009.ps" style="text-decoration: none;">[ps],</a>
+<a href="Sigmetrics2009.pdf" style="text-decoration: none;">[pdf]</a> <br>
+Presentation : <a href="Sigmetrics2009.ppt" style="text-decoration: none;">[ppt]</a>
+<br>
+bibtex&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : <a
+ href="Sigmetrics2009_bib.html" style="text-decoration: none;">[bibtex.html]</a>
+<br>
+<br>
+Project page:<a href="http://research.tid.es/nikos/index.php?option=com_content&task=view&id=21&Itemid=" style="text-decoration: none"> [html]</a>
+<br>
+<br>
+A video describing the project: <a href="http://www.youtube.com/watch?v=-ZHpdAQ562M" style="text-decoration: none"> [YouTube video]</a>
+<br> -->
+
+<!--Project page:&nbsp;<a
+ href="http://csr.bu.edu/sep"
+ style="text-decoration: none;">[html]</a>
+-->
+
+<!-- Start of StatCounter Code -->
+<script type="text/javascript" language="javascript">
+var sc_project=2126673; 
+var sc_invisible=1; 
+var sc_partition=19; 
+var sc_security="3bc9f8cf"; 
+</script>
+
+<script type="text/javascript" language="javascript" src="http://www.statcounter.com/counter/frames.js"></script><noscript><a href="http://www.statcounter.com/" target="_blank"><img  src="http://c20.statcounter.com/counter.php?sc_project=2126673&amp;java=0&amp;security=3bc9f8cf&amp;invisible=1" alt="hit counter" border="0"></a> </noscript>
+<!-- End of StatCounter Code -->
+
+
+
+
+
+
+
+
+
+</body>
+</html>
