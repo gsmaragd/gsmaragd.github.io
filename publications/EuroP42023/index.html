@@ -1,0 +1,92 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <meta http-equiv="content-type"
+ content="text/html; charset=ISO-8859-1">
+  <title>
+Per Priority Data Rate Measurement in Data Plane
+</title>
+</head>
+  <!--font-awesome -->
+    <link rel="stylesheet"
+href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <!-- -->
+<body link="#070fff" vlink="#686f84" bgcolor="#ffffff">
+<span style="font-weight: bold;"> ``Per Priority Data Rate Measurement in Data Plane''</span>
+<br>
+Habib Mostafaei and Georgios Smaragdakis.
+<br>
+European P4 Workshop (EuroP4) 2023.
+<br>
+<br>
+</span><span style="font-weight: bold;">Abstract:
+</span>
+<table cellpadding="2" cellspacing="2" border="0"
+ style="text-align: left; width: 66%;">
+  <tbody>
+    <tr>
+      <td style="vertical-align: top; text-align: justify;">
+Many applications, such as video streaming, congestion control, and server
+selection, can benefit when the data rate of different priority groups between
+two endpoints is accurately estimated over the end-to-end path. With the
+introduction of programmable networks, e.g., P4, it is now possible to offload
+the measurements to the data plane of intermediate devices. Recently, tools have
+been developed to react to changes in available bandwidth, but a tool to
+accurately estimate end-to-end per-priority data rates needs to be added. This
+motivates us to design and implement a new end-to-end and per-priority data rate
+estimation tool, PrioMeter. PrioMeter can accurately report the data rate per
+priority group of flows in programmable networks using high-precision timestamps
+for arbitrary traffic scales. PrioMeter leverages two primitives: quantization and truncation
+to achieve its goals. We implement PrioMeter in P4 and test it on BMv2 switches, and our preliminary
+results using NS3 simulations show that it can accurately estimate the data rate
+of different priority flows with minimal overhead.
+</td>
+  </tr>
+  </tbody>
+</table>
+<br>
+<br>
+
+
+<br><br>
+Paper&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : 
+<a href="EuroP42023.pdf" style="text-decoration: none;"><!--[pdf]-->
+<i class="fa fa-file-pdf-o fa-lg"></i>
+</a>
+
+<!--
+<br>
+presentation: <a href=".pdf" style="text-decoration: none;">
+<i class="fa fa-file-pdf-o fa-lg"></i>
+</a>
+-->
+
+<br>
+bibtex&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : <a
+ href="EuroP42023-Alias_bib.html" style="text-decoration: none;">[bibtex.html]</a>
+<br><br>
+<!-- Project page:<a href="http://www.smaragdakis.net/research/ResolutioNet" style="text-decoration: none"> [html]</a> -->
+<br> 
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<!-- Start of StatCounter Code -->
+<script type="text/javascript" language="javascript">
+var sc_project=2126673; 
+var sc_invisible=1; 
+var sc_partition=19; 
+var sc_security="3bc9f8cf"; 
+</script>
+
+<script type="text/javascript" language="javascript" src="http://www.statcounter.com/counter/frames.js"></script><noscript><a href="http://www.statcounter.com/" target="_blank"><img  src="http://c20.statcounter.com/counter.php?sc_project=2126673&amp;java=0&amp;security=3bc9f8cf&amp;invisible=1" alt="hit counter" border="0"></a> </noscript>
+<!-- End of StatCounter Code -->
+
+<br>
+</body>
+</html>
