@@ -1,0 +1,104 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <meta http-equiv="content-type"
+ content="text/html; charset=ISO-8859-1">
+  <title>
+LADDER: Multi-Objective Backdoor Attack via Evolutionary Algorithm
+</title>
+</head>
+  <!--font-awesome -->
+    <link rel="stylesheet"
+href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <!-- -->
+<body link="#070fff" vlink="#686f84" bgcolor="#ffffff">
+<span style="font-weight: bold;"> ``LADDER: Multi-Objective Backdoor Attack via Evolutionary Algorithm"</span>
+<br>
+Dazhuang Liu, Yanqi Qiao, Rui Wang, Kaitai Liang, and Georgios Smaragdakis.
+<br>
+Network and Distributed System Security (NDSS) Symposium 2025. 
+<br>
+<br>
+</span><span style="font-weight: bold;">Abstract:
+</span>
+<table cellpadding="2" cellspacing="2" border="0"
+ style="text-align: left; width: 66%;">
+  <tbody>
+    <tr>
+      <td style="vertical-align: top; text-align: justify;">
+	Current black-box backdoor attacks in convolutional neural 
+networks formulate attack objective(s) as single-objective 
+optimization problems in single domain. Designing triggers 
+in single domain harms semantics and trigger robustness as well 
+as introduces visual and spectral anomaly. This work proposes a 
+multi-objective black-box backdoor attack in
+dual domains via evolutionary algorithm (LADDER), the first
+instance of achieving multiple attack objectives simultaneously
+by optimizing triggers without requiring prior knowledge about
+victim model. In particular, we formulate LADDER as a multi-objective 
+optimization problem (MOP) and solve it via multi-objective 
+evolutionary algorithm (MOEA). MOEA maintains a
+population of triggers with trade-offs among attack objectives
+and uses non-dominated sort to drive triggers toward optimal
+solutions. We further apply preference-based selection to MOEA
+to exclude impractical triggers. LADDER investigates a new dual-domain 
+perspective for trigger stealthiness by minimizing the
+anomaly between clean and poisoned samples in the spectral
+domain. Lastly, the robustness against preprocessing operations is
+achieved by pushing triggers to low-frequency regions. Extensive
+experiments comprehensively showcase that LADDER achieves
+attack effectiveness of at least 99%, attack robustness with
+90.23% (50.09% higher than state-of-the-art attacks on average),
+superior natural stealthiness (1.12× to 196.74× improvement)
+and excellent spectral stealthiness (8.45× enhancement) as compared 
+to current stealthy attacks by the average l2-norm across 5 public datasets.
+</td>
+  </tr>
+  </tbody>
+</table>
+<br>
+<br>
+
+
+<br><br>
+Paper&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : 
+<a href="NDSS2025.pdf" style="text-decoration: none;"><!--[pdf]-->
+<i class="fa fa-file-pdf-o fa-lg"></i>
+</a>
+
+<!--
+<br>
+presentation: <a href=".pdf" style="text-decoration: none;">
+<i class="fa fa-file-pdf-o fa-lg"></i>
+</a>
+-->
+
+<br>
+bibtex&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : <a
+ href="NDSS2025_bib.html" style="text-decoration: none;">[bibtex.html]</a>
+<br><br>
+<!-- Project page:<a href="http://www.smaragdakis.net/research/ResolutioNet" style="text-decoration: none"> [html]</a> -->
+<br> 
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<!-- Start of StatCounter Code -->
+<script type="text/javascript" language="javascript">
+var sc_project=2126673; 
+var sc_invisible=1; 
+var sc_partition=19; 
+var sc_security="3bc9f8cf"; 
+</script>
+
+<script type="text/javascript" language="javascript" src="http://www.statcounter.com/counter/frames.js"></script><noscript><a href="http://www.statcounter.com/" target="_blank"><img  src="http://c20.statcounter.com/counter.php?sc_project=2126673&amp;java=0&amp;security=3bc9f8cf&amp;invisible=1" alt="hit counter" border="0"></a> </noscript>
+<!-- End of StatCounter Code -->
+
+<br>
+</body>
+</html>
