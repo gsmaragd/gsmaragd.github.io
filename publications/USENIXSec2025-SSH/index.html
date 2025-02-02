@@ -1,0 +1,98 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <meta http-equiv="content-type"
+ content="text/html; charset=ISO-8859-1">
+  <title>
+Catch-22: Uncovering Compromised Hosts using SSH Public Keys
+</title>
+</head>
+  <!--font-awesome -->
+    <link rel="stylesheet"
+href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <!-- -->
+<body link="#070fff" vlink="#686f84" bgcolor="#ffffff">
+<span style="font-weight: bold;"> ``Catch-22: Uncovering Compromised Hosts using SSH Public Keys"</span>
+<br>
+Cristian Munteanu, Georgios Smaragdakis, Anja Feldmann, and Tobias Fiebig.
+<br>
+USENIX Security Symposium 2025.
+<br>
+<br>
+</span><span style="font-weight: bold;">Abstract:
+</span>
+<table cellpadding="2" cellspacing="2" border="0"
+ style="text-align: left; width: 66%;">
+  <tbody>
+    <tr>
+      <td style="vertical-align: top; text-align: justify;">
+
+Attackers regularly use SSH (Secure SHell) to compromise systems, e.g., via brute-force attacks, establishing
+persistence by deploying SSH public keys. This ranges from IoT botnets like Mirai, over loader and dropper systems, to
+the back-ends of malicious operations. Identifying compromised systems at the Internet scale would be a major
+break-through for combatting malicious activity by enabling targeted clean-up efforts
+<br>
+In this paper, we present a method to identify compromised SSH servers at scale. For this, we use SSH's behavior to only
+send a challenge during public key authentication, to check if the key is present on the system. Our technique neither
+allows us to access compromised systems (unlike, e.g., testing known attacker passwords), nor does it require access for
+auditing.
+<br>
+With our methodology used at an Internet-wide scan, we identify more than 21,700 unique systems (1,649 ASes, 144
+countries) where attackers installed at least one of 52 verified malicious keys provided by a threat intelligence
+company, including critical Internet infrastructure. Furthermore, we find new context on the activities of malicious
+campaigns like, e.g., the 'fritzfrog' IoT botnet, malicious actors like 'teamtnt', and even the presence of state-actor
+associated keys within sensitive ASes. Comparing to honeypot data, we find these to under-/over-represent attackers'
+activity, even underestimating some APTs’ activities. Finally, we collaborate with a national CSIRT and the
+Shadowserver Foundation to notify and remediate compromised systems. We run our measurements continuously and
+automatically share notifications.
+
+</td>
+  </tr>
+  </tbody>
+</table>
+<br>
+<br>
+
+
+<br><br>
+Paper&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : 
+<a href="NDSS2025.pdf" style="text-decoration: none;"><!--[pdf]-->
+<i class="fa fa-file-pdf-o fa-lg"></i>
+</a>
+
+<!--
+<br>
+presentation: <a href=".pdf" style="text-decoration: none;">
+<i class="fa fa-file-pdf-o fa-lg"></i>
+</a>
+-->
+
+<br>
+bibtex&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : <a
+ href="NDSS2025_bib.html" style="text-decoration: none;">[bibtex.html]</a>
+<br><br>
+<!-- Project page:<a href="http://www.smaragdakis.net/research/ResolutioNet" style="text-decoration: none"> [html]</a> -->
+<br> 
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<!-- Start of StatCounter Code -->
+<script type="text/javascript" language="javascript">
+var sc_project=2126673; 
+var sc_invisible=1; 
+var sc_partition=19; 
+var sc_security="3bc9f8cf"; 
+</script>
+
+<script type="text/javascript" language="javascript" src="http://www.statcounter.com/counter/frames.js"></script><noscript><a href="http://www.statcounter.com/" target="_blank"><img  src="http://c20.statcounter.com/counter.php?sc_project=2126673&amp;java=0&amp;security=3bc9f8cf&amp;invisible=1" alt="hit counter" border="0"></a> </noscript>
+<!-- End of StatCounter Code -->
+
+<br>
+</body>
+</html>
