@@ -1,0 +1,109 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <meta http-equiv="content-type"
+ content="text/html; charset=ISO-8859-1">
+  <title>
+Revealing Informed Scanners by Colocating Reactive and Passive Telescopes
+</title>
+</head>
+  <!--font-awesome -->
+    <link rel="stylesheet"
+href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <!-- -->
+<body link="#070fff" vlink="#686f84" bgcolor="#ffffff">
+<span style="font-weight: bold;"> ``Revealing Informed Scanners by Colocating Reactive and Passive Telescopes"
+</span>
+<br>
+Dario Ferrero, Georgios Smaragdakis, and Harm Griffioen.
+<br>
+International Symposium on Research in Attacks, Intrusions and Defenses (RAID) 2025.
+<br>
+<br>
+</span><span style="font-weight: bold;">Abstract:
+</span>
+<table cellpadding="2" cellspacing="2" border="0"
+ style="text-align: left; width: 66%;">
+  <tbody>
+    <tr>
+      <td style="vertical-align: top; text-align: justify;">
+
+Network telescopes have been utilized for decades
+to detect scanning activity on the Internet. Such telescopes are
+typically passive, i.e., they do not reply to TCP SYN packets.
+Recently, reactive network telescopes that respond to TCP SYN
+packets have been proposed to unveil a new wave of scanners,
+namely two-phase scanners, and collect malicious payloads from
+TCP ACK packets.
+<br><br>
+In this paper, we propose a methodology that combines the
+modus operandi of passive and reactive telescopes to identify an
+additional wave of scanners – that we call "informed scanners"–
+that participate in attacks. Our main observation is that small
+reactive telescopes operating within larger passive telescopes are
+visited by "informed" clients that are aware of the liveness of
+hosts without performing scanning themselves; thus, are not
+visible in the passive telescope. We identify these informed
+clients as an additional class of highly targeted scanners and
+attackers. Indeed, by operating a /25 reactive telescope within
+a /16 passive telescope, we can filter out routine and two-phase
+scanning activity from informed one and identify clients that
+participate in service-targeted attacks. We discuss the scalability
+and sensitivity of our methodology and how it can be used to
+swiftly identify and profile malicious hosts on the Internet. We
+show that "mini-telescopes" of relatively smaller sizes, such as
+/20, can be comparably effective as larger sizes, such as a /16.
+Thus, our methodology can be useful to security operators that
+may only be able to allocate a relatively small address space to
+run a telescope.
+
+</td>
+  </tr>
+  </tbody>
+</table>
+<br>
+<br>
+
+
+<br><br>
+Paper&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : 
+<a href="USENIXSec2025-CVE.pdf" style="text-decoration: none;"><!--[pdf]-->
+<i class="fa fa-file-pdf-o fa-lg"></i>
+</a>
+
+<!--
+<br>
+presentation: <a href=".pdf" style="text-decoration: none;">
+<i class="fa fa-file-pdf-o fa-lg"></i>
+</a>
+-->
+
+<br>
+bibtex&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : <a
+ href="RAID2025_bib.html" style="text-decoration: none;">[bibtex.html]</a>
+<br><br>
+<!-- Project page:<a href="http://www.smaragdakis.net/research/ResolutioNet" style="text-decoration: none"> [html]</a> -->
+<br> 
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<!-- Start of StatCounter Code -->
+<script type="text/javascript" language="javascript">
+var sc_project=2126673; 
+var sc_invisible=1; 
+var sc_partition=19; 
+var sc_security="3bc9f8cf"; 
+</script>
+
+<script type="text/javascript" language="javascript" src="http://www.statcounter.com/counter/frames.js"></script><noscript><a href="http://www.statcounter.com/" target="_blank"><img  src="http://c20.statcounter.com/counter.php?sc_project=2126673&amp;java=0&amp;security=3bc9f8cf&amp;invisible=1" alt="hit counter" border="0"></a> </noscript>
+<!-- End of StatCounter Code -->
+
+<br>
+</body>
+</html>
