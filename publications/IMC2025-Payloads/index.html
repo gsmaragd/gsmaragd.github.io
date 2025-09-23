@@ -1,0 +1,88 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <meta http-equiv="content-type"
+ content="text/html; charset=ISO-8859-1">
+  <title>
+Have you SYN what I see? Analyzing TCP SYN Payloads in the Wild
+</title>
+</head>
+  <!--font-awesome -->
+    <link rel="stylesheet"
+href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <!-- -->
+<body link="#070fff" vlink="#686f84" bgcolor="#ffffff">
+<span style="font-weight: bold;"> 
+``Have you SYN what I see? Analyzing TCP SYN Payloads in the Wild''</span>
+<br>
+Dario Ferrero, Enrico Bassetti, Harm Griffioen, and Georgios Smaragdakis.
+<br>
+ACM Internet Measurement Conference (IMC) 2025.
+<br>
+<br>
+</span><span style="font-weight: bold;">Abstract:
+</span>
+<table cellpadding="2" cellspacing="2" border="0"
+ style="text-align: left; width: 66%;">
+  <tbody>
+    <tr>
+      <td style="vertical-align: top; text-align: justify;">
+TCP SYN packets are typically meant to initiate a three-way handshake for new connections and do not carry a
+payload. The only exception, according to the standards, is TCP Fast Open, where data is transmitted as TCP SYN payload.
+<br><br>
+In this paper, we perform an empirical analysis of other cases where TCP SYN carries a payload. We utilize a large
+passive and a reactive network telescope to collect pure TCP SYN packets over two years. Our analysis shows that around 75%
+of these payloads are HTTP GET requests either for potentially censored content performed by researchers and activists
+originated by a relatively small number of IPs. We also observe scouting and intrusion attempt activity related to port
+0, operating systems, middleware, and edge router vulnerability exploitation. We make our data and methodology
+publicly available as we want to raise awareness of this type of TCP SYN that typically goes unnoticed.
+
+</td>
+  </tr>
+  </tbody>
+</table>
+<br>
+<br>
+
+
+<br><br>
+Paper&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : 
+<a href="IMC2025-Payloads.pdf" style="text-decoration: none;"><!--[pdf]-->
+<i class="fa fa-file-pdf-o fa-lg"></i>
+</a>
+
+<!--
+<br>
+presentation: <a href=".pdf" style="text-decoration: none;">
+<i class="fa fa-file-pdf-o fa-lg"></i>
+</a>
+-->
+
+<br>
+bibtex&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : <a
+ href="IMC2025-Payloads_bib.html" style="text-decoration: none;">[bibtex.html]</a>
+<br><br>
+<br> 
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<!-- Start of StatCounter Code -->
+<script type="text/javascript" language="javascript">
+var sc_project=2126673; 
+var sc_invisible=1; 
+var sc_partition=19; 
+var sc_security="3bc9f8cf"; 
+</script>
+
+<script type="text/javascript" language="javascript" src="http://www.statcounter.com/counter/frames.js"></script><noscript><a href="http://www.statcounter.com/" target="_blank"><img  src="http://c20.statcounter.com/counter.php?sc_project=2126673&amp;java=0&amp;security=3bc9f8cf&amp;invisible=1" alt="hit counter" border="0"></a> </noscript>
+<!-- End of StatCounter Code -->
+
+<br>
+</body>
+</html>
