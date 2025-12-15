@@ -28,8 +28,22 @@ ACM/IFIP International Middleware Conference 2025.
   <tbody>
     <tr>
       <td style="vertical-align: top; text-align: justify;">
-
-
+System call interposition is a widely used technique to trace and modify application behavior. Over the years, numerous
+interposition mechanisms have been proposed, each with distinct strengths and trade-offs. Recently, advances in binary
+rewriting—specifically targeting x86–64 syscall and sysenter instructions—have led to new techniques that take important
+steps forward, with some claiming to support general-purpose use.
+<br><br>
+We analyze state-of-the-art interposers in depth and uncover several fundamental design and implementation
+flaws—pitfalls that we collectively term System Call Interposition Pitfalls. For example, prior work cannot reliably
+interpose all system calls and may even corrupt code and data. These flaws undermine the practicality of existing
+solutions in real-world scenarios, rendering them unsuitable as universal interposition mechanisms.
+<br><br>
+Motivated by our findings, we design and implement a new plug-and-play system call interposition approach named K23,
+targeting x86–64 platforms. K23 addresses the uncovered pitfalls via a hybrid design that unifies the strengths of prior
+methods, combining offline and online phases that leverage multiple Linux interfaces and binary rewriting. Our
+evaluation shows that K23 overcomes the key limitations of state-of-the-art solutions while remaining highly efficient.
+To our knowledge, K23 is the first general-purpose interposer suitable for a wide range of use cases and environments,
+from low-end devices to performance-critical, datacenter-scale workloads.
 </td>
   </tr>
   </tbody>
