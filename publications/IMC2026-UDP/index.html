@@ -1,0 +1,92 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <meta http-equiv="content-type"
+ content="text/html; charset=ISO-8859-1">
+  <title>
+Understanding Different Perspectives: Analyzing UDP Scanning Through Reactive Telescopes
+</title>
+</head>
+  <!--font-awesome -->
+    <link rel="stylesheet"
+href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <!-- -->
+<body link="#070fff" vlink="#686f84" bgcolor="#ffffff">
+<span style="font-weight: bold;"> ``Understanding Different Perspectives: Analyzing UDP Scanning Through Reactive Telescopes"</span>
+<br>
+Dario Ferrero, Andrea Sordello, Harm Griffioen, Idilio Drago, Georgios Smaragdakis, and Marco Mellia.
+<br>
+ACM Internet Measurement Conference (IMC) 2026. 
+<br>
+<br>
+</span><span style="font-weight: bold;">Abstract:
+</span>
+<table cellpadding="2" cellspacing="2" border="0"
+ style="text-align: left; width: 66%;">
+  <tbody>
+    <tr>
+      <td style="vertical-align: top; text-align: justify;">
+
+Reactive telescopes reveal scanning behavior that passive telescopes cannot observe, but prior deployments have focused
+exclusively on TCP. We present RT-UDP, the first transport-layer reactive telescope for UDP, which returns empty UDP
+packets across all ports while applying rate limits to limit its contribution to reflection attacks. We deploy RT-UDP
+alongside passive telescopes and TCP responders at four university networks in three countries and compare their
+observations over 30 days. Activating RT-UDP increases observed UDP source addresses by 13.0--43.8% and flows by
+11.7--99.6%, although the additional traffic is concentrated among a small subset of sources. It also shifts the
+application-layer landscape: approximately half of the traffic targets the top 10 destination ports, and services rarely
+visible in passive telescopes become prominent. Despite carrying no application-layer data, an empty UDP response alters
+sender behavior: retransmissions increase by 87--602%, different-payload follow-ups by more than 200%, and TCP
+fallback by over an order of magnitude. Payload analysis further reveals protocol switching and multi-stage probing
+triggered by interaction. These findings demonstrate that minimal transport-layer responses expose UDP scanning
+strategies and service ecosystems that remain largely invisible to passive measurement.
+
+</td>
+    </tr>
+  </tbody>
+</table>
+<br>
+<br>
+
+
+<br><br>
+Paper&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : 
+<a href="IMC2026-UDP.pdf" style="text-decoration: none;"><!--[pdf]-->
+<i class="fa fa-file-pdf-o fa-lg"></i>
+</a>
+
+<!--
+<br>
+presentation: <a href=".pdf" style="text-decoration: none;">
+<i class="fa fa-file-pdf-o fa-lg"></i>
+</a>
+-->
+
+<br>
+bibtex&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : <a
+ href="IMC2026-UDP_bib.html" style="text-decoration: none;">[bibtex.html]</a>
+<br><br>
+<!-- Project page:<a href="http://www.smaragdakis.net/research/ResolutioNet" style="text-decoration: none"> [html]</a> -->
+<br> 
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<!-- Start of StatCounter Code -->
+<script type="text/javascript" language="javascript">
+var sc_project=2126673; 
+var sc_invisible=1; 
+var sc_partition=19; 
+var sc_security="3bc9f8cf"; 
+</script>
+
+<script type="text/javascript" language="javascript" src="http://www.statcounter.com/counter/frames.js"></script><noscript><a href="http://www.statcounter.com/" target="_blank"><img  src="http://c20.statcounter.com/counter.php?sc_project=2126673&amp;java=0&amp;security=3bc9f8cf&amp;invisible=1" alt="hit counter" border="0"></a> </noscript>
+<!-- End of StatCounter Code -->
+
+<br>
+</body>
+</html>
